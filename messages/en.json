@@ -1,0 +1,17 @@
+{
+  "nav": {
+    "proyectos": "Projects",
+    "blog": "Blog",
+    "sobreMi": "About",
+    "contacto": "Contact"
+  },
+  "inicio": {
+    "lema": "Stories drawn in code",
+    "rol": "Developer"
+  },
+  "comun": {
+    "cambiarIdioma": "Español",
+    "volver": "Back",
+    "porMaquetar": "Layout pending."
+  }
+}

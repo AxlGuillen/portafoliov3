@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   Sistema 4XL — manga en blanco y negro.
+   El color no es paleta: es recompensa. La lima aparece solo en hover
+   y en la sección de contacto.
+------------------------------------------------------------------ */
+@theme {
+  /* Tinta y papel */
+  --color-tinta: #111111;
+  --color-papel: #ffffff;
+  --color-lector: #101010;
+  --color-lima: #d9f24a;
+
+  /* Tipografías (las variables --font-*-src las inyecta next/font) */
+  --font-display: var(--font-archivo-src), "Arial Black", Impact, sans-serif;
+  --font-body: var(--font-karla-src), ui-sans-serif, system-ui, sans-serif;
+  --font-hand: var(--font-gochi-src), "Comic Sans MS", cursive;
+
+  /* Grosores de trazo de las viñetas */
+  --stroke-vineta: 3.5px;
+  --stroke-caja: 3px;
+
+  /* Canal entre viñetas */
+  --spacing-canal: 0.875rem;
+}
+
+/* ------------------------------------------------------------------
+   Tramas de semitono.
+   Se pintan en CSS, nunca se hornean en la imagen: así el arte generado
+   pesa menos y la trama queda nítida a cualquier zoom, sin muaré.
+------------------------------------------------------------------ */
+@utility trama-puntos {
+  background-image: radial-gradient(
+    color-mix(in srgb, var(--color-tinta) 18%, transparent) 1.3px,
+    transparent 1.8px
+  );
+  background-size: 9px 9px;
+}
+
+@utility trama-densa {
+  background-image: radial-gradient(
+    color-mix(in srgb, var(--color-tinta) 30%, transparent) 1.4px,
+    transparent 1.9px
+  );
+  background-size: 6px 6px;
+}
+
+@utility trama-lineas {
+  background-image: repeating-linear-gradient(
+    66deg,
+    color-mix(in srgb, var(--color-tinta) 26%, transparent) 0 1.6px,
+    transparent 1.6px 22px
+  );
+}
+
+@utility trama-velocidad {
+  background-image: repeating-linear-gradient(
+    84deg,
+    color-mix(in srgb, var(--color-tinta) 50%, transparent) 0 2.4px,
+    transparent 2.4px 13px
+  );
+}
+
+/* ------------------------------------------------------------------
+   Base
+------------------------------------------------------------------ */
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background: var(--color-lector);
+    color: var(--color-tinta);
+    font-family: var(--font-body);
+  }
+
+  /* Los reveals al scroll se apagan por completo para quien pide menos
+     movimiento. Aquí !important es obligatorio: tiene que ganarle a las
+     animaciones que GSAP escribe en el atributo style. */
+  /* biome-ignore-start lint/complexity/noImportantStyles: anular animaciones en línea */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  /* biome-ignore-end lint/complexity/noImportantStyles: anular animaciones en línea */
+
+  :focus-visible {
+    outline: 3px solid var(--color-lima);
+    outline-offset: 2px;
+  }
+}

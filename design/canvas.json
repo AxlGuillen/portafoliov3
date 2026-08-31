@@ -1,0 +1,190 @@
+{
+  "pages": [
+    { "id": "page-1", "name": "Secciones" },
+    { "id": "page-2", "name": "Exploración v1" }
+  ],
+  "artboards": [
+    {
+      "file": "Mapa.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 920,
+      "h": 1620,
+      "title": "Índice — mapa del sitio",
+      "page": "page-1"
+    },
+    {
+      "file": "Sistema.dc.html",
+      "x": 0,
+      "y": 1800,
+      "w": 1100,
+      "h": 1320,
+      "title": "Sistema 4XL",
+      "page": "page-1"
+    },
+    {
+      "file": "Main.dc.html",
+      "x": 1240,
+      "y": 0,
+      "w": 1440,
+      "h": 2960,
+      "title": "Inicio — desktop",
+      "page": "page-1"
+    },
+    {
+      "file": "Mobile.dc.html",
+      "x": 2800,
+      "y": 0,
+      "w": 390,
+      "h": 3320,
+      "title": "Inicio — móvil",
+      "page": "page-1"
+    },
+    {
+      "file": "Proyectos.dc.html",
+      "x": 3320,
+      "y": 0,
+      "w": 1440,
+      "h": 2020,
+      "title": "Proyectos",
+      "page": "page-1"
+    },
+    {
+      "file": "SobreMi.dc.html",
+      "x": 4880,
+      "y": 0,
+      "w": 1440,
+      "h": 2180,
+      "title": "Sobre mí + Certificaciones",
+      "page": "page-1"
+    },
+    {
+      "file": "Contacto.dc.html",
+      "x": 6440,
+      "y": 0,
+      "w": 1440,
+      "h": 1700,
+      "title": "Contacto",
+      "page": "page-1"
+    },
+    {
+      "file": "MangaPop.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 2680,
+      "title": "Opción A — Manga Pop",
+      "page": "page-2"
+    },
+    {
+      "file": "TintaElectrica.dc.html",
+      "x": 1560,
+      "y": 0,
+      "w": 1440,
+      "h": 2260,
+      "title": "Opción B — Tinta Eléctrica",
+      "page": "page-2"
+    },
+    {
+      "file": "VentanasFlotantes.dc.html",
+      "x": 3120,
+      "y": 0,
+      "w": 1440,
+      "h": 2340,
+      "title": "Opción C — Ventanas Flotantes",
+      "page": "page-2"
+    },
+    {
+      "file": "Reticula4.dc.html",
+      "x": 4680,
+      "y": 0,
+      "w": 1440,
+      "h": 1800,
+      "title": "Retícula 4 (lima)",
+      "page": "page-2"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "nota-mapa",
+      "x": 0,
+      "y": -250,
+      "w": 400,
+      "page": "page-1",
+      "text": "ÍNDICE — 4 secciones = 4 rutas raíz\nCursos y certificaciones viven en /sobre-mi/certificaciones.\nCada proyecto se escribe en 4 partes fijas: El encargo · El problema · La decisión · El resultado."
+    },
+    {
+      "id": "nota-vocab",
+      "x": 1240,
+      "y": -250,
+      "w": 420,
+      "page": "page-1",
+      "text": "REGLA DE VOCABULARIO (nueva)\nLas etiquetas son directas y comprensibles: Proyectos, Blog, Sobre mí, Contacto, Certificaciones. Lo temático lo aporta el DIBUJO — viñetas, tramas, SFX, cortes diagonales — nunca las palabras. Nadie debería descifrar un nombre para saber a dónde va."
+    },
+    {
+      "id": "nota-mobile",
+      "x": 2800,
+      "y": -250,
+      "w": 380,
+      "page": "page-1",
+      "text": "MÓVIL — scroll vertical\nLas mismas viñetas apiladas a todo el ancho, sesgos alternados, jerarquía por altura. Barra inferior fija con las 4 rutas."
+    },
+    {
+      "id": "nota-proyectos",
+      "x": 3320,
+      "y": -250,
+      "w": 400,
+      "page": "page-1",
+      "text": "PROYECTOS — /proyectos\n8 trabajos (múltiplo de 4) en viñetas de tamaños desiguales y sesgos alternos, nunca una cuadrícula regular. 4 filtros. Cada viñeta lleva a su caso."
+    },
+    {
+      "id": "nota-sobremi",
+      "x": 4880,
+      "y": -250,
+      "w": 400,
+      "page": "page-1",
+      "text": "SOBRE MÍ — /sobre-mi\nRetrato dominante + biografía, 4 barras de habilidades, trayectoria en tira de 4 viñetas, y la GALERÍA DE CERTIFICACIONES: 8 cartas ligeramente rotadas con sello, emisor, año y enlace a la credencial. 4 filtros."
+    },
+    {
+      "id": "nota-contacto",
+      "x": 6440,
+      "y": -250,
+      "w": 400,
+      "page": "page-1",
+      "text": "CONTACTO — /contacto\nLa única página a color: la hoja entera es lima. Formulario con campos de borde grueso + 4 canales directos (el 4.º marcado con ★) + disponibilidad y ubicación."
+    },
+    {
+      "id": "nota-a",
+      "x": 0,
+      "y": -170,
+      "w": 360,
+      "page": "page-2",
+      "text": "OPCIÓN A — MANGA POP (archivada)\nPapel crema + bloques rojo/azul. Referencia para páginas interiores."
+    },
+    {
+      "id": "nota-b",
+      "x": 1560,
+      "y": -170,
+      "w": 360,
+      "page": "page-2",
+      "text": "OPCIÓN B — TINTA ELÉCTRICA (archivada)\nNoche + lima + diagonales. Referencia para estados hover y la sección a color."
+    },
+    {
+      "id": "nota-c",
+      "x": 3120,
+      "y": -170,
+      "w": 360,
+      "page": "page-2",
+      "text": "OPCIÓN C — VENTANAS FLOTANTES (archivada)\nPaneles dispersos sobre papel."
+    },
+    {
+      "id": "nota-r4",
+      "x": 4680,
+      "y": -170,
+      "w": 360,
+      "page": "page-2",
+      "text": "RETÍCULA 4 EN LIMA (archivada)\nEl 4 del logo como retícula. Descartada por colorimetría; la diagonal sobrevive como corte en B/N."
+    }
+  ],
+  "launch": { "view": "canvas", "page": "page-1" }
+}

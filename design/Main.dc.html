@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Gochi+Hand&family=Karla:ital,wght@0,400;0,700;0,800;1,400&display=swap');
+    body { margin: 0; font-family: 'Karla', 'Segoe UI', sans-serif; }
+    a { color: #111111; } a:hover { color: #D9F24A; }
+  </style>
+</helmet>
+<div style="width: 1440px; background: #101010; color: #111111; padding: 0 0 48px; box-sizing: border-box;">
+
+  <!-- barra funcional sobre el fondo del lector -->
+  <div style="display: flex; justify-content: space-between; align-items: center; padding: 18px 48px;">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <svg viewBox="0 0 120 120" width="40" height="40" style="display: block;"><rect width="120" height="120" rx="27" fill="#111111" stroke="#FFFFFF" stroke-width="6"></rect><g fill="#FFFFFF" transform="translate(8,14)"><path d="M0 52 H104 V66 H0 Z"></path><path d="M66 0 H80 V78 H104 V92 H66 V20 L26 60 H6 Z"></path></g></svg>
+      <span style="font-family: 'Archivo Black', 'Arial Black', sans-serif; font-size: 18px; color: #FFFFFF;">4XL</span>
+    </div>
+    <div style="display: flex; gap: 24px;">
+      <a href="#" style="font-weight: 800; font-size: 14px; text-decoration: none; color: #FFFFFF; padding: 10px 2px;">Proyectos</a>
+      <a href="#" style="font-weight: 800; font-size: 14px; text-decoration: none; color: #FFFFFF; padding: 10px 2px;">Blog</a>
+      <a href="#" style="font-weight: 800; font-size: 14px; text-decoration: none; color: #FFFFFF; padding: 10px 2px;">Sobre mí</a>
+      <a href="#" style="font-weight: 800; font-size: 14px; text-decoration: none; color: #111111; background: #FFFFFF; padding: 10px 18px;">Contacto</a>
+    </div>
+  </div>
+
+  <!-- ============ PÁGINA 1 DEL MANGA ============ -->
+  <div style="width: 920px; margin: 0 auto; background: #FFFFFF; box-shadow: 0 22px 60px rgba(0,0,0,0.6); padding: 10px 10px 16px; box-sizing: border-box;">
+    <div style="position: relative; width: 900px; height: 1300px;">
+      <svg viewBox="0 0 900 1300" width="900" height="1300" style="position: absolute; top: 0; left: 0; display: block;">
+        <defs>
+          <pattern id="tone1" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.3" fill="rgba(17,17,17,0.18)"></circle></pattern>
+          <pattern id="lineas" width="26" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(24)"><rect x="0" y="0" width="1.6" height="26" fill="rgba(17,17,17,0.28)"></rect></pattern>
+        </defs>
+        <!-- viñeta 1: apertura, corte diagonal inferior (la diagonal del 4, en negativo) -->
+        <polygon points="6,6 894,6 894,468 6,562" fill="url(#lineas)" stroke="#111111" stroke-width="3.5"></polygon>
+        <!-- viñeta 2: proyecto estrella, corte diagonal superior -->
+        <polygon points="6,602 894,508 894,1244 6,1244" fill="url(#tone1)" stroke="#111111" stroke-width="3.5"></polygon>
+      </svg>
+
+      <!-- caja de narración (viñeta 1) -->
+      <div style="position: absolute; top: 28px; left: 28px; background: #FFFFFF; border: 3px solid #111111; padding: 8px 14px; font-weight: 800; font-size: 14px; letter-spacing: 0.04em;">DESARROLLADOR — PORTAFOLIO 2026</div>
+
+      <!-- placeholder de asset (viñeta 1) -->
+      <div style="position: absolute; top: 170px; left: 250px; width: 420px; border: 3px dashed #111111; background: rgba(255,255,255,0.92); padding: 14px 18px; text-align: center;">
+        <span style="font-weight: 800; font-size: 13px; letter-spacing: 0.1em;">ASSET IA — VIÑETA 1</span>
+        <p style="margin: 6px 0 0; font-size: 13.5px; line-height: 1.45;">Acción de apertura: el héroe entra a página completa, speedlines, el brazo rompe el marco por arriba.</p>
+      </div>
+
+      <!-- SFX viñeta 1 -->
+      <div style="position: absolute; top: 40px; right: 40px; font-family: 'Archivo Black', sans-serif; font-size: 52px; transform: rotate(8deg); color: #111111; -webkit-text-stroke: 2px #FFFFFF;">¡TAK!</div>
+
+      <!-- bocadillo (viñeta 1) -->
+      <div style="position: absolute; top: 330px; right: 60px; width: 190px;">
+        <div style="background: #FFFFFF; border: 3px solid #111111; border-radius: 50%; padding: 26px 22px; text-align: center; font-weight: 800; font-size: 15px; line-height: 1.35;">¿LISTO?<br>PASA LA PÁGINA.</div>
+        <div style="width: 0; height: 0; border-left: 14px solid transparent; border-right: 6px solid transparent; border-top: 22px solid #111111; margin: -6px 0 0 40px; transform: rotate(-12deg);"></div>
+      </div>
+
+      <!-- bloque de título vertical (estilo JJK, cruza ambas viñetas) -->
+      <div style="position: absolute; top: 400px; left: 34px; width: 118px; background: #111111; padding: 20px 0 24px; display: flex; flex-direction: column; align-items: center; gap: 16px; box-shadow: 6px 6px 0 rgba(17,17,17,0.25);">
+        <svg viewBox="0 0 120 120" width="64" height="64" style="display: block;"><rect width="120" height="120" rx="27" fill="#111111" stroke="#FFFFFF" stroke-width="6"></rect><g fill="#FFFFFF" transform="translate(8,14)"><path d="M0 52 H104 V66 H0 Z"></path><path d="M66 0 H80 V78 H104 V92 H66 V20 L26 60 H6 Z"></path></g></svg>
+        <span style="writing-mode: vertical-rl; font-family: 'Archivo Black', sans-serif; font-size: 30px; color: #FFFFFF; letter-spacing: 0.12em;">AXL GUILLEN</span>
+        <span style="writing-mode: vertical-rl; font-size: 13px; color: #FFFFFF; font-weight: 700; letter-spacing: 0.2em;">PORTAFOLIO — VOL. 3</span>
+      </div>
+
+      <!-- viñeta 2: proyecto estrella -->
+      <div style="position: absolute; top: 700px; left: 250px; width: 430px; border: 3px dashed #111111; background: rgba(255,255,255,0.92); padding: 14px 18px; text-align: center;">
+        <span style="font-weight: 800; font-size: 13px; letter-spacing: 0.1em;">ASSET IA — VIÑETA 2</span>
+        <p style="margin: 6px 0 0; font-size: 13.5px; line-height: 1.45;">Contrapicado dramático del proyecto estrella: la "batalla" más grande, trama de grises, mucho negro.</p>
+      </div>
+      <div style="position: absolute; top: 640px; right: 44px; font-family: 'Archivo Black', sans-serif; font-size: 46px; transform: rotate(-6deg); color: #FFFFFF; -webkit-text-stroke: 2px #111111;">¡ZUUM!</div>
+      <div style="position: absolute; bottom: 76px; right: 40px; background: #FFFFFF; border: 3px solid #111111; padding: 12px 16px; max-width: 320px; display: flex; flex-direction: column; gap: 4px;">
+        <span style="font-weight: 800; font-size: 15px;">[Proyecto destacado]</span>
+        <a href="#" style="font-weight: 800; font-size: 13.5px; text-decoration: none;">ver caso →</a>
+      </div>
+      <div style="position: absolute; bottom: 76px; left: 40px; background: #111111; color: #FFFFFF; padding: 10px 14px; font-family: 'Gochi Hand', cursive; font-size: 16px; transform: rotate(-1deg);">cada viñeta lleva a su sección</div>
+    </div>
+    <div style="text-align: center; margin-top: 10px; font-weight: 800; font-size: 12px; letter-spacing: 0.16em; color: rgba(17,17,17,0.55);">— 1 / 4 —</div>
+  </div>
+
+  <!-- ============ PÁGINA 2 DEL MANGA: composición de acción ============ -->
+  <div style="width: 920px; margin: 44px auto 0; background: #FFFFFF; box-shadow: 0 22px 60px rgba(0,0,0,0.6); padding: 10px 10px 16px; box-sizing: border-box;">
+    <div style="position: relative; width: 900px; height: 1300px;">
+      <svg viewBox="0 0 900 1300" width="900" height="1300" style="position: absolute; top: 0; left: 0; display: block;">
+        <defs>
+          <pattern id="tone1b" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.3" fill="rgba(17,17,17,0.18)"></circle></pattern>
+          <pattern id="tone2b" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.4" fill="rgba(17,17,17,0.3)"></circle></pattern>
+          <pattern id="lineasb" width="26" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(-18)"><rect x="0" y="0" width="1.6" height="26" fill="rgba(17,17,17,0.3)"></rect></pattern>
+          <pattern id="rafaga" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(-6)"><rect x="0" y="0" width="2.4" height="14" fill="rgba(17,17,17,0.5)"></rect></pattern>
+        </defs>
+
+        <!-- viñetas 3 y 4: blog, dos cortes sesgados arriba -->
+        <polygon points="6,6 430,6 392,254 6,292" fill="#FFFFFF" stroke="#111111" stroke-width="3.5"></polygon>
+        <polygon points="470,6 894,6 894,214 432,252" fill="url(#tone1b)" stroke="#111111" stroke-width="3.5"></polygon>
+
+        <!-- viñeta 5: SOBRE MÍ — panel dominante en diagonal, a sangre -->
+        <polygon points="6,332 894,254 894,724 6,806" fill="url(#lineasb)" stroke="#111111" stroke-width="3.5"></polygon>
+
+        <!-- viñeta 7: ráfaga de velocidad cruzando la página -->
+        <polygon points="6,846 894,766 894,832 6,918" fill="url(#rafaga)" stroke="#111111" stroke-width="3.5"></polygon>
+
+        <!-- viñeta 12: contacto — la única a color (se dibuja antes para que el caso 04 la rompa) -->
+        <polygon points="6,1216 894,1152 894,1292 6,1292" fill="#D9F24A" stroke="#111111" stroke-width="3.5"></polygon>
+
+        <!-- viñetas 8-11: los casos, secuencia sesgada con jerarquía -->
+        <polygon points="6,958 262,934 246,1172 6,1194" fill="url(#tone1b)" stroke="#111111" stroke-width="3.5"></polygon>
+        <polygon points="300,930 470,916 452,1154 288,1168" fill="#FFFFFF" stroke="#111111" stroke-width="3.5"></polygon>
+        <polygon points="510,912 652,900 636,1138 496,1150" fill="url(#tone2b)" stroke="#111111" stroke-width="3.5"></polygon>
+        <polygon points="690,896 894,878 894,1240 676,1160" fill="#111111" stroke="#111111" stroke-width="3.5"></polygon>
+      </svg>
+
+      <!-- blog: cajas de narración -->
+      <div style="position: absolute; top: 24px; left: 26px; background: #111111; color: #FFFFFF; padding: 6px 12px; font-weight: 800; font-size: 13px; letter-spacing: 0.06em; transform: rotate(-1.6deg);">BLOG</div>
+      <div style="position: absolute; top: 76px; left: 34px; width: 320px; display: flex; flex-direction: column; gap: 6px; transform: rotate(-1.6deg);">
+        <span style="font-weight: 800; font-size: 18px; line-height: 1.3;">[Título del último post]</span>
+        <span style="font-family: 'Gochi Hand', cursive; font-size: 15px;">[fecha] · 4 min de lectura</span>
+        <a href="#" style="font-weight: 800; font-size: 13.5px; text-decoration: none;">leer →</a>
+      </div>
+      <div style="position: absolute; top: 60px; left: 510px; width: 330px; display: flex; flex-direction: column; gap: 6px; transform: rotate(-2.2deg);">
+        <span style="background: #FFFFFF; border: 3px solid #111111; padding: 8px 12px; font-weight: 800; font-size: 16px; line-height: 1.3;">[Título del post anterior]</span>
+        <a href="#" style="font-weight: 800; font-size: 13.5px; text-decoration: none; background: #FFFFFF; align-self: flex-start; padding: 2px 8px;">Ver todo el blog →</a>
+      </div>
+
+      <!-- el personaje: dominante -->
+      <div style="position: absolute; top: 360px; left: 28px; background: #FFFFFF; border: 3px solid #111111; padding: 6px 12px; font-weight: 800; font-size: 13px; letter-spacing: 0.06em; transform: rotate(-4.5deg);">SOBRE MÍ</div>
+      <div style="position: absolute; top: 430px; left: 200px; width: 400px; border: 3px dashed #111111; background: rgba(255,255,255,0.92); padding: 12px 16px; text-align: center; transform: rotate(-3deg);">
+        <span style="font-weight: 800; font-size: 13px; letter-spacing: 0.1em;">ASSET IA — VIÑETA DOMINANTE</span>
+        <p style="margin: 6px 0 0; font-size: 13.5px; line-height: 1.45;">El personaje en diagonal, cuerpo entero en acción (patada/salto), tinta sólida + speedlines; la pierna rompe el borde inferior del panel.</p>
+      </div>
+      <div style="position: absolute; top: 280px; right: 40px; font-family: 'Archivo Black', sans-serif; font-size: 44px; transform: rotate(-8deg); color: #FFFFFF; -webkit-text-stroke: 2px #111111;">¡FIUU!</div>
+      <!-- viñeta 6: inserta, rompe el borde del panel dominante -->
+      <div style="position: absolute; top: 690px; right: 26px; width: 230px; background: #FFFFFF; border: 3.5px solid #111111; padding: 14px 16px; box-shadow: -6px 6px 0 rgba(17,17,17,0.2); transform: rotate(2deg); display: flex; flex-direction: column; gap: 5px;">
+        <span style="font-family: 'Gochi Hand', cursive; font-size: 16px;">"nada mal, ¿eh?"</span>
+        <a href="#" style="font-weight: 800; font-size: 14px; text-decoration: none;">Sobre mí →</a>
+      </div>
+
+      <!-- ráfaga -->
+      <div style="position: absolute; top: 836px; left: 50%; transform: translateX(-50%) rotate(-5deg); font-family: 'Archivo Black', sans-serif; font-size: 40px; color: #FFFFFF; -webkit-text-stroke: 2.5px #111111; white-space: nowrap;">¡GO GO GO GO!</div>
+      <div style="position: absolute; top: 782px; left: 30px; background: #111111; color: #FFFFFF; padding: 5px 10px; font-weight: 800; font-size: 12px; letter-spacing: 0.08em; transform: rotate(-5deg);">PROYECTOS ↓</div>
+
+      <!-- casos: cajas de narración sesgadas -->
+      <div style="position: absolute; top: 1000px; left: 30px; width: 190px; border: 3px dashed #111111; background: rgba(255,255,255,0.92); padding: 8px 10px; text-align: center; transform: rotate(-2deg);"><span style="font-weight: 800; font-size: 11px; letter-spacing: 0.08em;">ASSET IA — KEY VISUAL DE CADA CASO</span></div>
+      <div style="position: absolute; top: 1108px; left: 24px; background: #FFFFFF; border: 3px solid #111111; padding: 7px 10px; display: flex; flex-direction: column; gap: 2px; transform: rotate(-2deg); width: 170px;"><span style="font-weight: 800; font-size: 13px;">[Proyecto 01]</span><a href="#" style="font-weight: 800; font-size: 12px; text-decoration: none;">ver →</a></div>
+      <div style="position: absolute; top: 1080px; left: 306px; background: #FFFFFF; border: 3px solid #111111; padding: 7px 10px; display: flex; flex-direction: column; gap: 2px; transform: rotate(-2.5deg); width: 130px;"><span style="font-weight: 800; font-size: 13px;">[Proyecto 02]</span><a href="#" style="font-weight: 800; font-size: 12px; text-decoration: none;">ver →</a></div>
+      <div style="position: absolute; top: 1062px; left: 508px; background: #FFFFFF; border: 3px solid #111111; padding: 7px 10px; display: flex; flex-direction: column; gap: 2px; transform: rotate(-3deg); width: 110px;"><span style="font-weight: 800; font-size: 13px;">[Proyecto 03]</span><a href="#" style="font-weight: 800; font-size: 12px; text-decoration: none;">ver →</a></div>
+      <div style="position: absolute; top: 920px; right: 40px; font-family: 'Archivo Black', sans-serif; font-size: 24px; color: #FFFFFF; transform: rotate(-3deg);">04★</div>
+      <div style="position: absolute; top: 1070px; right: 46px; background: #FFFFFF; border: 3px solid #111111; padding: 7px 10px; display: flex; flex-direction: column; gap: 2px; transform: rotate(-4deg); width: 150px;"><span style="font-weight: 800; font-size: 13px;">[Proyecto 04]</span><a href="#" style="font-weight: 800; font-size: 12px; text-decoration: none;">ver →</a></div>
+
+      <!-- contacto: la única viñeta a color -->
+      <div style="position: absolute; top: 1218px; left: 34px; display: flex; align-items: center; gap: 22px; transform: rotate(-2.6deg); width: 600px;">
+        <span style="font-family: 'Archivo Black', sans-serif; font-size: 32px;">¿HABLAMOS?</span>
+        <a href="#" style="background: #111111; color: #D9F24A; font-family: 'Archivo Black', sans-serif; font-size: 16px; padding: 12px 20px; text-decoration: none; flex-shrink: 0;">Contacto →</a>
+        <span style="font-family: 'Gochi Hand', cursive; font-size: 14px; line-height: 1.3;">cuéntame qué quieres construir</span>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 10px; font-weight: 800; font-size: 12px; letter-spacing: 0.16em; color: rgba(17,17,17,0.55);">— 2 / 4 —</div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

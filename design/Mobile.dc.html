@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Gochi+Hand&family=Karla:ital,wght@0,400;0,700;0,800;1,400&display=swap');
+    body { margin: 0; font-family: 'Karla', 'Segoe UI', sans-serif; }
+    a { color: #111111; } a:hover { color: #D9F24A; }
+  </style>
+</helmet>
+<div style="width: 390px; background: #101010; color: #111111; box-sizing: border-box; overflow: hidden;">
+
+  <!-- barra superior (sticky en la app real) -->
+  <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px;">
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <svg viewBox="0 0 120 120" width="32" height="32" style="display: block;"><rect width="120" height="120" rx="27" fill="#111111" stroke="#FFFFFF" stroke-width="6"></rect><g fill="#FFFFFF" transform="translate(8,14)"><path d="M0 52 H104 V66 H0 Z"></path><path d="M66 0 H80 V78 H104 V92 H66 V20 L26 60 H6 Z"></path></g></svg>
+      <span style="font-family: 'Archivo Black', 'Arial Black', sans-serif; font-size: 15px; color: #FFFFFF;">4XL</span>
+    </div>
+    <span style="font-family: 'Gochi Hand', cursive; font-size: 13px; color: rgba(255,255,255,0.65);">desliza ↓</span>
+  </div>
+
+  <!-- el papel: en mobile la página ocupa todo el ancho -->
+  <div style="background: #FFFFFF; padding: 10px 0 90px; position: relative;">
+
+    <!-- viñeta 1: apertura -->
+    <div style="margin: 6px 10px 0; transform: skewY(-2.5deg); border: 3px solid #111111; background-image: repeating-linear-gradient(66deg, rgba(17,17,17,0.28) 0 1.6px, transparent 1.6px 24px); position: relative; height: 400px;">
+      <div style="transform: skewY(2.5deg); position: relative; height: 100%;">
+        <div style="position: absolute; top: 16px; left: 14px; background: #FFFFFF; border: 3px solid #111111; padding: 6px 10px; font-weight: 800; font-size: 12px; letter-spacing: 0.04em;">DESARROLLADOR — PORTAFOLIO 2026</div>
+        <div style="position: absolute; top: 64px; right: 12px; font-family: 'Archivo Black', sans-serif; font-size: 36px; transform: rotate(8deg); color: #111111; -webkit-text-stroke: 2px #FFFFFF;">¡TAK!</div>
+        <div style="position: absolute; top: 150px; left: 30px; right: 30px; border: 3px dashed #111111; background: rgba(255,255,255,0.94); padding: 12px 14px; text-align: center;">
+          <span style="font-weight: 800; font-size: 12px; letter-spacing: 0.1em;">ASSET IA — APERTURA</span>
+          <p style="margin: 5px 0 0; font-size: 13px; line-height: 1.45;">El héroe entra a viñeta completa, speedlines; el brazo rompe el marco por arriba.</p>
+        </div>
+        <div style="position: absolute; top: 300px; right: 18px; background: #FFFFFF; border: 3px solid #111111; border-radius: 50%; padding: 16px 18px; text-align: center; font-weight: 800; font-size: 13px; line-height: 1.3;">¿LISTO?<br>SIGUE BAJANDO.</div>
+      </div>
+    </div>
+
+    <!-- bloque de título: horizontal en mobile -->
+    <div style="margin: 26px 10px 0; background: #111111; padding: 14px 16px; display: flex; align-items: center; gap: 12px; transform: rotate(-1deg); box-shadow: 4px 4px 0 rgba(17,17,17,0.25);">
+      <svg viewBox="0 0 120 120" width="42" height="42" style="display: block; flex-shrink: 0;"><rect width="120" height="120" rx="27" fill="#111111" stroke="#FFFFFF" stroke-width="6"></rect><g fill="#FFFFFF" transform="translate(8,14)"><path d="M0 52 H104 V66 H0 Z"></path><path d="M66 0 H80 V78 H104 V92 H66 V20 L26 60 H6 Z"></path></g></svg>
+      <div style="display: flex; flex-direction: column;">
+        <span style="font-family: 'Archivo Black', sans-serif; font-size: 22px; color: #FFFFFF; letter-spacing: 0.06em;">AXL GUILLEN</span>
+        <span style="font-size: 11px; color: #FFFFFF; font-weight: 700; letter-spacing: 0.22em;">PORTAFOLIO — VOL. 3</span>
+      </div>
+    </div>
+
+    <!-- viñeta 2: proyecto estrella -->
+    <div style="margin: 26px 10px 0; transform: skewY(2deg); border: 3px solid #111111; background-image: radial-gradient(rgba(17,17,17,0.18) 1.3px, transparent 1.8px); background-size: 9px 9px; position: relative; height: 360px;">
+      <div style="transform: skewY(-2deg); position: relative; height: 100%;">
+        <div style="position: absolute; top: 20px; left: 14px; font-family: 'Archivo Black', sans-serif; font-size: 34px; transform: rotate(-5deg); color: #FFFFFF; -webkit-text-stroke: 2px #111111;">¡ZUUM!</div>
+        <div style="position: absolute; top: 110px; left: 26px; right: 26px; border: 3px dashed #111111; background: rgba(255,255,255,0.94); padding: 12px 14px; text-align: center;">
+          <span style="font-weight: 800; font-size: 12px; letter-spacing: 0.1em;">ASSET IA — EL ESTRELLA</span>
+          <p style="margin: 5px 0 0; font-size: 13px; line-height: 1.45;">Contrapicado dramático del proyecto estrella, mucho negro.</p>
+        </div>
+        <div style="position: absolute; bottom: 22px; left: 14px; right: 14px; background: #FFFFFF; border: 3px solid #111111; padding: 10px 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px;">
+          <span style="font-weight: 800; font-size: 14px;">[Proyecto destacado]</span>
+          <a href="#" style="font-weight: 800; font-size: 13px; text-decoration: none; padding: 8px 0;">ver →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- blog: dos viñetas sesgadas -->
+    <div style="margin: 26px 10px 0; transform: skewY(-2deg); border: 3px solid #111111; background: #FFFFFF; padding: 16px;">
+      <div style="transform: skewY(2deg); display: flex; flex-direction: column; gap: 8px;">
+        <span style="background: #111111; color: #FFFFFF; align-self: flex-start; padding: 5px 10px; font-weight: 800; font-size: 11px; letter-spacing: 0.08em;">BLOG</span>
+        <span style="font-weight: 800; font-size: 16px; line-height: 1.35;">[Título del último post]</span>
+        <span style="font-family: 'Gochi Hand', cursive; font-size: 14px;">[fecha] · 4 min de lectura</span>
+        <a href="#" style="font-weight: 800; font-size: 13.5px; text-decoration: none; padding: 8px 0;">leer →</a>
+      </div>
+    </div>
+    <div style="margin: 14px 10px 0; transform: skewY(1.6deg); border: 3px solid #111111; background-image: radial-gradient(rgba(17,17,17,0.12) 1.2px, transparent 1.7px); background-size: 10px 10px; padding: 16px; background-color: #FFFFFF;">
+      <div style="transform: skewY(-1.6deg); display: flex; flex-direction: column; gap: 6px;">
+        <span style="font-weight: 800; font-size: 15px; line-height: 1.35; background: #FFFFFF; align-self: flex-start; padding: 1px 6px;">[Título del post anterior]</span>
+        <a href="#" style="font-weight: 800; font-size: 13.5px; text-decoration: none; background: #FFFFFF; align-self: flex-start; padding: 6px 6px;">Ver todo el blog →</a>
+      </div>
+    </div>
+
+    <!-- el personaje: viñeta dominante, retrato alto (formato ideal en vertical) -->
+    <div style="margin: 30px 10px 0; transform: skewY(-2.8deg); border: 3px solid #111111; background-image: repeating-linear-gradient(-72deg, rgba(17,17,17,0.3) 0 1.6px, transparent 1.6px 24px); position: relative; height: 560px;">
+      <div style="transform: skewY(2.8deg); position: relative; height: 100%;">
+        <div style="position: absolute; top: 20px; left: 14px; background: #FFFFFF; border: 3px solid #111111; padding: 6px 10px; font-weight: 800; font-size: 12px; letter-spacing: 0.06em;">SOBRE MÍ</div>
+        <div style="position: absolute; top: 76px; right: 12px; font-family: 'Archivo Black', sans-serif; font-size: 32px; transform: rotate(-8deg); color: #FFFFFF; -webkit-text-stroke: 2px #111111;">¡FIUU!</div>
+        <div style="position: absolute; top: 200px; left: 26px; right: 26px; border: 3px dashed #111111; background: rgba(255,255,255,0.94); padding: 12px 14px; text-align: center;">
+          <span style="font-weight: 800; font-size: 12px; letter-spacing: 0.1em;">ASSET IA — DOMINANTE (RETRATO)</span>
+          <p style="margin: 5px 0 0; font-size: 13px; line-height: 1.45;">Cuerpo entero en acción, en diagonal; la pierna rompe el borde inferior. El formato vertical del teléfono es el lienzo perfecto para este arte.</p>
+        </div>
+      </div>
+    </div>
+    <!-- inserta: rompe el borde de la dominante -->
+    <div style="margin: -30px 18px 0 auto; width: 220px; background: #FFFFFF; border: 3.5px solid #111111; padding: 12px 14px; box-shadow: -5px 5px 0 rgba(17,17,17,0.2); transform: rotate(2deg); display: flex; flex-direction: column; gap: 4px; position: relative;">
+      <span style="font-family: 'Gochi Hand', cursive; font-size: 15px;">"nada mal, ¿eh?"</span>
+      <a href="#" style="font-weight: 800; font-size: 13.5px; text-decoration: none; padding: 6px 0;">Sobre mí →</a>
+    </div>
+
+    <!-- ráfaga -->
+    <div style="margin: 26px -8px 0; transform: rotate(-3deg); border-top: 3px solid #111111; border-bottom: 3px solid #111111; background-image: repeating-linear-gradient(84deg, rgba(17,17,17,0.5) 0 2.4px, transparent 2.4px 13px); padding: 14px 0; text-align: center;">
+      <span style="font-family: 'Archivo Black', sans-serif; font-size: 28px; color: #FFFFFF; -webkit-text-stroke: 2px #111111; white-space: nowrap;">¡GO GO GO GO!</span>
+    </div>
+    <div style="margin: 18px 10px 0; background: #111111; color: #FFFFFF; padding: 5px 10px; font-weight: 800; font-size: 12px; letter-spacing: 0.08em; display: inline-block; transform: rotate(-1.5deg);">PROYECTOS ↓</div>
+
+    <!-- casos: 4 viñetas apiladas, sesgos alternados, jerarquía por altura -->
+    <div style="margin: 12px 10px 0; transform: skewY(-2deg); border: 3px solid #111111; background-image: radial-gradient(rgba(17,17,17,0.18) 1.3px, transparent 1.8px); background-size: 9px 9px; position: relative; height: 300px; background-color: #FFFFFF;">
+      <div style="transform: skewY(2deg); position: relative; height: 100%;">
+        <div style="position: absolute; top: 100px; left: 60px; right: 60px; border: 3px dashed #111111; background: rgba(255,255,255,0.94); padding: 8px 10px; text-align: center;"><span style="font-weight: 800; font-size: 11px; letter-spacing: 0.08em;">ASSET IA — KEY VISUAL</span></div>
+        <div style="position: absolute; bottom: 16px; left: 14px; background: #FFFFFF; border: 3px solid #111111; padding: 8px 12px; display: flex; gap: 12px; align-items: center;"><span style="font-weight: 800; font-size: 13px;">[Proyecto 01]</span><a href="#" style="font-weight: 800; font-size: 12.5px; text-decoration: none; padding: 6px 0;">ver →</a></div>
+      </div>
+    </div>
+    <div style="margin: 14px 10px 0; transform: skewY(1.8deg); border: 3px solid #111111; background: #FFFFFF; position: relative; height: 210px;">
+      <div style="transform: skewY(-1.8deg); position: relative; height: 100%;">
+        <div style="position: absolute; bottom: 16px; left: 14px; background: #FFFFFF; border: 3px solid #111111; padding: 8px 12px; display: flex; gap: 12px; align-items: center;"><span style="font-weight: 800; font-size: 13px;">[Proyecto 02]</span><a href="#" style="font-weight: 800; font-size: 12.5px; text-decoration: none; padding: 6px 0;">ver →</a></div>
+      </div>
+    </div>
+    <div style="margin: 14px 10px 0; transform: skewY(-1.6deg); border: 3px solid #111111; background-image: radial-gradient(rgba(17,17,17,0.3) 1.4px, transparent 1.9px); background-size: 7px 7px; position: relative; height: 190px; background-color: #FFFFFF;">
+      <div style="transform: skewY(1.6deg); position: relative; height: 100%;">
+        <div style="position: absolute; bottom: 16px; left: 14px; background: #FFFFFF; border: 3px solid #111111; padding: 8px 12px; display: flex; gap: 12px; align-items: center;"><span style="font-weight: 800; font-size: 13px;">[Proyecto 03]</span><a href="#" style="font-weight: 800; font-size: 12.5px; text-decoration: none; padding: 6px 0;">ver →</a></div>
+      </div>
+    </div>
+    <!-- caso 04: negro, más alto, invade la viñeta de contacto -->
+    <div style="margin: 14px 10px -46px; transform: skewY(2.4deg); border: 3px solid #111111; background: #111111; position: relative; height: 250px; z-index: 2;">
+      <div style="transform: skewY(-2.4deg); position: relative; height: 100%;">
+        <div style="position: absolute; top: 18px; right: 16px; font-family: 'Archivo Black', sans-serif; font-size: 24px; color: #FFFFFF;">04★</div>
+        <div style="position: absolute; bottom: 24px; left: 14px; background: #FFFFFF; border: 3px solid #111111; padding: 8px 12px; display: flex; gap: 12px; align-items: center;"><span style="font-weight: 800; font-size: 13px;">[Proyecto 04]</span><a href="#" style="font-weight: 800; font-size: 12.5px; text-decoration: none; padding: 6px 0;">ver →</a></div>
+      </div>
+    </div>
+
+    <!-- contacto: la única viñeta a color -->
+    <div style="margin: 0 -8px; transform: rotate(-2deg); border: 3px solid #111111; background: #D9F24A; padding: 56px 26px 30px; position: relative; z-index: 1;">
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <span style="font-weight: 800; font-size: 11px; letter-spacing: 0.14em;">CONTACTO</span>
+        <span style="font-family: 'Archivo Black', sans-serif; font-size: 34px; line-height: 1.05;">¿HABLAMOS?</span>
+        <a href="#" style="background: #111111; color: #D9F24A; font-family: 'Archivo Black', sans-serif; font-size: 17px; padding: 15px 22px; text-decoration: none; align-self: flex-start;">Contacto →</a>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 26px; font-weight: 800; font-size: 11px; letter-spacing: 0.16em; color: rgba(17,17,17,0.55);">— 1–2 / 4 —</div>
+  </div>
+
+  <!-- tab bar inferior: 4 rutas, fija en la app real -->
+  <div style="background: #111111; border-top: 3px solid #FFFFFF; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));">
+    <a href="#" style="color: #FFFFFF; font-weight: 800; font-size: 11.5px; text-decoration: none; text-align: center; padding: 16px 4px; letter-spacing: 0.02em;">Proyectos</a>
+    <a href="#" style="color: #FFFFFF; font-weight: 800; font-size: 11.5px; text-decoration: none; text-align: center; padding: 16px 4px; letter-spacing: 0.02em; border-left: 2px solid rgba(255,255,255,0.25);">Blog</a>
+    <a href="#" style="color: #FFFFFF; font-weight: 800; font-size: 11.5px; text-decoration: none; text-align: center; padding: 16px 4px; letter-spacing: 0.02em; border-left: 2px solid rgba(255,255,255,0.25);">Sobre mí</a>
+    <a href="#" style="color: #D9F24A; font-weight: 800; font-size: 11.5px; text-decoration: none; text-align: center; padding: 16px 4px; letter-spacing: 0.02em; border-left: 2px solid rgba(255,255,255,0.25);">Contacto</a>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

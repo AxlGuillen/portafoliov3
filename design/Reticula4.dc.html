@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Gochi+Hand&family=Karla:ital,wght@0,400;0,700;0,800;1,400&display=swap');
+    body { margin: 0; font-family: 'Karla', 'Segoe UI', sans-serif; }
+    a { color: #141210; } a:hover { color: #E23D2E; }
+  </style>
+</helmet>
+<div style="width: 1440px; background: #0C100E; color: #141210; padding: 0 0 40px; box-sizing: border-box;">
+
+  <!-- barra funcional sobre el "escritorio" oscuro -->
+  <div style="display: flex; justify-content: space-between; align-items: center; padding: 18px 48px;">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <svg viewBox="0 0 120 120" width="40" height="40" style="display: block;"><rect width="120" height="120" rx="27" fill="#0C100E" stroke="#D9F24A" stroke-width="6"></rect><g fill="#D9F24A" transform="translate(8,14)"><path d="M0 52 H104 V66 H0 Z"></path><path d="M66 0 H80 V78 H104 V92 H66 V20 L26 60 H6 Z"></path></g></svg>
+      <span style="font-family: 'Archivo Black', 'Arial Black', sans-serif; font-size: 18px; color: #D9F24A;">4XL</span>
+    </div>
+    <div style="display: flex; gap: 24px;">
+      <a href="#" style="font-weight: 800; font-size: 14px; text-decoration: none; color: #F2EBDA; padding: 10px 2px;">/proyectos</a>
+      <a href="#" style="font-weight: 800; font-size: 14px; text-decoration: none; color: #F2EBDA; padding: 10px 2px;">/blog</a>
+      <a href="#" style="font-weight: 800; font-size: 14px; text-decoration: none; color: #F2EBDA; padding: 10px 2px;">/sobre-mi</a>
+      <a href="#" style="font-weight: 800; font-size: 14px; text-decoration: none; color: #D9F24A; padding: 10px 2px;">/contacto</a>
+    </div>
+  </div>
+
+  <!-- LA PÁGINA DE CÓMIC -->
+  <div style="width: 1360px; margin: 0 auto; background: #F2EBDA; box-shadow: 0 24px 60px rgba(0,0,0,0.55); padding: 8px 8px 20px; box-sizing: border-box;">
+
+    <!-- zona hero: la retícula ES el 4 del logo (canales lima) -->
+    <div style="position: relative; width: 1344px; height: 1150px;">
+      <svg viewBox="0 0 1344 1150" width="1344" height="1150" style="position: absolute; top: 0; left: 0; display: block;">
+        <defs>
+          <pattern id="dots" width="11" height="11" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.6" fill="rgba(20,18,16,0.22)"></circle></pattern>
+          <pattern id="dotsdark" width="11" height="11" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.6" fill="rgba(217,242,74,0.3)"></circle></pattern>
+        </defs>
+        <!-- fondo: el 4 gigante en lima queda visible en los canales -->
+        <rect x="0" y="0" width="1344" height="1150" fill="#D9F24A"></rect>
+        <!-- P1 hero (borde diagonal = trazo del 4) -->
+        <polygon points="8,8 852,8 852,252 102,632 8,632" fill="#FBF7EC" stroke="#141210" stroke-width="5"></polygon>
+        <!-- P2 cuña bajo la diagonal -->
+        <polygon points="852,368 852,632 226,632" fill="#FBF7EC" stroke="#141210" stroke-width="5"></polygon>
+        <polygon points="852,368 852,632 226,632" fill="url(#dots)" stroke="none"></polygon>
+        <!-- P3 columna derecha: sobre mí -->
+        <rect x="958" y="8" width="378" height="624" fill="#FBF7EC" stroke="#141210" stroke-width="5"></rect>
+        <rect x="958" y="8" width="378" height="380" fill="url(#dots)" stroke="#141210" stroke-width="5"></rect>
+        <!-- P4 blog -->
+        <rect x="8" y="738" width="402" height="404" fill="#FBF7EC" stroke="#141210" stroke-width="5"></rect>
+        <!-- P5 proyectos -->
+        <rect x="426" y="738" width="426" height="404" fill="#FBF7EC" stroke="#141210" stroke-width="5"></rect>
+        <!-- P6 contacto: el panel 04, especial (tinta) -->
+        <rect x="958" y="738" width="378" height="404" fill="#0C100E" stroke="#141210" stroke-width="5"></rect>
+        <rect x="958" y="738" width="378" height="404" fill="url(#dotsdark)" stroke="none"></rect>
+      </svg>
+
+      <!-- contenido P1: presentación -->
+      <div style="position: absolute; top: 44px; left: 44px; width: 540px; display: flex; flex-direction: column; gap: 14px;">
+        <span style="font-family: 'Gochi Hand', cursive; font-size: 21px; color: #E23D2E;">página 01 — aparece el desarrollador</span>
+        <span style="font-family: 'Archivo Black', 'Arial Black', sans-serif; font-size: 88px; line-height: 0.94; letter-spacing: -0.01em;">AXL<br>GUILLEN</span>
+        <p style="margin: 6px 0 0; font-size: 16.5px; line-height: 1.55; max-width: 430px;">[ROL — una línea de narrador: quién es y qué construye.]</p>
+      </div>
+      <div style="position: absolute; top: -6px; left: -6px; background: #E23D2E; color: #FBF7EC; font-family: 'Archivo Black', sans-serif; font-size: 26px; padding: 8px 16px; border: 4px solid #141210; transform: rotate(-3deg);">¡CRAS!</div>
+
+      <!-- contenido P2: cuña → proyecto estrella -->
+      <div style="position: absolute; top: 480px; left: 560px; width: 270px; transform: rotate(-4deg); display: flex; flex-direction: column; gap: 4px;">
+        <span style="font-family: 'Archivo Black', sans-serif; font-size: 34px; color: #E23D2E;">¡BOOM!</span>
+        <a href="#" style="font-weight: 800; font-size: 15px; text-decoration: none;">[proyecto estrella] →</a>
+      </div>
+
+      <!-- contenido P3: sobre mí -->
+      <div style="position: absolute; top: 150px; left: 1000px; width: 294px; text-align: center;">
+        <span style="font-family: 'Gochi Hand', cursive; font-size: 19px; background: #FBF7EC; padding: 2px 10px; border: 2px solid #141210;">retrato IA aquí</span>
+      </div>
+      <div style="position: absolute; top: 420px; left: 990px; width: 314px; display: flex; flex-direction: column; gap: 8px;">
+        <span style="font-family: 'Archivo Black', sans-serif; font-size: 24px;">EL PERSONAJE</span>
+        <p style="margin: 0; font-size: 15px; line-height: 1.5;">[Dos líneas de bio con voz propia.]</p>
+        <a href="#" style="font-weight: 800; font-size: 14px; text-decoration: none;">( /sobre-mi ) →</a>
+      </div>
+
+      <!-- travesaño del 4: tagline -->
+      <div style="position: absolute; top: 655px; left: 0; width: 1344px; display: flex; justify-content: center; align-items: center; gap: 18px;">
+        <span style="font-family: 'Archivo Black', sans-serif; font-size: 30px; color: #0C100E;">Historias dibujadas en código</span>
+        <span style="font-family: 'Gochi Hand', cursive; font-size: 19px; color: #0C100E;">← lees sobre el 4, literal</span>
+      </div>
+
+      <!-- contenido P4: blog -->
+      <div style="position: absolute; top: 770px; left: 40px; width: 340px; display: flex; flex-direction: column; gap: 12px;">
+        <span style="font-family: 'Archivo Black', sans-serif; font-size: 26px;">EL BLOG</span>
+        <div style="display: flex; flex-direction: column; gap: 3px;"><span style="font-weight: 800; font-size: 16px;">[Título del último post]</span><span style="font-family: 'Gochi Hand', cursive; font-size: 16px; color: #E23D2E;">tira #12 — [fecha]</span></div>
+        <div style="display: flex; flex-direction: column; gap: 3px;"><span style="font-weight: 800; font-size: 16px;">[Título del post anterior]</span><span style="font-family: 'Gochi Hand', cursive; font-size: 16px; color: #E23D2E;">tira #11 — [fecha]</span></div>
+        <a href="#" style="font-weight: 800; font-size: 14px; text-decoration: none;">( /blog ) →</a>
+      </div>
+
+      <!-- contenido P5: proyectos -->
+      <div style="position: absolute; top: 770px; left: 458px; width: 362px; display: flex; flex-direction: column; gap: 12px;">
+        <span style="font-family: 'Archivo Black', sans-serif; font-size: 26px;">LOS CASOS</span>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px;">
+          <div style="border: 3px solid #141210; background: #2E7CD6; height: 92px; display: flex; align-items: flex-end; padding: 8px;"><span style="font-weight: 800; font-size: 13px; color: #FBF7EC;">[P.01]</span></div>
+          <div style="border: 3px solid #141210; background: #E23D2E; height: 92px; display: flex; align-items: flex-end; padding: 8px;"><span style="font-weight: 800; font-size: 13px; color: #FBF7EC;">[P.02]</span></div>
+          <div style="border: 3px solid #141210; background: #FBF7EC; height: 92px; display: flex; align-items: flex-end; padding: 8px;"><span style="font-weight: 800; font-size: 13px;">[P.03]</span></div>
+          <div style="border: 3px solid #141210; background: #0C100E; height: 92px; display: flex; align-items: flex-end; padding: 8px;"><span style="font-weight: 800; font-size: 13px; color: #D9F24A;">[P.04] ★</span></div>
+        </div>
+        <a href="#" style="font-weight: 800; font-size: 14px; text-decoration: none;">( /proyectos ) →</a>
+      </div>
+
+      <!-- contenido P6: contacto 04★ -->
+      <div style="position: absolute; top: 790px; left: 998px; width: 298px; display: flex; flex-direction: column; gap: 12px;">
+        <span style="font-family: 'Archivo Black', sans-serif; font-size: 54px; color: #D9F24A; line-height: 1;">04★</span>
+        <span style="font-family: 'Archivo Black', sans-serif; font-size: 26px; color: #F2EBDA; line-height: 1.15;">EL CAPÍTULO FINAL</span>
+        <a href="#" style="align-self: flex-start; background: #D9F24A; color: #0C100E; font-family: 'Archivo Black', sans-serif; font-size: 18px; padding: 14px 22px; text-decoration: none; transform: rotate(-1.5deg); border: 3px solid #F2EBDA;">( /contacto ) →</a>
+      </div>
+    </div>
+
+    <!-- tira inferior: fila clásica de historieta -->
+    <div style="display: flex; gap: 14px; margin-top: 14px; padding: 0 0;">
+      <div style="flex: 2.2 1 0; border: 5px solid #141210; background: #FBF7EC; padding: 18px 22px; display: flex; align-items: center; gap: 18px;">
+        <span style="font-family: 'Gochi Hand', cursive; font-size: 18px; color: #E23D2E; flex-shrink: 0;">mientras tanto…</span>
+        <div style="flex: 1 1 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px;">
+          <div style="border: 3px solid #141210; height: 74px; background-image: radial-gradient(rgba(20,18,16,0.25) 1.4px, transparent 1.9px); background-size: 10px 10px;"></div>
+          <div style="border: 3px solid #141210; height: 74px; background: #2E7CD6;"></div>
+          <div style="border: 3px solid #141210; height: 74px; background-image: radial-gradient(rgba(20,18,16,0.25) 1.4px, transparent 1.9px); background-size: 10px 10px;"></div>
+          <div style="border: 3px solid #141210; height: 74px; background: #E23D2E; display: flex; align-items: center; justify-content: center;"><span style="font-family: 'Archivo Black', sans-serif; font-size: 15px; color: #FBF7EC;">¡PLAF!</span></div>
+        </div>
+        <a href="#" style="font-weight: 800; font-size: 14px; text-decoration: none; flex-shrink: 0;">[último post] →</a>
+      </div>
+      <div style="flex: 1 1 0; border: 5px solid #141210; background: #D9F24A; padding: 18px 22px; display: flex; flex-direction: column; justify-content: center; gap: 8px;">
+        <span style="font-family: 'Archivo Black', sans-serif; font-size: 22px;">CONTINUARÁ…</span>
+        <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+          <a href="#" style="font-weight: 800; font-size: 14px; text-decoration: none;">GitHub</a>
+          <a href="#" style="font-weight: 800; font-size: 14px; text-decoration: none;">LinkedIn</a>
+          <a href="#" style="font-weight: 800; font-size: 14px; text-decoration: none;">RSS</a>
+          <a href="#" style="font-weight: 800; font-size: 14px; text-decoration: none;">X</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- pie de página del cómic -->
+    <div style="text-align: center; margin-top: 18px; font-weight: 800; font-size: 13px; letter-spacing: 0.14em; color: rgba(20,18,16,0.6);">— PÁG. 1 / 4 —</div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

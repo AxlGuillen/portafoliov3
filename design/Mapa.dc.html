@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Gochi+Hand&family=Karla:ital,wght@0,400;0,700;0,800;1,400&display=swap');
+    body { margin: 0; font-family: 'Karla', 'Segoe UI', sans-serif; }
+    a { color: #111111; } a:hover { color: #D9F24A; }
+  </style>
+</helmet>
+<div style="width: 920px; background: #FFFFFF; color: #111111; padding: 0 0 20px; box-sizing: border-box;">
+
+  <!-- cabecera del índice -->
+  <div style="border-bottom: 5px solid #111111; padding: 26px 30px 20px; display: flex; justify-content: space-between; align-items: flex-end; gap: 20px;">
+    <div style="display: flex; align-items: center; gap: 16px;">
+      <svg viewBox="0 0 120 120" width="56" height="56" style="display: block; flex-shrink: 0;"><rect width="120" height="120" rx="27" fill="#111111"></rect><g fill="#FFFFFF" transform="translate(8,14)"><path d="M0 52 H104 V66 H0 Z"></path><path d="M66 0 H80 V78 H104 V92 H66 V20 L26 60 H6 Z"></path></g></svg>
+      <div style="display: flex; flex-direction: column;">
+        <span style="font-family: 'Archivo Black', sans-serif; font-size: 40px; line-height: 1;">ÍNDICE</span>
+        <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.2em;">4XL — PORTAFOLIO VOL. 3</span>
+      </div>
+    </div>
+    <div style="text-align: right; display: flex; flex-direction: column; gap: 2px;">
+      <span style="font-family: 'Yu Gothic', 'Meiryo', 'Hiragino Sans', sans-serif; font-size: 26px; font-weight: 700;">目次</span>
+      <span style="font-family: 'Gochi Hand', cursive; font-size: 16px;">4 capítulos, 4 rutas raíz</span>
+    </div>
+  </div>
+
+  <!-- CAP 01 -->
+  <div style="display: flex; gap: 0; border-bottom: 3px solid #111111;">
+    <div style="width: 150px; flex-shrink: 0; border-right: 3px solid #111111; background-image: repeating-linear-gradient(66deg, rgba(17,17,17,0.26) 0 1.6px, transparent 1.6px 22px); display: flex; align-items: center; justify-content: center;">
+      <span style="font-family: 'Archivo Black', sans-serif; font-size: 62px; color: #FFFFFF; -webkit-text-stroke: 3px #111111;">01</span>
+    </div>
+    <div style="flex: 1 1 0; padding: 22px 26px; display: flex; flex-direction: column; gap: 12px;">
+      <div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;">
+        <span style="font-family: 'Archivo Black', sans-serif; font-size: 30px;">PROYECTOS</span>
+        <span style="background: #111111; color: #FFFFFF; padding: 5px 10px; font-weight: 800; font-size: 14px;">/proyectos</span>
+      </div>
+      <p style="margin: 0; font-size: 15px; line-height: 1.5; max-width: 600px;">Índice de viñetas filtrable; cada caso se abre como un capítulo propio.</p>
+      <div style="display: flex; flex-direction: column; gap: 7px; border-left: 4px solid #111111; padding-left: 14px;">
+        <span style="font-size: 14.5px;"><strong>/proyectos</strong> — índice en viñetas, filtro por tipo de trabajo</span>
+        <span style="font-size: 14.5px;"><strong>/proyectos/[slug]</strong> — el caso contado en 4 actos, con stack, capturas y enlaces vivos</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAP 02 -->
+  <div style="display: flex; gap: 0; border-bottom: 3px solid #111111;">
+    <div style="width: 150px; flex-shrink: 0; border-right: 3px solid #111111; background-image: radial-gradient(rgba(17,17,17,0.28) 1.4px, transparent 1.9px); background-size: 8px 8px; display: flex; align-items: center; justify-content: center;">
+      <span style="font-family: 'Archivo Black', sans-serif; font-size: 62px; color: #FFFFFF; -webkit-text-stroke: 3px #111111;">02</span>
+    </div>
+    <div style="flex: 1 1 0; padding: 22px 26px; display: flex; flex-direction: column; gap: 12px;">
+      <div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;">
+        <span style="font-family: 'Archivo Black', sans-serif; font-size: 30px;">BLOG</span>
+        <span style="background: #111111; color: #FFFFFF; padding: 5px 10px; font-weight: 800; font-size: 14px;">/blog</span>
+      </div>
+      <p style="margin: 0; font-size: 15px; line-height: 1.5; max-width: 600px;">Artículos sobre lo que aprendes, rompes y arreglas. Es la sección que más te hará volver a publicar, así que se lee cómoda y se comparte fácil.</p>
+      <div style="display: flex; flex-direction: column; gap: 7px; border-left: 4px solid #111111; padding-left: 14px;">
+        <span style="font-size: 14.5px;"><strong>/blog</strong> — archivo completo, más reciente primero</span>
+        <span style="font-size: 14.5px;"><strong>/blog/[slug]</strong> — el post, con viñeta de portada y lectura limpia</span>
+        <span style="font-size: 14.5px;"><strong>/blog/tema/[tema]</strong> — agrupado por tema</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAP 03 -->
+  <div style="display: flex; gap: 0; border-bottom: 3px solid #111111;">
+    <div style="width: 150px; flex-shrink: 0; border-right: 3px solid #111111; background-image: repeating-linear-gradient(-72deg, rgba(17,17,17,0.3) 0 1.6px, transparent 1.6px 22px); display: flex; align-items: center; justify-content: center;">
+      <span style="font-family: 'Archivo Black', sans-serif; font-size: 62px; color: #FFFFFF; -webkit-text-stroke: 3px #111111;">03</span>
+    </div>
+    <div style="flex: 1 1 0; padding: 22px 26px; display: flex; flex-direction: column; gap: 12px;">
+      <div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;">
+        <span style="font-family: 'Archivo Black', sans-serif; font-size: 30px;">SOBRE MÍ</span>
+        <span style="background: #111111; color: #FFFFFF; padding: 5px 10px; font-weight: 800; font-size: 14px;">/sobre-mi</span>
+      </div>
+      <p style="margin: 0; font-size: 15px; line-height: 1.5; max-width: 600px;">Quién eres, de dónde vienes y qué sabes hacer. Aquí vive la galería de cursos y certificaciones.</p>
+      <div style="display: flex; flex-direction: column; gap: 7px; border-left: 4px solid #111111; padding-left: 14px;">
+        <span style="font-size: 14.5px;"><strong>/sobre-mi</strong> — biografía, habilidades y trayectoria</span>
+        <span style="font-size: 14.5px;"><strong>/sobre-mi/certificaciones</strong> — galería de cursos y certificaciones, cada una con enlace a su credencial</span>
+        <span style="font-size: 14.5px;"><strong>/cv.pdf</strong> — currículum descargable</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAP 04 -->
+  <div style="display: flex; gap: 0; border-bottom: 5px solid #111111; background: #D9F24A;">
+    <div style="width: 150px; flex-shrink: 0; border-right: 3px solid #111111; background: #111111; display: flex; align-items: center; justify-content: center;">
+      <span style="font-family: 'Archivo Black', sans-serif; font-size: 62px; color: #D9F24A;">04</span>
+    </div>
+    <div style="flex: 1 1 0; padding: 22px 26px; display: flex; flex-direction: column; gap: 12px;">
+      <div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;">
+        <span style="font-family: 'Archivo Black', sans-serif; font-size: 30px;">CONTACTO</span>
+        <span style="background: #111111; color: #D9F24A; padding: 5px 10px; font-weight: 800; font-size: 14px;">/contacto</span>
+        <span style="font-family: 'Archivo Black', sans-serif; font-size: 20px;">★</span>
+      </div>
+      <p style="margin: 0; font-size: 15px; line-height: 1.5; max-width: 600px;">La única sección a color del sitio. Formulario más los 4 canales directos; es el destino al que empuja cada página.</p>
+      <div style="display: flex; flex-direction: column; gap: 7px; border-left: 4px solid #111111; padding-left: 14px;">
+        <span style="font-size: 14.5px;"><strong>/contacto</strong> — formulario, correo, y 4 canales (GitHub, LinkedIn, X, [4.º canal])</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- hallazgo: kishotenketsu -->
+  <div style="margin: 24px 30px 0; border: 4px solid #111111; padding: 20px 24px; display: flex; gap: 20px; align-items: flex-start; box-shadow: 6px 6px 0 rgba(17,17,17,0.2);">
+    <span style="font-family: 'Yu Gothic', 'Meiryo', 'Hiragino Sans', sans-serif; font-size: 40px; font-weight: 700; line-height: 1.1; flex-shrink: 0;">起承転結</span>
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <span style="font-family: 'Archivo Black', sans-serif; font-size: 20px;">CADA PROYECTO SE CUENTA EN 4 PARTES</span>
+      <p style="margin: 0; font-size: 14.5px; line-height: 1.55;">Plantilla fija para escribir cada caso, tomada de la estructura de 4 actos con la que se escribe el manga. Los títulos que ve el visitante son los de abajo: directos, sin jerga.</p>
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px;">
+        <div style="border: 3px solid #111111; padding: 10px 12px; display: flex; flex-direction: column; gap: 3px;"><span style="font-weight: 800; font-size: 13.5px;">EL ENCARGO</span><span style="font-size: 13px; line-height: 1.4;">Quién lo pidió y en qué contexto</span></div>
+        <div style="border: 3px solid #111111; padding: 10px 12px; display: flex; flex-direction: column; gap: 3px; background-image: radial-gradient(rgba(17,17,17,0.16) 1.3px, transparent 1.8px); background-size: 9px 9px;"><span style="font-weight: 800; font-size: 13.5px;">EL PROBLEMA</span><span style="font-size: 13px; line-height: 1.4;">Qué lo hacía difícil de verdad</span></div>
+        <div style="border: 3px solid #111111; padding: 10px 12px; display: flex; flex-direction: column; gap: 3px;"><span style="font-weight: 800; font-size: 13.5px;">LA DECISIÓN</span><span style="font-size: 13px; line-height: 1.4;">La elección técnica que lo resolvió</span></div>
+        <div style="border: 3px solid #111111; padding: 10px 12px; display: flex; flex-direction: column; gap: 3px; background: #111111; color: #FFFFFF;"><span style="font-weight: 800; font-size: 13.5px;">EL RESULTADO</span><span style="font-size: 13px; line-height: 1.4;">Qué cambió, con números</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- páginas de servicio -->
+  <div style="margin: 22px 30px 0; display: flex; gap: 18px; align-items: stretch;">
+    <div style="flex: 1 1 0; border: 3px solid #111111; padding: 16px 20px; display: flex; flex-direction: column; gap: 8px;">
+      <span style="font-weight: 800; font-size: 12px; letter-spacing: 0.14em;">PÁGINAS DE SERVICIO — FUERA DEL ÍNDICE</span>
+      <span style="font-size: 14px; line-height: 1.5;"><strong>/404</strong> — página no encontrada, ilustrada como hoja arrancada</span>
+      <span style="font-size: 14px; line-height: 1.5;"><strong>/rss.xml</strong> · <strong>/sitemap.xml</strong> — para quien te sigue y para los buscadores</span>
+    </div>
+    <div style="width: 260px; flex-shrink: 0; border: 3px solid #111111; background: #111111; color: #FFFFFF; padding: 16px 20px; display: flex; flex-direction: column; gap: 6px;">
+      <span style="font-weight: 800; font-size: 12px; letter-spacing: 0.14em;">REGLA INNEGOCIABLE</span>
+      <span style="font-size: 14px; line-height: 1.5;">Las 8 rutas de arriba existen de verdad: se comparten, se indexan y el botón atrás funciona.</span>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 22px; font-weight: 800; font-size: 12px; letter-spacing: 0.16em; color: rgba(17,17,17,0.55);">— ÍNDICE —</div>
+</div>
+</x-dc>
+</body>
+</html>

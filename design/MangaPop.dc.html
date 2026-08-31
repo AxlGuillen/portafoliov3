@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Gochi+Hand&family=Karla:ital,wght@0,400;0,700;0,800;1,400&display=swap');
+    body { margin: 0; font-family: 'Karla', 'Segoe UI', sans-serif; }
+    a { color: #141210; } a:hover { color: #E23D2E; }
+  </style>
+</helmet>
+<div style="width: 1440px; background-color: #F2EBDA; background-image: radial-gradient(rgba(20,18,16,0.10) 1px, transparent 1.4px); background-size: 16px 16px; color: #141210; overflow: hidden; position: relative;">
+
+  <!-- nav -->
+  <div style="display: flex; justify-content: space-between; align-items: center; padding: 24px 56px; border-bottom: 3px solid #141210; background: #F2EBDA;">
+    <div style="display: flex; align-items: center; gap: 14px;">
+      <svg viewBox="0 0 120 120" width="48" height="48" style="display: block;"><rect width="120" height="120" rx="27" fill="#0C100E"></rect><g fill="#D9F24A" transform="translate(8,14)"><path d="M0 52 H104 V66 H0 Z"></path><path d="M66 0 H80 V78 H104 V92 H66 V20 L26 60 H6 Z"></path></g></svg>
+      <span style="font-family: 'Archivo Black', 'Arial Black', sans-serif; font-size: 22px; letter-spacing: 0.02em;">4XL</span>
+    </div>
+    <div style="display: flex; gap: 12px; align-items: center;">
+      <a href="#" style="display: inline-block; padding: 12px 20px; border: 3px solid #141210; background: #FBF7EC; font-weight: 800; font-size: 15px; text-decoration: none; transform: rotate(-1deg); box-shadow: 3px 3px 0 #141210;">/proyectos</a>
+      <a href="#" style="display: inline-block; padding: 12px 20px; border: 3px solid #141210; background: #FBF7EC; font-weight: 800; font-size: 15px; text-decoration: none; transform: rotate(0.8deg); box-shadow: 3px 3px 0 #141210;">/blog</a>
+      <a href="#" style="display: inline-block; padding: 12px 20px; border: 3px solid #141210; background: #FBF7EC; font-weight: 800; font-size: 15px; text-decoration: none; transform: rotate(-0.6deg); box-shadow: 3px 3px 0 #141210;">/sobre-mi</a>
+      <a href="#" style="display: inline-block; padding: 12px 20px; border: 3px solid #141210; background: #D9F24A; font-weight: 800; font-size: 15px; text-decoration: none; transform: rotate(1deg); box-shadow: 3px 3px 0 #141210;">/contacto</a>
+    </div>
+  </div>
+
+  <!-- hero -->
+  <div style="display: flex; gap: 48px; padding: 72px 56px 88px; align-items: center; position: relative;">
+    <div style="flex: 1 1 0; display: flex; flex-direction: column; gap: 20px;">
+      <div style="font-family: 'Gochi Hand', cursive; font-size: 24px; color: #E23D2E;">cap. 01 — el desarrollador</div>
+      <div style="font-family: 'Archivo Black', 'Arial Black', sans-serif; font-size: 110px; line-height: 0.95; letter-spacing: -0.01em;">AXL<br>GUILLEN</div>
+      <div style="display: inline-flex; align-self: flex-start; background: #141210; color: #F2EBDA; padding: 12px 22px; font-weight: 800; font-size: 22px; transform: rotate(-1.2deg);">Historias dibujadas en código</div>
+      <p style="max-width: 460px; font-size: 17px; line-height: 1.55; margin: 8px 0 0;">[ROL — una línea sobre qué haces y para quién, escrita como narrador de manga.]</p>
+    </div>
+    <div style="width: 480px; flex-shrink: 0; position: relative;">
+      <div style="border: 5px solid #141210; background: #FBF7EC; box-shadow: 10px 10px 0 #141210; transform: rotate(2deg); padding: 0; position: relative;">
+        <div style="height: 360px; background-image: radial-gradient(rgba(20,18,16,0.35) 1.6px, transparent 2px); background-size: 9px 9px; display: flex; align-items: center; justify-content: center;">
+          <svg viewBox="0 0 120 120" width="190" height="190" style="transform: rotate(-4deg); filter: drop-shadow(6px 6px 0 rgba(20,18,16,0.9));"><rect width="120" height="120" rx="27" fill="#0C100E"></rect><g fill="#D9F24A" transform="translate(8,14)"><path d="M0 52 H104 V66 H0 Z"></path><path d="M66 0 H80 V78 H104 V92 H66 V20 L26 60 H6 Z"></path></g></svg>
+        </div>
+        <div style="border-top: 4px solid #141210; padding: 14px 18px; font-family: 'Gochi Hand', cursive; font-size: 19px; background: #FBF7EC;">retrato del autor — asset IA aquí</div>
+      </div>
+      <div style="position: absolute; top: -26px; right: -14px; background: #E23D2E; color: #FBF7EC; font-family: 'Archivo Black', sans-serif; font-size: 30px; padding: 10px 18px; transform: rotate(6deg); border: 4px solid #141210;">¡ZAS!</div>
+    </div>
+    <div style="position: absolute; right: 14px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px;">
+      <span style="font-family: 'Archivo Black', sans-serif; font-size: 14px;">01</span>
+      <span style="width: 3px; height: 56px; background: #141210; display: block;"></span>
+      <span style="font-family: 'Archivo Black', sans-serif; font-size: 14px; color: rgba(20,18,16,0.4);">04</span>
+    </div>
+  </div>
+
+  <!-- 01 proyectos -->
+  <div style="padding: 56px 56px 72px; border-top: 3px solid #141210; background: #EFE6CF;">
+    <div style="display: flex; align-items: baseline; gap: 18px; margin-bottom: 36px;">
+      <span style="font-family: 'Archivo Black', sans-serif; font-size: 20px; background: #141210; color: #D9F24A; padding: 6px 12px;">01</span>
+      <span style="font-family: 'Archivo Black', sans-serif; font-size: 40px;">PROYECTOS</span>
+      <span style="font-family: 'Gochi Hand', cursive; font-size: 20px; color: #E23D2E;">cuatro casos, cuatro batallas</span>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px;">
+      <div style="border: 4px solid #141210; background: #FBF7EC; box-shadow: 7px 7px 0 #141210; transform: rotate(-1deg); display: flex; flex-direction: column;">
+        <div style="height: 170px; background: #2E7CD6; background-image: radial-gradient(rgba(251,247,236,0.5) 1.5px, transparent 2px); background-size: 10px 10px; border-bottom: 4px solid #141210; display: flex; align-items: flex-end; padding: 14px;"><span style="font-family: 'Archivo Black', sans-serif; color: #FBF7EC; font-size: 26px; text-shadow: 3px 3px 0 #141210;">[PROYECTO 01]</span></div>
+        <div style="padding: 18px 20px; display: flex; flex-direction: column; gap: 10px;"><p style="margin: 0; font-size: 15.5px; line-height: 1.5;">[Qué resolvió, contado en una viñeta.]</p><a href="#" style="font-weight: 800; text-decoration: none; font-size: 15px;">ver el caso →</a></div>
+      </div>
+      <div style="border: 4px solid #141210; background: #FBF7EC; box-shadow: 7px 7px 0 #141210; transform: rotate(0.8deg); display: flex; flex-direction: column;">
+        <div style="height: 170px; background: #E23D2E; background-image: radial-gradient(rgba(251,247,236,0.5) 1.5px, transparent 2px); background-size: 10px 10px; border-bottom: 4px solid #141210; display: flex; align-items: flex-end; padding: 14px;"><span style="font-family: 'Archivo Black', sans-serif; color: #FBF7EC; font-size: 26px; text-shadow: 3px 3px 0 #141210;">[PROYECTO 02]</span></div>
+        <div style="padding: 18px 20px; display: flex; flex-direction: column; gap: 10px;"><p style="margin: 0; font-size: 15.5px; line-height: 1.5;">[Qué resolvió, contado en una viñeta.]</p><a href="#" style="font-weight: 800; text-decoration: none; font-size: 15px;">ver el caso →</a></div>
+      </div>
+      <div style="border: 4px solid #141210; background: #FBF7EC; box-shadow: 7px 7px 0 #141210; transform: rotate(0.6deg); display: flex; flex-direction: column;">
+        <div style="height: 170px; background: #D9F24A; background-image: radial-gradient(rgba(20,18,16,0.28) 1.5px, transparent 2px); background-size: 10px 10px; border-bottom: 4px solid #141210; display: flex; align-items: flex-end; padding: 14px;"><span style="font-family: 'Archivo Black', sans-serif; color: #141210; font-size: 26px;">[PROYECTO 03]</span></div>
+        <div style="padding: 18px 20px; display: flex; flex-direction: column; gap: 10px;"><p style="margin: 0; font-size: 15.5px; line-height: 1.5;">[Qué resolvió, contado en una viñeta.]</p><a href="#" style="font-weight: 800; text-decoration: none; font-size: 15px;">ver el caso →</a></div>
+      </div>
+      <div style="border: 4px solid #141210; background: #141210; box-shadow: 7px 7px 0 rgba(20,18,16,0.35); transform: rotate(-0.7deg); display: flex; flex-direction: column;">
+        <div style="height: 170px; background-image: radial-gradient(rgba(217,242,74,0.4) 1.5px, transparent 2px); background-size: 10px 10px; border-bottom: 4px solid #D9F24A; display: flex; align-items: flex-end; padding: 14px;"><span style="font-family: 'Archivo Black', sans-serif; color: #D9F24A; font-size: 26px;">[PROYECTO 04]</span></div>
+        <div style="padding: 18px 20px; display: flex; flex-direction: column; gap: 10px;"><p style="margin: 0; font-size: 15.5px; line-height: 1.5; color: #F2EBDA;">El cuarto siempre es especial.</p><a href="#" style="font-weight: 800; text-decoration: none; font-size: 15px; color: #D9F24A;">ver el caso →</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 02 blog -->
+  <div style="padding: 56px; border-top: 3px solid #141210;">
+    <div style="display: flex; align-items: baseline; gap: 18px; margin-bottom: 28px;">
+      <span style="font-family: 'Archivo Black', sans-serif; font-size: 20px; background: #141210; color: #D9F24A; padding: 6px 12px;">02</span>
+      <span style="font-family: 'Archivo Black', sans-serif; font-size: 40px;">BLOG</span>
+    </div>
+    <div style="display: flex; gap: 28px; align-items: stretch;">
+      <div style="flex: 1 1 0; border: 4px solid #141210; background: #FBF7EC; padding: 22px 24px; box-shadow: 6px 6px 0 #141210; display: flex; flex-direction: column; gap: 8px;">
+        <span style="font-family: 'Gochi Hand', cursive; font-size: 17px; color: #E23D2E;">tira #12 — [fecha]</span>
+        <span style="font-weight: 800; font-size: 21px;">[Título del último post]</span>
+        <a href="#" style="font-weight: 800; font-size: 15px; text-decoration: none;">leer la tira →</a>
+      </div>
+      <div style="flex: 1 1 0; border: 4px solid #141210; background: #FBF7EC; padding: 22px 24px; box-shadow: 6px 6px 0 #141210; display: flex; flex-direction: column; gap: 8px; transform: rotate(0.6deg);">
+        <span style="font-family: 'Gochi Hand', cursive; font-size: 17px; color: #E23D2E;">tira #11 — [fecha]</span>
+        <span style="font-weight: 800; font-size: 21px;">[Título del post anterior]</span>
+        <a href="#" style="font-weight: 800; font-size: 15px; text-decoration: none;">leer la tira →</a>
+      </div>
+      <a href="#" style="width: 190px; border: 4px solid #141210; background: #D9F24A; display: flex; align-items: center; justify-content: center; font-family: 'Archivo Black', sans-serif; font-size: 19px; text-decoration: none; box-shadow: 6px 6px 0 #141210; transform: rotate(-1deg); text-align: center; padding: 12px;">TODAS LAS TIRAS →</a>
+    </div>
+  </div>
+
+  <!-- 03 sobre mí (ficha de personaje) -->
+  <div style="padding: 56px; border-top: 3px solid #141210; background: #EFE6CF;">
+    <div style="display: flex; align-items: baseline; gap: 18px; margin-bottom: 28px;">
+      <span style="font-family: 'Archivo Black', sans-serif; font-size: 20px; background: #141210; color: #D9F24A; padding: 6px 12px;">03</span>
+      <span style="font-family: 'Archivo Black', sans-serif; font-size: 40px;">FICHA DE PERSONAJE</span>
+    </div>
+    <div style="display: flex; gap: 32px;">
+      <div style="width: 300px; border: 4px solid #141210; background: #FBF7EC; box-shadow: 7px 7px 0 #141210; transform: rotate(-1.4deg); height: 300px; background-image: radial-gradient(rgba(20,18,16,0.3) 1.6px, transparent 2px); background-size: 9px 9px; display: flex; align-items: center; justify-content: center; font-family: 'Gochi Hand', cursive; font-size: 20px;">sprite del héroe (IA)</div>
+      <div style="flex: 1 1 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; align-content: center;">
+        <div style="border: 3px solid #141210; background: #FBF7EC; padding: 16px 18px;"><span style="font-weight: 800; font-size: 14px; letter-spacing: 0.06em;">FRONTEND</span><div style="height: 14px; background: #F2EBDA; border: 2px solid #141210; margin-top: 8px;"><div style="width: 85%; height: 100%; background: #D9F24A;"></div></div></div>
+        <div style="border: 3px solid #141210; background: #FBF7EC; padding: 16px 18px;"><span style="font-weight: 800; font-size: 14px; letter-spacing: 0.06em;">BACKEND</span><div style="height: 14px; background: #F2EBDA; border: 2px solid #141210; margin-top: 8px;"><div style="width: 70%; height: 100%; background: #2E7CD6;"></div></div></div>
+        <div style="border: 3px solid #141210; background: #FBF7EC; padding: 16px 18px;"><span style="font-weight: 800; font-size: 14px; letter-spacing: 0.06em;">UI / MOTION</span><div style="height: 14px; background: #F2EBDA; border: 2px solid #141210; margin-top: 8px;"><div style="width: 75%; height: 100%; background: #E23D2E;"></div></div></div>
+        <div style="border: 3px solid #141210; background: #FBF7EC; padding: 16px 18px;"><span style="font-weight: 800; font-size: 14px; letter-spacing: 0.06em;">[STAT 04]</span><div style="height: 14px; background: #F2EBDA; border: 2px solid #141210; margin-top: 8px;"><div style="width: 60%; height: 100%; background: #141210;"></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 04 contacto: el especial -->
+  <div style="padding: 64px 56px 72px; border-top: 4px solid #141210; background: #0C100E; position: relative; overflow: hidden;">
+    <div style="position: absolute; right: -60px; top: -40px; font-family: 'Archivo Black', sans-serif; font-size: 340px; color: rgba(217,242,74,0.14); line-height: 1;">4</div>
+    <div style="display: flex; align-items: center; gap: 40px; position: relative;">
+      <div style="flex: 1 1 0; display: flex; flex-direction: column; gap: 14px;">
+        <span style="font-family: 'Archivo Black', sans-serif; font-size: 20px; background: #D9F24A; color: #0C100E; padding: 6px 12px; align-self: flex-start;">04 — EL CAPÍTULO FINAL</span>
+        <span style="font-family: 'Archivo Black', sans-serif; font-size: 52px; color: #F2EBDA; line-height: 1.05;">Hablemos del siguiente capítulo</span>
+        <span style="font-family: 'Gochi Hand', cursive; font-size: 21px; color: #D9F24A;">[tu promesa de respuesta — ¿24h = 4×6?]</span>
+      </div>
+      <a href="#" style="display: inline-block; background: #D9F24A; color: #0C100E; font-family: 'Archivo Black', sans-serif; font-size: 24px; padding: 22px 36px; text-decoration: none; border: 4px solid #F2EBDA; box-shadow: 8px 8px 0 rgba(217,242,74,0.35); transform: rotate(-1.5deg);">/contacto →</a>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

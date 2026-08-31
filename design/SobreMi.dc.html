@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Gochi+Hand&family=Karla:ital,wght@0,400;0,700;0,800;1,400&display=swap');
+    body { margin: 0; font-family: 'Karla', 'Segoe UI', sans-serif; }
+    a { color: #111111; } a:hover { color: #D9F24A; }
+  </style>
+</helmet>
+<div style="width: 1440px; background: #101010; color: #111111; padding: 0 0 48px; box-sizing: border-box;">
+
+  <!-- nav -->
+  <div style="display: flex; justify-content: space-between; align-items: center; padding: 18px 48px;">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <svg viewBox="0 0 120 120" width="40" height="40" style="display: block;"><rect width="120" height="120" rx="27" fill="#111111" stroke="#FFFFFF" stroke-width="6"></rect><g fill="#FFFFFF" transform="translate(8,14)"><path d="M0 52 H104 V66 H0 Z"></path><path d="M66 0 H80 V78 H104 V92 H66 V20 L26 60 H6 Z"></path></g></svg>
+      <span style="font-family: 'Archivo Black', 'Arial Black', sans-serif; font-size: 18px; color: #FFFFFF;">4XL</span>
+    </div>
+    <div style="display: flex; gap: 24px;">
+      <a href="#" style="font-weight: 800; font-size: 14px; text-decoration: none; color: #FFFFFF; padding: 10px 2px;">Proyectos</a>
+      <a href="#" style="font-weight: 800; font-size: 14px; text-decoration: none; color: #FFFFFF; padding: 10px 2px;">Blog</a>
+      <a href="#" style="font-weight: 800; font-size: 14px; text-decoration: none; color: #FFFFFF; padding: 10px 2px; border-bottom: 3px solid #FFFFFF;">Sobre mí</a>
+      <a href="#" style="font-weight: 800; font-size: 14px; text-decoration: none; color: #111111; background: #FFFFFF; padding: 10px 18px;">Contacto</a>
+    </div>
+  </div>
+
+  <!-- hoja -->
+  <div style="width: 920px; margin: 0 auto; background: #FFFFFF; box-shadow: 0 22px 60px rgba(0,0,0,0.6); padding: 10px 10px 18px; box-sizing: border-box;">
+
+    <!-- retrato dominante + bio -->
+    <div style="display: flex; gap: 14px;">
+      <div style="flex: 1.1 1 0; transform: skewY(-1.8deg); border: 3.5px solid #111111; background-image: repeating-linear-gradient(-72deg, rgba(17,17,17,0.28) 0 1.6px, transparent 1.6px 22px); position: relative; height: 460px;">
+        <div style="transform: skewY(1.8deg); position: relative; height: 100%;">
+          <div style="position: absolute; top: 22px; left: 20px; background: #FFFFFF; border: 3px solid #111111; padding: 5px 10px; font-weight: 800; font-size: 12px; letter-spacing: 0.1em;">INICIO / SOBRE MÍ</div>
+          <div style="position: absolute; top: 180px; left: 32px; right: 32px; border: 3px dashed #111111; background: rgba(255,255,255,0.94); padding: 12px 14px; text-align: center;">
+            <span style="font-weight: 800; font-size: 12px; letter-spacing: 0.08em;">ASSET IA — RETRATO</span>
+            <p style="margin: 5px 0 0; font-size: 13px; line-height: 1.45;">Plano medio mirando a cámara, fondo con trama.</p>
+          </div>
+        </div>
+      </div>
+      <div style="flex: 1.3 1 0; display: flex; flex-direction: column; gap: 14px;">
+        <div style="flex: 1 1 0; border: 3.5px solid #111111; padding: 22px 24px; display: flex; flex-direction: column; gap: 12px; transform: skewY(1.4deg);">
+          <div style="transform: skewY(-1.4deg); display: flex; flex-direction: column; gap: 12px;">
+            <span style="font-family: 'Archivo Black', sans-serif; font-size: 46px; line-height: 1;">AXL<br>GUILLEN</span>
+            <span style="background: #111111; color: #FFFFFF; align-self: flex-start; padding: 6px 12px; font-weight: 800; font-size: 14px;">[Rol · ciudad]</span>
+            <p style="margin: 0; font-size: 15px; line-height: 1.55;">[Dos o tres líneas de biografía: qué construyes, con qué tecnologías y qué tipo de problemas te gusta resolver.]</p>
+            <a href="#" style="border: 3px solid #111111; background: #FFFFFF; align-self: flex-start; padding: 10px 18px; font-weight: 800; font-size: 14px; text-decoration: none;">Descargar CV (PDF) ↓</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- habilidades: 4 barras -->
+    <div style="margin-top: 22px; border: 3.5px solid #111111; padding: 20px 24px; display: flex; flex-direction: column; gap: 14px;">
+      <div style="display: flex; align-items: baseline; gap: 12px;">
+        <span style="font-family: 'Archivo Black', sans-serif; font-size: 24px;">HABILIDADES</span>
+        <span style="font-family: 'Gochi Hand', cursive; font-size: 16px;">lo que hago todos los días</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 26px;">
+        <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-weight: 800; font-size: 13.5px; letter-spacing: 0.04em;">FRONTEND</span><div style="height: 16px; border: 3px solid #111111; background: #FFFFFF;"><div style="width: 85%; height: 100%; background: #111111;"></div></div></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-weight: 800; font-size: 13.5px; letter-spacing: 0.04em;">BACKEND</span><div style="height: 16px; border: 3px solid #111111; background: #FFFFFF;"><div style="width: 70%; height: 100%; background-image: radial-gradient(rgba(17,17,17,0.85) 1.6px, transparent 2.1px); background-size: 6px 6px; background-color: #111111;"></div></div></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-weight: 800; font-size: 13.5px; letter-spacing: 0.04em;">INTERFAZ Y ANIMACIÓN</span><div style="height: 16px; border: 3px solid #111111; background: #FFFFFF;"><div style="width: 78%; height: 100%; background: #111111;"></div></div></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-weight: 800; font-size: 13.5px; letter-spacing: 0.04em;">[HABILIDAD 4]</span><div style="height: 16px; border: 3px solid #111111; background: #FFFFFF;"><div style="width: 62%; height: 100%; background: #111111;"></div></div></div>
+      </div>
+    </div>
+
+    <!-- trayectoria: tira de 4 viñetas -->
+    <div style="margin-top: 22px;">
+      <div style="display: flex; align-items: baseline; gap: 12px; margin-bottom: 12px;">
+        <span style="font-family: 'Archivo Black', sans-serif; font-size: 24px;">TRAYECTORIA</span>
+        <span style="font-family: 'Gochi Hand', cursive; font-size: 16px;">de izquierda a derecha, como se lee</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px;">
+        <div style="border: 3px solid #111111; padding: 14px 16px; display: flex; flex-direction: column; gap: 5px;"><span style="font-family: 'Archivo Black', sans-serif; font-size: 20px;">[AÑO]</span><span style="font-weight: 800; font-size: 14px;">[Puesto o hito]</span><span style="font-size: 13.5px; line-height: 1.4;">[Empresa o contexto]</span></div>
+        <div style="border: 3px solid #111111; padding: 14px 16px; display: flex; flex-direction: column; gap: 5px; background-image: radial-gradient(rgba(17,17,17,0.14) 1.2px, transparent 1.7px); background-size: 9px 9px;"><span style="font-family: 'Archivo Black', sans-serif; font-size: 20px;">[AÑO]</span><span style="font-weight: 800; font-size: 14px;">[Puesto o hito]</span><span style="font-size: 13.5px; line-height: 1.4;">[Empresa o contexto]</span></div>
+        <div style="border: 3px solid #111111; padding: 14px 16px; display: flex; flex-direction: column; gap: 5px;"><span style="font-family: 'Archivo Black', sans-serif; font-size: 20px;">[AÑO]</span><span style="font-weight: 800; font-size: 14px;">[Puesto o hito]</span><span style="font-size: 13.5px; line-height: 1.4;">[Empresa o contexto]</span></div>
+        <div style="border: 3px solid #111111; padding: 14px 16px; display: flex; flex-direction: column; gap: 5px; background: #111111; color: #FFFFFF;"><span style="font-family: 'Archivo Black', sans-serif; font-size: 20px;">HOY</span><span style="font-weight: 800; font-size: 14px;">[Puesto actual]</span><span style="font-size: 13.5px; line-height: 1.4;">[Empresa o contexto]</span></div>
+      </div>
+    </div>
+
+    <!-- CERTIFICACIONES Y CURSOS -->
+    <div style="margin-top: 28px; border-top: 5px solid #111111; padding-top: 22px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; margin-bottom: 8px;">
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-family: 'Archivo Black', sans-serif; font-size: 36px; line-height: 1;">CERTIFICACIONES Y CURSOS</span>
+          <span style="font-size: 14.5px;">Cada una enlaza a su credencial verificable.</span>
+        </div>
+        <span style="background: #111111; color: #FFFFFF; padding: 8px 14px; font-weight: 800; font-size: 13.5px;">/sobre-mi/certificaciones</span>
+      </div>
+
+      <div style="display: flex; gap: 10px; margin: 14px 0 18px; align-items: center; flex-wrap: wrap;">
+        <a href="#" style="border: 3px solid #111111; background: #111111; color: #FFFFFF; padding: 7px 14px; font-weight: 800; font-size: 13px; text-decoration: none;">Todas</a>
+        <a href="#" style="border: 3px solid #111111; background: #FFFFFF; padding: 7px 14px; font-weight: 800; font-size: 13px; text-decoration: none;">Frontend</a>
+        <a href="#" style="border: 3px solid #111111; background: #FFFFFF; padding: 7px 14px; font-weight: 800; font-size: 13px; text-decoration: none;">Backend</a>
+        <a href="#" style="border: 3px solid #111111; background: #FFFFFF; padding: 7px 14px; font-weight: 800; font-size: 13px; text-decoration: none;">Nube y datos</a>
+      </div>
+
+      <!-- galería: 8 cartas (2 filas de 4) -->
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px;">
+        <div style="border: 3.5px solid #111111; background: #FFFFFF; display: flex; flex-direction: column; transform: rotate(-1deg); box-shadow: 4px 4px 0 rgba(17,17,17,0.18);">
+          <div style="height: 108px; border-bottom: 3px solid #111111; background-image: radial-gradient(rgba(17,17,17,0.22) 1.4px, transparent 1.9px); background-size: 8px 8px; display: flex; align-items: center; justify-content: center;"><span style="border: 2px dashed #111111; background: rgba(255,255,255,0.94); padding: 5px 8px; font-weight: 800; font-size: 10.5px; text-align: center;">ASSET IA — SELLO</span></div>
+          <div style="padding: 12px 13px; display: flex; flex-direction: column; gap: 4px;"><span style="font-weight: 800; font-size: 14px; line-height: 1.3;">[Certificación 01]</span><span style="font-size: 12.5px;">[Emisor] · [año]</span><a href="#" style="font-weight: 800; font-size: 12.5px; text-decoration: none; margin-top: 2px;">ver credencial →</a></div>
+        </div>
+        <div style="border: 3.5px solid #111111; background: #FFFFFF; display: flex; flex-direction: column; transform: rotate(0.8deg); box-shadow: 4px 4px 0 rgba(17,17,17,0.18);">
+          <div style="height: 108px; border-bottom: 3px solid #111111; background-image: repeating-linear-gradient(66deg, rgba(17,17,17,0.24) 0 1.6px, transparent 1.6px 20px); display: flex; align-items: center; justify-content: center;"><span style="border: 2px dashed #111111; background: rgba(255,255,255,0.94); padding: 5px 8px; font-weight: 800; font-size: 10.5px; text-align: center;">ASSET IA — SELLO</span></div>
+          <div style="padding: 12px 13px; display: flex; flex-direction: column; gap: 4px;"><span style="font-weight: 800; font-size: 14px; line-height: 1.3;">[Certificación 02]</span><span style="font-size: 12.5px;">[Emisor] · [año]</span><a href="#" style="font-weight: 800; font-size: 12.5px; text-decoration: none; margin-top: 2px;">ver credencial →</a></div>
+        </div>
+        <div style="border: 3.5px solid #111111; background: #FFFFFF; display: flex; flex-direction: column; transform: rotate(-0.6deg); box-shadow: 4px 4px 0 rgba(17,17,17,0.18);">
+          <div style="height: 108px; border-bottom: 3px solid #111111; background-image: radial-gradient(rgba(17,17,17,0.3) 1.4px, transparent 1.9px); background-size: 6px 6px; display: flex; align-items: center; justify-content: center;"><span style="border: 2px dashed #111111; background: rgba(255,255,255,0.94); padding: 5px 8px; font-weight: 800; font-size: 10.5px; text-align: center;">ASSET IA — SELLO</span></div>
+          <div style="padding: 12px 13px; display: flex; flex-direction: column; gap: 4px;"><span style="font-weight: 800; font-size: 14px; line-height: 1.3;">[Certificación 03]</span><span style="font-size: 12.5px;">[Emisor] · [año]</span><a href="#" style="font-weight: 800; font-size: 12.5px; text-decoration: none; margin-top: 2px;">ver credencial →</a></div>
+        </div>
+        <div style="border: 3.5px solid #111111; background: #111111; color: #FFFFFF; display: flex; flex-direction: column; transform: rotate(1.2deg); box-shadow: 4px 4px 0 rgba(17,17,17,0.3);">
+          <div style="height: 108px; border-bottom: 3px solid #FFFFFF; display: flex; align-items: center; justify-content: center; position: relative;"><span style="border: 2px dashed #FFFFFF; padding: 5px 8px; font-weight: 800; font-size: 10.5px; text-align: center;">ASSET IA — SELLO</span><span style="position: absolute; top: 8px; right: 10px; font-family: 'Archivo Black', sans-serif; font-size: 17px;">★</span></div>
+          <div style="padding: 12px 13px; display: flex; flex-direction: column; gap: 4px;"><span style="font-weight: 800; font-size: 14px; line-height: 1.3;">[Certificación 04]</span><span style="font-size: 12.5px;">[Emisor] · [año]</span><a href="#" style="font-weight: 800; font-size: 12.5px; text-decoration: none; margin-top: 2px; color: #FFFFFF;">ver credencial →</a></div>
+        </div>
+        <div style="border: 3.5px solid #111111; background: #FFFFFF; display: flex; flex-direction: column; transform: rotate(0.7deg); box-shadow: 4px 4px 0 rgba(17,17,17,0.18);">
+          <div style="height: 108px; border-bottom: 3px solid #111111; background-image: repeating-linear-gradient(-72deg, rgba(17,17,17,0.24) 0 1.6px, transparent 1.6px 20px); display: flex; align-items: center; justify-content: center;"><span style="border: 2px dashed #111111; background: rgba(255,255,255,0.94); padding: 5px 8px; font-weight: 800; font-size: 10.5px; text-align: center;">ASSET IA — SELLO</span></div>
+          <div style="padding: 12px 13px; display: flex; flex-direction: column; gap: 4px;"><span style="font-weight: 800; font-size: 14px; line-height: 1.3;">[Certificación 05]</span><span style="font-size: 12.5px;">[Emisor] · [año]</span><a href="#" style="font-weight: 800; font-size: 12.5px; text-decoration: none; margin-top: 2px;">ver credencial →</a></div>
+        </div>
+        <div style="border: 3.5px solid #111111; background: #FFFFFF; display: flex; flex-direction: column; transform: rotate(-1.1deg); box-shadow: 4px 4px 0 rgba(17,17,17,0.18);">
+          <div style="height: 108px; border-bottom: 3px solid #111111; background-image: radial-gradient(rgba(17,17,17,0.22) 1.4px, transparent 1.9px); background-size: 8px 8px; display: flex; align-items: center; justify-content: center;"><span style="border: 2px dashed #111111; background: rgba(255,255,255,0.94); padding: 5px 8px; font-weight: 800; font-size: 10.5px; text-align: center;">ASSET IA — SELLO</span></div>
+          <div style="padding: 12px 13px; display: flex; flex-direction: column; gap: 4px;"><span style="font-weight: 800; font-size: 14px; line-height: 1.3;">[Certificación 06]</span><span style="font-size: 12.5px;">[Emisor] · [año]</span><a href="#" style="font-weight: 800; font-size: 12.5px; text-decoration: none; margin-top: 2px;">ver credencial →</a></div>
+        </div>
+        <div style="border: 3.5px solid #111111; background: #FFFFFF; display: flex; flex-direction: column; transform: rotate(0.5deg); box-shadow: 4px 4px 0 rgba(17,17,17,0.18);">
+          <div style="height: 108px; border-bottom: 3px solid #111111; background-image: repeating-linear-gradient(66deg, rgba(17,17,17,0.2) 0 1.6px, transparent 1.6px 22px); display: flex; align-items: center; justify-content: center;"><span style="border: 2px dashed #111111; background: rgba(255,255,255,0.94); padding: 5px 8px; font-weight: 800; font-size: 10.5px; text-align: center;">ASSET IA — SELLO</span></div>
+          <div style="padding: 12px 13px; display: flex; flex-direction: column; gap: 4px;"><span style="font-weight: 800; font-size: 14px; line-height: 1.3;">[Certificación 07]</span><span style="font-size: 12.5px;">[Emisor] · [año]</span><a href="#" style="font-weight: 800; font-size: 12.5px; text-decoration: none; margin-top: 2px;">ver credencial →</a></div>
+        </div>
+        <div style="border: 3.5px solid #111111; background: #FFFFFF; display: flex; flex-direction: column; transform: rotate(-0.9deg); box-shadow: 4px 4px 0 rgba(17,17,17,0.18);">
+          <div style="height: 108px; border-bottom: 3px solid #111111; background-image: radial-gradient(rgba(17,17,17,0.3) 1.4px, transparent 1.9px); background-size: 6px 6px; display: flex; align-items: center; justify-content: center;"><span style="border: 2px dashed #111111; background: rgba(255,255,255,0.94); padding: 5px 8px; font-weight: 800; font-size: 10.5px; text-align: center;">ASSET IA — SELLO</span></div>
+          <div style="padding: 12px 13px; display: flex; flex-direction: column; gap: 4px;"><span style="font-weight: 800; font-size: 14px; line-height: 1.3;">[Certificación 08]</span><span style="font-size: 12.5px;">[Emisor] · [año]</span><a href="#" style="font-weight: 800; font-size: 12.5px; text-decoration: none; margin-top: 2px;">ver credencial →</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

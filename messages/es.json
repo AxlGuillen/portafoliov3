@@ -1,0 +1,17 @@
+{
+  "nav": {
+    "proyectos": "Proyectos",
+    "blog": "Blog",
+    "sobreMi": "Sobre mí",
+    "contacto": "Contacto"
+  },
+  "inicio": {
+    "lema": "Historias dibujadas en código",
+    "rol": "Desarrollador"
+  },
+  "comun": {
+    "cambiarIdioma": "English",
+    "volver": "Volver",
+    "porMaquetar": "Por maquetar."
+  }
+}

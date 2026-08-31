@@ -67,6 +67,12 @@ sola; si cada panel declara el suyo, el canal deja de ser paralelo.
 
 ## Comandos
 
-`npm run dev` · `npm run build` · `npm run lint` · `npm run format`
+El gestor de paquetes es **bun**, no npm. Para instalar: `bun install`.
+
+`bun run dev` · `bun run build` · `bun run lint` · `bun run format`
+
+Siempre con `run` por delante: `bun build` e `bun test` son comandos propios
+de bun (su empaquetador y su corredor de pruebas) y no ejecutan los scripts de
+`package.json`.
 
 El linter ignora `design/`, que son artefactos de diseño y no código.

@@ -22,15 +22,16 @@ El diseño vive en [`design/`](./design) como lienzo de artboards.
 | Contenido | MDX bilingüe en `content/` |
 | Animación | GSAP + ScrollTrigger |
 | Calidad | Biome (lint y formato) |
+| Paquetes | Bun |
 
 ## Comandos
 
 ```bash
-npm run dev      # desarrollo
-npm run build    # compilar
-npm run start    # servir la compilación
-npm run lint     # revisar
-npm run format   # formatear
+bun run dev      # desarrollo
+bun run build    # compilar
+bun run start    # servir la compilación
+bun run lint     # revisar
+bun run format   # formatear
 ```
 
 ## Estructura

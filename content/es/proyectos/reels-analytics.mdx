@@ -1,0 +1,71 @@
+---
+titulo: Reels Analytics
+subtitulo: Analíticas propias para un canal de TikTok e Instagram
+resumen: Las APIs oficiales dicen cómo va un video hoy, no cómo llegó hasta ahí. Construí el sistema que guarda esa historia y la convierte en decisiones.
+tipo: aplicacion
+periodo: Julio 2026 — en producción
+stack:
+  - Next.js 16
+  - Supabase
+  - MCP
+  - TikTok API
+  - Instagram Graph API
+enlace: https://reels-analytics.vercel.app
+repo: https://github.com/AxlGuillen/reels-analytics
+orden: 2
+---
+
+## El encargo
+
+Me lo puse yo. Publico video corto en TikTok e Instagram como **@axelsine13**, y
+llegó un punto en que tenía cientos de videos publicados y ninguna forma de
+responder preguntas simples: qué tipo de contenido funciona, a qué hora conviene
+publicar, si un video despegó de verdad o solo parecía.
+
+## El problema
+
+Aquí está el hallazgo que define el proyecto: **las APIs oficiales devuelven el
+estado actual de una métrica, nunca su historia.** Te dicen que un video tiene
+40.000 vistas. No te dicen si las consiguió en seis horas o en tres semanas — y
+esa diferencia es justo la que importa.
+
+Sin historia no puedes comparar videos de distinta edad, ni detectar cuál rompió
+su cohorte, ni saber a qué se debió una subida de seguidores.
+
+## La decisión
+
+**Los snapshots son el producto.** Un cron captura el estado de cada video todos
+los días y lo guarda sin tocar; el crecimiento se calcula comparando snapshots.
+Guardar el dato crudo y derivar las métricas al leerlo tiene una consecuencia que
+no anticipé y resultó valiosísima: **cada vez que mejoro una fórmula, la mejora
+aplica hacia atrás sobre todo el historial.**
+
+La segunda decisión fue de honestidad. Un sistema de métricas personal solo sirve
+si no se miente a sí mismo, así que lo diseñé para admitir lo que no sabe: cuando
+no hay datos suficientes para comparar a una edad concreta devuelve *nada* en vez
+de extrapolar, los picos se anulan si la cohorte no discrimina, y la atribución de
+seguidores se etiqueta como correlación y no como causa.
+
+La arquitectura de puertos y adaptadores no fue capricho: **los límites de llamadas
+de Instagram obligan a rotar** entre los videos recientes y un lote de los viejos,
+mientras que TikTok no lo necesita. Cada plataforma resuelve lo suyo detrás del
+mismo contrato, y añadir una nueva es implementar ese contrato, no tocar la
+analítica.
+
+## El resultado
+
+En producción con ingesta diaria ininterrumpida desde el 4 de julio de 2026, sobre
+un catálogo de **524 videos y unos 5,97 millones de vistas acumuladas**. De cero a
+sistema completo —ingesta, analítica, panel, MCP y resumen semanal— en unos 109
+commits durante un mes.
+
+Ya cambió decisiones reales: un experimento con audio en tendencia quedó resuelto
+a favor con datos, no con intuición — el 27,8% de esa cohorte pasó las 20.000
+vistas y esos días ganaron **3,25 veces más seguidores** que el resto.
+
+Dos cosas de las que salí con más oficio. **Implementar OAuth 2.1 completo a mano**
+—registro dinámico de clientes, PKCE, rotación de refresh, tokens hasheados— en un
+contexto propio y de bajo riesgo, que es el mejor sitio para leerse las
+especificaciones de verdad. Y descubrir que **las restricciones del plan gratuito
+funcionan como diseño**: dos tareas programadas y sesenta segundos de ejecución
+obligaron a que todo el sistema cupiera exactamente ahí.

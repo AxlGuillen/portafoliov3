@@ -1,0 +1,76 @@
+---
+titulo: DYMMSA
+subtitulo: Cotizaciones e inventario para un distribuidor de herramientas
+resumen: Automaticé el ciclo completo de cotización, aprobación y compra de un distribuidor URREA que hasta entonces procesaba pedidos a mano en Excel.
+cliente: DYMMSA
+tipo: aplicacion
+periodo: "[inicio] — en curso"
+stack:
+  - Next.js 16
+  - Supabase
+  - TanStack Query
+  - MCP
+  - Playwright
+enlace: https://dymmsa-web.vercel.app
+destacado: true
+orden: 1
+---
+
+## El encargo
+
+DYMMSA es distribuidor autorizado de herramientas URREA en Morelia. Sus clientes
+le mandaban archivos de Excel con códigos de producto y alguien de la empresa se
+sentaba a buscar cada precio, calcular totales, redactar la cotización y después
+rastrear el pedido a mano.
+
+Me contrataron para automatizar eso. Trabajo freelance, yo solo, sin equipo.
+
+## El problema
+
+Lo evidente era la lentitud, pero el problema real era la falta de rastro: nadie
+podía decir en qué punto estaba un pedido, qué había aprobado el cliente ni qué
+faltaba pedirle al proveedor. Cada error se descubría tarde.
+
+Y había una fricción que no era técnica: **cualquier sistema que obligara al
+cliente a crearse una cuenta iba a morir sin usarse.** Quien aprueba una
+cotización no quiere registrarse en nada.
+
+## La decisión
+
+Modelé el flujo completo como una cadena en la que cada paso deja registro:
+
+```
+Excel del cliente → Cotizador → Aprobación por token → Orden de venta
+    → Planificador de compra → Excel para URREA → Recepción → Inventario
+```
+
+Tres decisiones sostienen el sistema. **La aprobación va por token público**: el
+cliente recibe un enlace, aprueba ítem por ítem y no se registra en ningún lado —
+eso eliminó la fricción de adopción de raíz. **El catálogo se aprende solo**: cada
+producto que pasa por el cotizador se incorpora, así que el sistema se vuelve más
+útil con el uso normal, sin trabajo extra para nadie. Y **nada llama a la base de
+datos desde el navegador**: todo pasa por rutas de API propias, lo que da un
+único sitio donde viven la autenticación, los errores y las reglas de negocio.
+
+Más adelante añadí un **servidor MCP** sobre la aplicación: las mismas rutas y las
+mismas reglas quedaron disponibles para agentes de IA, con OAuth 2.1 nativo de
+Supabase. El token de quien llama construye su propio cliente, así que las
+políticas de acceso aplican igual que en la web — sin claves privilegiadas.
+
+## El resultado
+
+El sistema está en uso activo y sigue creciendo: **556 commits** a agosto de 2026,
+14 tablas en producción y 47 rutas de API. Desde el ciclo original entregué seis
+módulos más — catálogo multimarca, planificador de compra mayoreo contra menudeo,
+planificador de cortes con esquema en SVG, proveedores, tareas sobre issues de
+GitHub y el servidor MCP.
+
+Lo respalda una base de pruebas seria: **81 archivos de test** entre unitarios, de
+componente, de integración y extremo a extremo contra una instancia local de la
+base de datos.
+
+Pero el aprendizaje que más me marcó no fue técnico. Yo había puesto una
+restricción para que una recepción no pudiera exceder lo pedido, porque parecía
+obvio. **Resultó falsa: el proveedor a veces manda de más.** Quitar la restricción
+y modelar el excedente fue la respuesta correcta, y me enseñó a desconfiar de las
+reglas que doy por sentadas sin haberlas visto operar.

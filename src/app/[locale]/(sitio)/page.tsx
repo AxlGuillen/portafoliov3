@@ -49,8 +49,7 @@ export default async function Inicio({ params }: Props) {
 
             {/* Sobre el dibujo, el texto necesita fondo sólido: es lo que hace
                 el manga con los rótulos, y aquí además garantiza contraste. */}
-            <div className="flex w-fit items-center gap-4 bg-tinta px-5 py-4">
-              <Logo size={58} trazo="var(--color-papel)" />
+            <div className="w-fit bg-tinta px-5 py-4">
               <h1 className="font-display text-4xl text-papel leading-none tracking-tight sm:text-5xl">
                 AXL
                 <br />

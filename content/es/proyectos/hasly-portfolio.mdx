@@ -1,0 +1,63 @@
+---
+titulo: Hasly Studio
+subtitulo: Portafolio editorial para una fotógrafa profesional
+resumen: Ochenta fotos, scroll a pantalla completa construido a mano y una paleta sin un solo color. El protagonismo es de las fotos, no de la interfaz.
+tipo: sitio
+periodo: 2026 — completado
+stack:
+  - Next.js 16
+  - GSAP Observer
+  - Tailwind 4
+  - TypeScript
+enlace: https://hasly.studio
+orden: 4
+---
+
+## El encargo
+
+Hasly Luna es fotógrafa profesional —sesiones, bodas, eventos, producto— y es mi
+hermana. No hubo cliente ni cobro: quería construirle un portafolio de verdad y,
+de paso, meterme a fondo en diseño editorial y animación, que era donde menos
+oficio tenía.
+
+## El problema
+
+En un portafolio de fotografía hay una tensión incómoda: **cuanto más luce la
+interfaz, menos lucen las fotos.** Cada gesto de diseño que llama la atención se
+la está quitando al trabajo que vino a mostrarse.
+
+A la vez, un sitio de fotografía que se navega como una web corriente tampoco
+funciona — se siente barato al lado de las imágenes.
+
+## La decisión
+
+**Paleta cien por cien neutral, sin color de marca.** Ni uno. La decisión más
+difícil del proyecto y la más acertada: en un portafolio de fotografía el color
+tienen que ponerlo las fotos, y cualquier acento de interfaz compite con ellas.
+
+Para que la navegación se sintiera cuidada sin robar protagonismo, construí un
+**sistema de scroll a pantalla completa a mano** con GSAP Observer, en vez de
+tirar de una librería de scroll. Cada sección entra con un vector distinto
+—diagonal, horizontal, vertical—, y esa variación es lo que hace que moverse por
+el sitio se sienta vivo en lugar de mecánico.
+
+Con ochenta imágenes de por medio, el rendimiento era parte del diseño: división
+del código por secciones, formatos modernos y carga diferida, con la portada
+renderizada en servidor y el resto en fragmentos aparte.
+
+## El resultado
+
+En producción en **hasly.studio**, con **90 en móvil y 99 en escritorio** de
+PageSpeed pese a cargar una galería de ochenta fotos en siete categorías, con
+filtros y vista a pantalla completa.
+
+Incluye además una capa completa de descubrimiento para agentes de IA —`llms.txt`
+negociado por contenido, `.well-known`, WebMCP— que puntúa **83 sobre 100** como
+sitio nativo para agentes. Fue mi banco de pruebas para algo que creo que va a
+dejar de ser opcional.
+
+Dos aprendizajes que me llevé a todo lo demás. **GSAP Observer por encima de las
+librerías de scroll suave**: más control, una dependencia menos y encaje natural
+con el resto del ecosistema de animación. Y que **`prefers-reduced-motion` se
+piensa desde el principio, no se parchea al final** — en un sitio que se mueve
+tanto, añadirlo después habría sido rehacerlo.

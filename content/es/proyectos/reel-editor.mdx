@@ -1,0 +1,70 @@
+---
+titulo: ReelForge
+subtitulo: Editor de video local para convertir clips en reels verticales
+resumen: Diez módulos de procesamiento sobre FFmpeg que corren en mi propia máquina. No es un editor de línea de tiempo: es una cadena de montaje.
+tipo: herramienta
+periodo: 2026 — en desarrollo
+stack:
+  - Flask
+  - FFmpeg
+  - faster-whisper
+  - yt-dlp
+  - Python
+orden: 3
+---
+
+## El encargo
+
+También mío. Produzco video corto y cada pieza necesitaba el mismo trabajo previo:
+tomar un clip horizontal, verticalizarlo, montarle audio, ponerle marca de agua y
+quemarle subtítulos. Hacerlo a mano en un editor genérico, una y otra vez, era
+tiempo que no se recuperaba.
+
+Es la herramienta con la que produzco el material de fondo de mis videos; su
+contraparte de medición es [Reels Analytics](/proyectos/reels-analytics).
+
+## El problema
+
+La tentación era construir un editor con línea de tiempo. Habría sido un error:
+yo no necesito editar, necesito **aplicar siempre las mismas transformaciones**.
+Un editor genérico me obliga a repetir decisiones que ya tomé.
+
+El otro problema es que descargar video de las plataformas **es una carrera
+armamentista**. YouTube exige resolver desafíos de JavaScript, Windows encripta
+las cookies del navegador, y TikTok tiene ventanas en las que simplemente
+bloquea. Lo que funcionaba el mes pasado deja de funcionar.
+
+## La decisión
+
+Nada de línea de tiempo: **una colección de módulos**, cada uno resolviendo una
+transformación concreta, más dos que encadenan varios en un solo paso. Todos
+siguen exactamente la misma estructura interna —validar, procesar, exponer—, de
+modo que añadir uno nuevo es replicar un patrón en vez de decidir de cero cómo
+organizarlo.
+
+Todas las llamadas a FFmpeg pasan por **un único punto**. Eso evitó que la lógica
+de procesos y el parseo de errores se repitiera diez veces, y permitió algo que
+no había previsto: **fusionar pasadas**. Verticalizar y poner la marca de agua en
+una sola operación ahorra un ciclo completo de decodificar y volver a codificar,
+y con él una generación de pérdida de calidad.
+
+Todo corre en local. Nada se sube a ninguna nube.
+
+## El resultado
+
+Diez módulos y dos cadenas completas, en uso real para producir mi contenido.
+Transcripción automática con subtítulos editables antes de quemarlos, acelerada
+por GPU —unas **5,6 veces más rápido**— con doble red de seguridad hacia CPU. La
+descarga desde plataformas quedó endurecida con reintentos, cookies filtradas y
+cambio de cliente.
+
+Y de aquí salió la lección que más me ha servido en todo lo demás que construyo.
+El encendido por GPU tenía un respaldo automático a CPU, invisible y silencioso.
+**Estuvo apagado durante meses sin que nadie lo notara** — la comprobación fallaba
+por un fotograma más pequeño del mínimo que acepta el codificador y por un emoji
+que reventaba en la consola de Windows. El sistema seguía funcionando, solo que
+lento.
+
+Desde entonces trabajo con una regla: **un respaldo silencioso no es un respaldo,
+es una avería que todavía no has visto.** Si algo puede degradarse solo, tiene que
+decirlo.

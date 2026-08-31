@@ -57,13 +57,25 @@ usar traducciones. Si falta en alguno, esa ruta deja de ser estática.
 
 ## Viñetas con corte diagonal
 
-La caja de maquetación es rectangular y la silueta se dibuja aparte: `clip-path`
-recorta el contenido y un `<polygon>` SVG con `vector-effect="non-scaling-stroke"`
-pinta el borde de tinta, ambos derivados de la misma lista de puntos. No uses
-`border` en una viñeta recortada: `clip-path` se lo come.
+Ya resuelto en `src/components/manga/`. Usa `<Panel>`; no repitas la lógica:
+
+```tsx
+const [arriba, abajo] = costura(11);
+<Panel forma={arriba} trama="lineas" className="h-[420px] p-8">…</Panel>
+<Panel forma={abajo} trama="puntos" className="h-[420px] p-8">…</Panel>
+```
+
+Cómo funciona por dentro, por si hay que tocarlo: la caja de maquetación es
+rectangular y la silueta se dibuja aparte. `clip-path` recorta fondo y
+contenido, y un `<polygon>` SVG con `vector-effect="non-scaling-stroke"` pinta
+el borde de tinta; ambos salen de la misma lista de puntos. El trazo se dibuja
+al doble de grosor porque el recorte se come su mitad exterior. No uses
+`border` en una viñeta recortada: `clip-path` se lo come entero.
 
 El ángulo del corte pertenece a la **costura entre dos viñetas**, no a una
-sola; si cada panel declara el suyo, el canal deja de ser paralelo.
+sola; por eso `costura()` devuelve el par. Las coordenadas son porcentajes de
+cada viñeta, así que las diagonales solo salen paralelas si ambas tienen la
+misma altura; si difieren, ajusta la caída en proporción.
 
 ## Comandos
 

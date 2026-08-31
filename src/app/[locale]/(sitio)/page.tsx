@@ -1,4 +1,5 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Arte } from "@/components/manga/Arte";
 import { Bocadillo } from "@/components/manga/Bocadillo";
 import { CajaNarracion } from "@/components/manga/CajaNarracion";
 import { corteAbajo, corteArriba, costura } from "@/components/manga/formas";
@@ -26,34 +27,44 @@ export default async function Inicio({ params }: Props) {
         <div className="relative flex flex-col gap-canal">
           <Panel
             forma={apertura}
-            trama="lineas"
-            className="min-h-[340px] p-6 sm:min-h-[420px] sm:p-8 lg:pl-[172px]"
+            className="flex min-h-[360px] flex-col justify-end p-6 sm:min-h-[460px] sm:p-8 lg:pl-[172px]"
           >
-            <CajaNarracion>{t("inicio.rol")} — 2026</CajaNarracion>
+            <Arte
+              src="/vinetas/inicio-apertura.avif"
+              alt="Axl Guillen apoyado en el tronco de un árbol en un parque, ilustrado a tinta"
+              posicion="55% 28%"
+              prioridad
+            />
 
-            <div className="mt-6 flex flex-wrap items-center gap-5 sm:mt-8 sm:gap-6">
-              <Logo size={80} />
-              <h1 className="font-display text-5xl leading-none tracking-tight sm:text-6xl">
+            <CajaNarracion className="absolute top-5 left-5 sm:top-6 sm:left-6">
+              {t("inicio.rol")} — 2026
+            </CajaNarracion>
+
+            <Sfx
+              rotacion={9}
+              className="absolute top-3 right-5 text-4xl sm:top-5 sm:right-8 sm:text-6xl"
+            >
+              ¡TAK!
+            </Sfx>
+
+            {/* Sobre el dibujo, el texto necesita fondo sólido: es lo que hace
+                el manga con los rótulos, y aquí además garantiza contraste. */}
+            <div className="flex w-fit items-center gap-4 bg-tinta px-5 py-4">
+              <Logo size={58} trazo="var(--color-papel)" />
+              <h1 className="font-display text-4xl text-papel leading-none tracking-tight sm:text-5xl">
                 AXL
                 <br />
                 GUILLEN
               </h1>
             </div>
 
-            <p className="mt-5 inline-block bg-tinta px-4 py-2 font-display text-base text-papel sm:mt-6 sm:text-lg">
+            <p className="mt-2 w-fit border-[3px] border-tinta bg-papel px-4 py-2 font-display text-base sm:text-lg">
               {t("inicio.lema")}
             </p>
 
-            <Sfx
-              rotacion={9}
-              className="absolute top-4 right-6 text-4xl sm:top-6 sm:right-10 sm:text-6xl"
-            >
-              ¡TAK!
-            </Sfx>
-
             <Bocadillo
               cola="abajo-izquierda"
-              className="absolute right-4 bottom-8 hidden h-[150px] w-[190px] text-sm sm:block"
+              className="absolute top-16 right-6 hidden h-[140px] w-[180px] text-sm lg:block"
             >
               {t("inicio.pasaPagina")}
             </Bocadillo>
@@ -61,30 +72,25 @@ export default async function Inicio({ params }: Props) {
 
           <Panel
             forma={destacado}
-            trama="puntos"
-            className="min-h-[300px] p-6 sm:min-h-[400px] sm:p-8 lg:pl-[172px]"
+            className="flex min-h-[320px] flex-col justify-end p-6 sm:min-h-[420px] sm:p-8 lg:pl-[172px]"
           >
+            <Arte
+              src="/vinetas/inicio-destacado.avif"
+              alt="Axl Guillen de espaldas frente a un monitor que muestra el panel del sistema DYMMSA, ilustrado a tinta"
+              posicion="60% center"
+            />
+
             <Sfx
               variante="papel"
               rotacion={-5}
-              className="text-4xl sm:text-5xl"
+              className="absolute top-5 left-5 text-4xl sm:top-6 sm:left-8 sm:text-5xl lg:left-[172px]"
             >
               ¡ZUUM!
             </Sfx>
 
-            <div className="mt-10 max-w-sm border-[3px] border-tinta border-dashed bg-papel/90 p-4 text-center sm:mt-16">
-              <span className="font-bold text-xs uppercase tracking-widest">
-                Asset IA
-              </span>
-              <p className="mt-1 text-sm leading-snug">
-                Contrapicado del proyecto destacado: la batalla más grande,
-                mucho negro.
-              </p>
-            </div>
-
             <Link
               href="/proyectos"
-              className="group mt-6 inline-flex flex-wrap items-center gap-4 border-[3px] border-tinta bg-papel px-4 py-3 transition-colors hover:bg-lima"
+              className="group flex w-fit flex-wrap items-center gap-4 border-[3px] border-tinta bg-papel px-4 py-3 transition-colors hover:bg-lima"
             >
               <span className="font-bold">[{t("inicio.destacado")}]</span>
               <span className="font-bold text-sm underline-offset-4 group-hover:underline">
@@ -95,7 +101,7 @@ export default async function Inicio({ params }: Props) {
             <CajaNarracion
               variante="narracion"
               fondo="tinta"
-              className="absolute right-6 bottom-6 hidden max-w-xs sm:block"
+              className="absolute right-6 bottom-6 hidden max-w-xs lg:block"
             >
               {t("inicio.narrador")}
             </CajaNarracion>
@@ -104,10 +110,7 @@ export default async function Inicio({ params }: Props) {
           {/* Rótulo de capítulo: vertical y cruzando la costura, como en un tomo. */}
           <div className="pointer-events-none absolute top-[26%] left-5 hidden w-[118px] flex-col items-center gap-4 bg-tinta py-5 shadow-[6px_6px_0_rgba(17,17,17,0.25)] lg:flex">
             <Logo size={60} trazo="var(--color-papel)" />
-            <span className="font-display text-2xl text-papel tracking-[0.12em] [writing-mode:vertical-rl]">
-              AXL GUILLEN
-            </span>
-            <span className="font-bold text-[11px] text-papel tracking-[0.2em] [writing-mode:vertical-rl]">
+            <span className="font-display text-lg text-papel tracking-[0.18em] [writing-mode:vertical-rl]">
               {t("inicio.volumen")}
             </span>
           </div>

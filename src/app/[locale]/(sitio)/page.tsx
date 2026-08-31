@@ -1,7 +1,8 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Bocadillo } from "@/components/manga/Bocadillo";
 import { CajaNarracion } from "@/components/manga/CajaNarracion";
-import { costura } from "@/components/manga/formas";
+import { corteAbajo, corteArriba, costura } from "@/components/manga/formas";
+import { Hoja } from "@/components/manga/Hoja";
 import { Panel } from "@/components/manga/Panel";
 import { Sfx } from "@/components/manga/Sfx";
 import { Logo } from "@/components/marca/Logo";
@@ -14,99 +15,261 @@ export default async function Inicio({ params }: Props) {
   setRequestLocale(locale);
   const t = await getTranslations();
 
-  // El corte pertenece a la costura entre las dos viñetas, no a una sola.
-  // Ambas miden lo mismo, así que las diagonales salen paralelas.
-  const [apertura, destacado] = costura(11);
+  // El corte pertenece a la costura entre dos viñetas, no a una sola.
+  const [apertura, destacado] = costura(9);
+  const [blogIzquierda, personaje] = costura(7);
 
   return (
-    <div className="mx-auto max-w-[920px] px-2 pb-16">
-      {/* La hoja de manga sobre el fondo oscuro del lector. */}
-      <div className="bg-papel p-2.5 shadow-[0_22px_60px_rgba(0,0,0,0.6)]">
-        <div className="flex flex-col gap-canal">
+    <div className="mx-auto flex max-w-[920px] flex-col gap-10 px-2 pb-16 sm:gap-12">
+      {/* --- Página 1: la portada del capítulo --- */}
+      <Hoja pagina="1 / 4">
+        <div className="relative flex flex-col gap-canal">
           <Panel
-            as="section"
             forma={apertura}
             trama="lineas"
-            className="h-[420px] p-8"
+            className="min-h-[340px] p-6 sm:min-h-[420px] sm:p-8 lg:pl-[172px]"
           >
             <CajaNarracion>{t("inicio.rol")} — 2026</CajaNarracion>
 
-            <div className="mt-8 flex flex-wrap items-center gap-6">
-              <Logo size={88} />
-              <h1 className="font-display text-6xl leading-none tracking-tight">
+            <div className="mt-6 flex flex-wrap items-center gap-5 sm:mt-8 sm:gap-6">
+              <Logo size={80} />
+              <h1 className="font-display text-5xl leading-none tracking-tight sm:text-6xl">
                 AXL
                 <br />
                 GUILLEN
               </h1>
             </div>
 
-            <p className="mt-6 inline-block bg-tinta px-4 py-2 font-display text-lg text-papel">
+            <p className="mt-5 inline-block bg-tinta px-4 py-2 font-display text-base text-papel sm:mt-6 sm:text-lg">
               {t("inicio.lema")}
             </p>
 
-            <Sfx rotacion={9} className="absolute top-6 right-10 text-6xl">
+            <Sfx
+              rotacion={9}
+              className="absolute top-4 right-6 text-4xl sm:top-6 sm:right-10 sm:text-6xl"
+            >
               ¡TAK!
             </Sfx>
 
             <Bocadillo
               cola="abajo-izquierda"
-              className="absolute right-8 bottom-10 h-[150px] w-[190px] text-sm"
+              className="absolute right-4 bottom-8 hidden h-[150px] w-[190px] text-sm sm:block"
             >
-              ¿LISTO? PASA LA PÁGINA.
+              {t("inicio.pasaPagina")}
             </Bocadillo>
           </Panel>
 
           <Panel
-            as="section"
             forma={destacado}
             trama="puntos"
-            className="h-[420px] p-8"
+            className="min-h-[300px] p-6 sm:min-h-[400px] sm:p-8 lg:pl-[172px]"
           >
-            <Sfx variante="papel" rotacion={-5} className="text-5xl">
+            <Sfx
+              variante="papel"
+              rotacion={-5}
+              className="text-4xl sm:text-5xl"
+            >
               ¡ZUUM!
             </Sfx>
 
-            <div className="mt-20 max-w-sm border-[3px] border-tinta border-dashed bg-papel/90 p-4 text-center">
+            <div className="mt-10 max-w-sm border-[3px] border-tinta border-dashed bg-papel/90 p-4 text-center sm:mt-16">
               <span className="font-bold text-xs uppercase tracking-widest">
                 Asset IA
               </span>
               <p className="mt-1 text-sm leading-snug">
-                Contrapicado del proyecto destacado, mucho negro.
+                Contrapicado del proyecto destacado: la batalla más grande,
+                mucho negro.
               </p>
             </div>
 
-            <div className="mt-6 inline-flex items-center gap-4 border-[3px] border-tinta bg-papel px-4 py-3">
-              <span className="font-bold">[Proyecto destacado]</span>
-              <Link
-                href="/proyectos"
-                className="font-bold text-sm underline-offset-4 hover:underline"
-              >
-                {t("nav.proyectos")} →
-              </Link>
-            </div>
-
-            <Bocadillo
-              tipo="grito"
-              fondo="tinta"
-              className="absolute top-8 right-8 h-[170px] w-[170px] text-lg"
+            <Link
+              href="/proyectos"
+              className="group mt-6 inline-flex flex-wrap items-center gap-4 border-[3px] border-tinta bg-papel px-4 py-3 transition-colors hover:bg-lima"
             >
-              ¡EL CASO 04!
-            </Bocadillo>
+              <span className="font-bold">[{t("inicio.destacado")}]</span>
+              <span className="font-bold text-sm underline-offset-4 group-hover:underline">
+                {t("inicio.verCaso")} →
+              </span>
+            </Link>
 
             <CajaNarracion
               variante="narracion"
               fondo="tinta"
-              className="absolute right-8 bottom-8 max-w-xs"
+              className="absolute right-6 bottom-6 hidden max-w-xs sm:block"
             >
-              Cada viñeta lleva a su sección.
+              {t("inicio.narrador")}
             </CajaNarracion>
           </Panel>
-        </div>
 
-        <p className="mt-3 text-center font-bold text-tinta/55 text-xs tracking-[0.16em]">
-          — 1 / 4 —
-        </p>
-      </div>
+          {/* Rótulo de capítulo: vertical y cruzando la costura, como en un tomo. */}
+          <div className="pointer-events-none absolute top-[26%] left-5 hidden w-[118px] flex-col items-center gap-4 bg-tinta py-5 shadow-[6px_6px_0_rgba(17,17,17,0.25)] lg:flex">
+            <Logo size={60} trazo="var(--color-papel)" />
+            <span className="font-display text-2xl text-papel tracking-[0.12em] [writing-mode:vertical-rl]">
+              AXL GUILLEN
+            </span>
+            <span className="font-bold text-[11px] text-papel tracking-[0.2em] [writing-mode:vertical-rl]">
+              {t("inicio.volumen")}
+            </span>
+          </div>
+        </div>
+      </Hoja>
+
+      {/* --- Página 2: las secciones --- */}
+      <Hoja pagina="2 / 4">
+        <div className="flex flex-col gap-canal">
+          {/* Blog: dos viñetas con cortes opuestos */}
+          <div className="flex flex-col gap-canal sm:flex-row">
+            <Panel
+              forma={blogIzquierda}
+              className="flex min-h-[190px] flex-1 flex-col gap-2 p-6"
+            >
+              <CajaNarracion fondo="tinta" className="self-start">
+                {t("nav.blog")}
+              </CajaNarracion>
+              <p className="mt-1 font-bold text-lg leading-snug">
+                [Título del último artículo]
+              </p>
+              <p className="font-hand text-base">[fecha] · 4 min</p>
+              <Link
+                href="/blog"
+                className="mt-auto font-bold text-sm underline-offset-4 hover:underline"
+              >
+                {t("inicio.leer")} →
+              </Link>
+            </Panel>
+
+            <Panel
+              forma={corteArriba(7, "izquierda")}
+              trama="puntos"
+              className="flex min-h-[190px] flex-1 flex-col gap-2 p-6"
+            >
+              <p className="mt-2 font-bold text-lg leading-snug">
+                [Título del artículo anterior]
+              </p>
+              <p className="font-hand text-base">[fecha] · 4 min</p>
+              <Link
+                href="/blog"
+                className="mt-auto font-bold text-sm underline-offset-4 hover:underline"
+              >
+                {t("inicio.archivo")} →
+              </Link>
+            </Panel>
+          </div>
+
+          {/* Sobre mí: viñeta dominante con una inserta que rompe el borde */}
+          <div className="relative">
+            <Panel
+              forma={personaje}
+              trama="lineas"
+              className="min-h-[320px] p-6 sm:min-h-[420px] sm:p-8"
+            >
+              <CajaNarracion>{t("nav.sobreMi")}</CajaNarracion>
+
+              <div className="mt-12 max-w-md border-[3px] border-tinta border-dashed bg-papel/90 p-4 text-center sm:mt-20">
+                <span className="font-bold text-xs uppercase tracking-widest">
+                  Asset IA
+                </span>
+                <p className="mt-1 text-sm leading-snug">
+                  Cuerpo entero en acción, en diagonal; la pierna rompe el borde
+                  inferior del panel.
+                </p>
+              </div>
+
+              <Sfx
+                variante="papel"
+                rotacion={-8}
+                className="absolute top-16 right-8 text-4xl sm:text-5xl"
+              >
+                ¡FIUU!
+              </Sfx>
+            </Panel>
+
+            {/* Va fuera del Panel: dentro, el recorte se la comería. */}
+            <Link
+              href="/sobre-mi"
+              className="-bottom-4 absolute right-4 flex w-[230px] rotate-2 flex-col gap-1 border-[3.5px] border-tinta bg-papel px-4 py-3 shadow-[-6px_6px_0_rgba(17,17,17,0.2)] transition-colors hover:bg-lima sm:right-6"
+            >
+              <span className="font-hand text-base">Nada mal, ¿eh?</span>
+              <span className="font-bold text-sm">{t("nav.sobreMi")} →</span>
+            </Link>
+          </div>
+
+          {/* Ráfaga: separador narrativo hacia los casos */}
+          <Panel
+            trama="velocidad"
+            className="mt-4 grid min-h-[74px] place-items-center px-4"
+          >
+            <Sfx
+              variante="papel"
+              rotacion={-3}
+              className="text-3xl sm:text-4xl"
+            >
+              ¡GO GO GO GO!
+            </Sfx>
+          </Panel>
+
+          {/* Los cuatro casos */}
+          <div>
+            <CajaNarracion fondo="tinta" className="mb-3">
+              {t("inicio.losCasos")}
+            </CajaNarracion>
+            <div className="grid grid-cols-1 gap-canal sm:grid-cols-2 lg:grid-cols-4">
+              {[1, 2, 3].map((numero) => (
+                <Link key={numero} href="/proyectos" className="group">
+                  <Panel
+                    forma={corteAbajo(
+                      6,
+                      numero % 2 === 0 ? "izquierda" : "derecha",
+                    )}
+                    trama={numero === 2 ? "densa" : "puntos"}
+                    className="flex min-h-[180px] flex-col justify-end p-4 transition-colors group-hover:bg-lima"
+                  >
+                    <span className="border-[3px] border-tinta bg-papel px-2 py-1 font-bold text-sm">
+                      [Proyecto 0{numero}]
+                    </span>
+                  </Panel>
+                </Link>
+              ))}
+
+              <Link href="/proyectos" className="group">
+                <Panel
+                  forma={corteAbajo(6, "izquierda")}
+                  fondo="tinta"
+                  className="flex min-h-[180px] flex-col justify-end p-4"
+                >
+                  <span className="absolute top-3 right-4 font-display text-2xl text-papel">
+                    04★
+                  </span>
+                  <span className="border-[3px] border-tinta bg-papel px-2 py-1 font-bold text-sm text-tinta transition-colors group-hover:bg-lima">
+                    [{t("inicio.elEspecial")}]
+                  </span>
+                </Panel>
+              </Link>
+            </div>
+          </div>
+
+          {/* Contacto: la única viñeta a color */}
+          <Panel
+            fondo="lima"
+            className="mt-2 flex flex-col items-start gap-4 p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8"
+          >
+            <div className="flex flex-col gap-2">
+              <span className="font-bold text-[11px] uppercase tracking-[0.14em]">
+                04 — {t("nav.contacto")}
+              </span>
+              <span className="font-display text-3xl leading-none sm:text-4xl">
+                {t("inicio.hablemos")}
+              </span>
+            </div>
+            <Link
+              href="/contacto"
+              className="bg-tinta px-6 py-4 font-display text-base text-lima transition-transform hover:-rotate-1 sm:text-lg"
+            >
+              {t("nav.contacto")} →
+            </Link>
+          </Panel>
+        </div>
+      </Hoja>
     </div>
   );
 }

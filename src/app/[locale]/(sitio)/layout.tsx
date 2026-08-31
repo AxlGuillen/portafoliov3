@@ -17,7 +17,8 @@ export default async function SitioLayout({
   return (
     <>
       <Nav />
-      <main>{children}</main>
+      {/* El hueco inferior deja sitio a la barra fija de móvil. */}
+      <main className="pb-24 sm:pb-0">{children}</main>
     </>
   );
 }

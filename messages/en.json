@@ -7,7 +7,17 @@
   },
   "inicio": {
     "lema": "Stories drawn in code",
-    "rol": "Developer"
+    "rol": "Developer",
+    "volumen": "Portfolio — Vol. 3",
+    "pasaPagina": "Ready? Turn the page.",
+    "destacado": "Featured project",
+    "narrador": "Every panel leads to its section.",
+    "verCaso": "View case",
+    "leer": "Read",
+    "archivo": "Full archive",
+    "losCasos": "The four cases",
+    "hablemos": "Shall we talk?",
+    "elEspecial": "The special one"
   },
   "comun": {
     "cambiarIdioma": "Español",

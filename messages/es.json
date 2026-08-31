@@ -7,7 +7,17 @@
   },
   "inicio": {
     "lema": "Historias dibujadas en código",
-    "rol": "Desarrollador"
+    "rol": "Desarrollador",
+    "volumen": "Portafolio — Vol. 3",
+    "pasaPagina": "¿Listo? Pasa la página.",
+    "destacado": "Proyecto destacado",
+    "narrador": "Cada viñeta lleva a su sección.",
+    "verCaso": "Ver caso",
+    "leer": "Leer",
+    "archivo": "Todo el archivo",
+    "losCasos": "Los cuatro casos",
+    "hablemos": "¿Hablamos?",
+    "elEspecial": "El especial"
   },
   "comun": {
     "cambiarIdioma": "English",

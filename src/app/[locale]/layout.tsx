@@ -5,6 +5,7 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import type { ReactNode } from "react";
 import { routing } from "@/i18n/routing";
+import { siteUrl } from "@/lib/site";
 import "../globals.css";
 
 const archivo = Archivo_Black({
@@ -32,7 +33,7 @@ export function generateStaticParams() {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://4xl.dev"),
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Axl Guillen — 4XL",
     template: "%s — 4XL",

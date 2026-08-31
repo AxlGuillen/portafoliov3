@@ -61,3 +61,93 @@ export function formaAClipPath(forma: Forma): string {
 
   return `polygon(${puntos.join(", ")})`;
 }
+
+// ---------------------------------------------------------------------------
+// Bocadillos
+// ---------------------------------------------------------------------------
+
+const redondo = (n: number) => Math.round(n * 10) / 10;
+
+/** Punto sobre una elipse inscrita, en grados (0 = derecha, 90 = abajo). */
+function enElipse(
+  grados: number,
+  cx: number,
+  cy: number,
+  rx: number,
+  ry: number,
+) {
+  const rad = (grados * Math.PI) / 180;
+  return `${redondo(cx + rx * Math.cos(rad))},${redondo(cy + ry * Math.sin(rad))}`;
+}
+
+/** Elipse inscrita en toda la caja, aproximada con `lados` puntos. */
+export function elipse(lados = 44): Forma {
+  return Array.from({ length: lados }, (_, i) =>
+    enElipse((360 / lados) * i, 50, 50, 50, 50),
+  ).join(" ");
+}
+
+export type LadoCola =
+  | "abajo-izquierda"
+  | "abajo-derecha"
+  | "arriba-izquierda"
+  | "arriba-derecha";
+
+const anguloDeCola: Record<LadoCola, number> = {
+  "abajo-derecha": 62,
+  "abajo-izquierda": 118,
+  "arriba-izquierda": 242,
+  "arriba-derecha": 298,
+};
+
+/**
+ * Bocadillo de diálogo: elipse con la cola integrada en el mismo contorno.
+ *
+ * La cola tiene que caber DENTRO de la caja, porque `clip-path` no puede pintar
+ * fuera de ella; por eso el cuerpo se encoge y deja sitio en ese lado. El
+ * componente compensa con relleno para que el texto no se meta en la punta.
+ */
+export function bocadillo(cola?: LadoCola, lados = 44): Forma {
+  if (!cola) return elipse(lados);
+
+  const haciaArriba = cola.startsWith("arriba");
+  const ry = 39;
+  const cy = haciaArriba ? 100 - ry : ry;
+
+  const centro = anguloDeCola[cola];
+  const apertura = 14;
+  const desde = centro - apertura;
+  const hasta = centro + apertura;
+
+  const puntaX = redondo(50 + 50 * Math.cos((centro * Math.PI) / 180) * 0.62);
+  const punta = `${puntaX},${haciaArriba ? 0 : 100}`;
+
+  const puntos: string[] = [];
+  let colaPuesta = false;
+
+  for (let i = 0; i < lados; i++) {
+    const grados = (360 / lados) * i;
+    if (!colaPuesta && grados > desde && grados < hasta) {
+      puntos.push(
+        enElipse(desde, 50, cy, 50, ry),
+        punta,
+        enElipse(hasta, 50, cy, 50, ry),
+      );
+      colaPuesta = true;
+    }
+    if (grados <= desde || grados >= hasta) {
+      puntos.push(enElipse(grados, 50, cy, 50, ry));
+    }
+  }
+
+  return puntos.join(" ");
+}
+
+/** Estallido de grito: picos alternando radio exterior e interior. */
+export function estallido(picos = 14, hundido = 0.76): Forma {
+  return Array.from({ length: picos * 2 }, (_, i) => {
+    const grados = (180 / picos) * i - 90;
+    const radio = i % 2 === 0 ? 1 : hundido;
+    return enElipse(grados, 50, 50, 50 * radio, 50 * radio);
+  }).join(" ");
+}

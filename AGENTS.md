@@ -77,6 +77,22 @@ sola; por eso `costura()` devuelve el par. Las coordenadas son porcentajes de
 cada viñeta, así que las diagonales solo salen paralelas si ambas tienen la
 misma altura; si difieren, ajusta la caída en proporción.
 
+## Vocabulario de la página
+
+En `src/components/manga/`, además de `Panel`:
+
+- `<CajaNarracion>` — el rótulo o la voz del narrador. Variantes `etiqueta`
+  (corta, en versales) y `narracion` (una o dos frases).
+- `<Bocadillo>` — diálogo. `tipo="habla"` es elipse con cola; `tipo="grito"`
+  es estallido de picos. Se apoya en `Panel`, así que cuerpo y cola salen del
+  mismo contorno.
+- `<Sfx>` — onomatopeya. Es texto de verdad, no adorno: se lee y se traduce.
+
+**Trampa de CSS que ya costó una vez:** el relleno en porcentaje se calcula
+sobre el CONTENEDOR, no sobre el elemento. Dentro de una viñeta ancha, un
+`px-[16%]` en el bocadillo daba 141px por lado. Para medidas relativas al
+propio elemento, usa `inset` en un hijo absoluto.
+
 ## Comandos
 
 El gestor de paquetes es **bun**, no npm. Para instalar: `bun install`.

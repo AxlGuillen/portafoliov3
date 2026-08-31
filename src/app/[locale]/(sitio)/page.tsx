@@ -1,6 +1,9 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Bocadillo } from "@/components/manga/Bocadillo";
+import { CajaNarracion } from "@/components/manga/CajaNarracion";
 import { costura } from "@/components/manga/formas";
 import { Panel } from "@/components/manga/Panel";
+import { Sfx } from "@/components/manga/Sfx";
 import { Logo } from "@/components/marca/Logo";
 import { Link } from "@/i18n/navigation";
 
@@ -26,9 +29,7 @@ export default async function Inicio({ params }: Props) {
             trama="lineas"
             className="h-[420px] p-8"
           >
-            <p className="inline-block border-[3px] border-tinta bg-papel px-3 py-1.5 font-bold text-xs uppercase tracking-wider">
-              {t("inicio.rol")} — 2026
-            </p>
+            <CajaNarracion>{t("inicio.rol")} — 2026</CajaNarracion>
 
             <div className="mt-8 flex flex-wrap items-center gap-6">
               <Logo size={88} />
@@ -42,6 +43,17 @@ export default async function Inicio({ params }: Props) {
             <p className="mt-6 inline-block bg-tinta px-4 py-2 font-display text-lg text-papel">
               {t("inicio.lema")}
             </p>
+
+            <Sfx rotacion={9} className="absolute top-6 right-10 text-6xl">
+              ¡TAK!
+            </Sfx>
+
+            <Bocadillo
+              cola="abajo-izquierda"
+              className="absolute right-8 bottom-10 h-[150px] w-[190px] text-sm"
+            >
+              ¿LISTO? PASA LA PÁGINA.
+            </Bocadillo>
           </Panel>
 
           <Panel
@@ -50,11 +62,11 @@ export default async function Inicio({ params }: Props) {
             trama="puntos"
             className="h-[420px] p-8"
           >
-            <p className="rotate-[-5deg] font-display text-5xl text-papel [-webkit-text-stroke:2px_var(--color-tinta)]">
+            <Sfx variante="papel" rotacion={-5} className="text-5xl">
               ¡ZUUM!
-            </p>
+            </Sfx>
 
-            <div className="mt-24 max-w-sm border-[3px] border-dashed border-tinta bg-papel/90 p-4 text-center">
+            <div className="mt-20 max-w-sm border-[3px] border-tinta border-dashed bg-papel/90 p-4 text-center">
               <span className="font-bold text-xs uppercase tracking-widest">
                 Asset IA
               </span>
@@ -72,6 +84,22 @@ export default async function Inicio({ params }: Props) {
                 {t("nav.proyectos")} →
               </Link>
             </div>
+
+            <Bocadillo
+              tipo="grito"
+              fondo="tinta"
+              className="absolute top-8 right-8 h-[170px] w-[170px] text-lg"
+            >
+              ¡EL CASO 04!
+            </Bocadillo>
+
+            <CajaNarracion
+              variante="narracion"
+              fondo="tinta"
+              className="absolute right-8 bottom-8 max-w-xs"
+            >
+              Cada viñeta lleva a su sección.
+            </CajaNarracion>
           </Panel>
         </div>
 

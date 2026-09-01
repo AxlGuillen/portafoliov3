@@ -1,0 +1,98 @@
+---
+titulo: "Un MCP sobre tu propia app"
+resumen: "Ya escribiste las reglas de negocio. Exponerlas a un agente no debería obligarte a escribirlas otra vez."
+fecha: "2026-08-31"
+tema: "arquitectura"
+---
+
+Llevo tres proyectos con servidor MCP encima: el sistema de cotizaciones de un
+cliente, las analíticas de mi canal y mi panel doméstico. El primero me costó
+entender algo que ahora me parece evidente, y es lo único que quiero defender
+aquí.
+
+## El error que casi cometo
+
+Cuando decidí que un agente tenía que poder consultar el negocio de DYMMSA, mi
+primer impulso fue construir **un servicio aparte**. Un endpoint nuevo, con su
+propia autenticación, sus propias consultas a la base de datos, su propia idea
+de qué es una cotización válida.
+
+Habría sido un desastre silencioso. No porque no funcionara —funciona— sino
+porque a partir de ese día tendría **dos definiciones de las mismas reglas**. La
+web sabe que una orden solo puede crearse con los ítems aprobados; el servicio
+nuevo tendría que saberlo también. Y el día que la regla cambie —y cambian—
+alguien va a actualizar una sola de las dos.
+
+## Lo que hice en su lugar
+
+El servidor MCP **vive dentro de la misma aplicación**. No es un proyecto
+gemelo: es una carpeta más y un endpoint más, junto a las cuarenta y siete rutas
+de API que ya existían.
+
+Eso significa que cada herramienta que expongo se apoya en el código que ya
+estaba escrito y probado. Cuando un agente pide las cotizaciones pendientes,
+atraviesa exactamente los mismos filtros que atraviesa la página cuando las
+pinta. No hay una segunda verdad que mantener.
+
+Y hay un efecto secundario que no había previsto: **cada mejora en las reglas de
+negocio llega gratis a los agentes.** No hay que portarla.
+
+## Donde esto se pone serio: los permisos
+
+Aquí es donde un MCP mal hecho se convierte en un agujero.
+
+La salida fácil es que el servidor use una clave con permisos totales y filtre
+él mismo qué puede ver cada quien. Es fácil porque funciona a la primera. Es
+mala porque desplaza toda la seguridad a tu código: cada consulta nueva es una
+oportunidad de olvidarte de un filtro.
+
+Lo que hice fue lo contrario. **El token de quien llama construye su propio
+cliente de base de datos**, uno por petición. Las políticas de acceso que ya
+protegen la web aplican idénticas, sin que yo escriba una línea para ello. No
+hay ninguna clave privilegiada en ningún punto del sistema.
+
+La diferencia práctica es enorme: no tengo que *acordarme* de restringir nada.
+Si un agente no debería ver algo, no lo ve, por la misma razón por la que no lo
+vería un usuario en el navegador.
+
+## Las integraciones de solo lectura necesitan lista blanca
+
+DYMMSA también consulta el sistema de facturación de la empresa. Ahí la
+tentación es dejar pasar consultas genéricas y confiar en que nadie pedirá lo
+que no debe.
+
+No confié. Hay una **lista explícita de qué modelos y qué campos se pueden
+consultar**, y se valida incluso dentro de los filtros de una consulta —porque
+se puede filtrar por un campo sin pedirlo y deducir su valor—. Los campos de
+nómina están bloqueados, y hay un test que falla si alguien los desbloquea.
+
+Ese test es la parte importante. Una lista blanca sin una prueba que la defienda
+es un comentario.
+
+## Por qué los proyectos empiezan a potenciarse
+
+Lo que no esperaba es lo que pasa cuando tienes más de uno.
+
+Las analíticas de mi canal exponen nueve herramientas de lectura. Una de ellas
+devuelve un bloque listo para pegar en la nota del guion que produjo ese video.
+El resultado es que **el sistema que mide se comunica con el sistema donde
+escribo**, sin que yo copie nada a mano.
+
+Cada app con MCP deja de ser una isla. No porque se integren entre ellas
+—no lo hacen—, sino porque **hay un agente en medio que puede leerlas todas** y
+yo dejo de ser el que transporta datos de una ventana a otra.
+
+## Lo que le diría a quien empiece
+
+Tres cosas, por orden de importancia.
+
+**No construyas un servicio paralelo.** Mete el MCP dentro de la aplicación que
+ya tiene las reglas.
+
+**No uses una clave privilegiada.** Que el token de quien llama construya el
+cliente, y deja que los permisos que ya tienes hagan su trabajo.
+
+**Empieza solo con lectura.** De veintitrés herramientas en DYMMSA, veintidós
+son de consulta. La única que escribe crea una tarea, que es lo más inofensivo
+que se me ocurrió. Las escrituras se van habilitando de una en una, por nivel de
+riesgo, y no hay ninguna prisa.

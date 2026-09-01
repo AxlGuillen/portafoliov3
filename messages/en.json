@@ -41,5 +41,12 @@
     "sobreMi": "Who I am, what I build and with what. Biography, skills, background and certifications.",
     "certificaciones": "Courses and certifications, each linking to its verifiable credential.",
     "contacto": "Let's talk about your project. Form, email and direct channels."
+  },
+  "blog": {
+    "titulo": "Notes",
+    "cuantos": "{total} articles",
+    "minutos": "{minutos} min read",
+    "todos": "All articles",
+    "sinTraducir": "This article has not been translated yet — you are reading the Spanish original."
   }
 }

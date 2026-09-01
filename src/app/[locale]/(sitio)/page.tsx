@@ -9,6 +9,7 @@ import { Panel } from "@/components/manga/Panel";
 import { Sfx } from "@/components/manga/Sfx";
 import { Logo } from "@/components/marca/Logo";
 import { Link } from "@/i18n/navigation";
+import { listarArticulos } from "@/lib/blog";
 import { metadatosDe } from "@/lib/metadatos";
 import { listarProyectos } from "@/lib/proyectos";
 
@@ -29,6 +30,13 @@ export default async function Inicio({ params }: Props) {
   setRequestLocale(locale);
   const t = await getTranslations();
   const proyectos = await listarProyectos(locale);
+  const [ultimo, anterior] = await listarArticulos(locale);
+  const fecha = new Intl.DateTimeFormat(locale, {
+    timeZone: "UTC",
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
   const proyectoDestacado = proyectos.find((p) => p.destacado) ?? proyectos[0];
 
   // El corte pertenece a la costura entre dos viñetas, no a una sola.
@@ -148,16 +156,26 @@ export default async function Inicio({ params }: Props) {
               <CajaNarracion fondo="tinta" className="self-start">
                 {t("nav.blog")}
               </CajaNarracion>
-              <p className="mt-1 font-bold text-lg leading-snug">
-                [Título del último artículo]
-              </p>
-              <p className="font-hand text-base">[fecha] · 4 min</p>
-              <Link
-                href="/blog"
-                className="mt-auto font-bold text-sm underline-offset-4 hover:underline"
-              >
-                {t("inicio.leer")} →
-              </Link>
+              {ultimo ? (
+                <>
+                  <p className="mt-1 font-bold text-lg leading-snug">
+                    {ultimo.titulo}
+                  </p>
+                  <p className="font-hand text-base">
+                    {fecha.format(new Date(ultimo.fecha))} ·{" "}
+                    {t("blog.minutos", { minutos: ultimo.minutos })}
+                  </p>
+                  <Link
+                    href={{
+                      pathname: "/blog/[slug]",
+                      params: { slug: ultimo.slug },
+                    }}
+                    className="mt-auto font-bold text-sm underline-offset-4 hover:underline"
+                  >
+                    {t("inicio.leer")} →
+                  </Link>
+                </>
+              ) : null}
             </Panel>
 
             <Panel
@@ -165,10 +183,17 @@ export default async function Inicio({ params }: Props) {
               trama="puntos"
               className="flex min-h-[190px] flex-1 flex-col gap-2 p-6"
             >
-              <p className="mt-2 font-bold text-lg leading-snug">
-                [Título del artículo anterior]
-              </p>
-              <p className="font-hand text-base">[fecha] · 4 min</p>
+              {anterior ? (
+                <>
+                  <p className="mt-2 font-bold text-lg leading-snug">
+                    {anterior.titulo}
+                  </p>
+                  <p className="font-hand text-base">
+                    {fecha.format(new Date(anterior.fecha))} ·{" "}
+                    {t("blog.minutos", { minutos: anterior.minutos })}
+                  </p>
+                </>
+              ) : null}
               <Link
                 href="/blog"
                 className="mt-auto font-bold text-sm underline-offset-4 hover:underline"

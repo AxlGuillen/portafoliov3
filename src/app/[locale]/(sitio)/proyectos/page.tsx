@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Arte } from "@/components/manga/Arte";
 import { CajaNarracion } from "@/components/manga/CajaNarracion";
@@ -6,9 +7,20 @@ import { Hoja } from "@/components/manga/Hoja";
 import { Panel } from "@/components/manga/Panel";
 import { Sfx } from "@/components/manga/Sfx";
 import { Link } from "@/i18n/navigation";
+import { metadatosDe } from "@/lib/metadatos";
 import { listarProyectos } from "@/lib/proyectos";
 
 type Props = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale });
+  return metadatosDe({
+    href: "/proyectos",
+    locale,
+    descripcion: t("meta.proyectos"),
+  });
+}
 
 export default async function Proyectos({ params }: Props) {
   const { locale } = await params;

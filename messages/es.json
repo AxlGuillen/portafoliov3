@@ -33,5 +33,13 @@
     "todos": "Todos los proyectos",
     "sinTraducir": "Este caso todavía no está traducido: lo estás leyendo en español.",
     "captura": "Captura de {proyecto}"
+  },
+  "meta": {
+    "inicio": "Portafolio de Axl Guillen, desarrollador. Cuatro casos contados de principio a fin: qué se encargó, qué lo hacía difícil, qué se decidió y qué cambió.",
+    "proyectos": "Cuatro proyectos documentados en detalle: un sistema de cotizaciones para un distribuidor, analíticas propias de un canal, un editor de video local y un portafolio de fotografía.",
+    "blog": "Apuntes sobre lo que aprendo construyendo: decisiones técnicas, errores que costaron tiempo y las reglas que salieron de ellos.",
+    "sobreMi": "Quién soy, qué construyo y con qué. Biografía, habilidades, trayectoria y certificaciones.",
+    "certificaciones": "Cursos y certificaciones, cada una con enlace a su credencial verificable.",
+    "contacto": "Hablemos de tu proyecto. Formulario, correo y canales directos."
   }
 }

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Arte } from "@/components/manga/Arte";
 import { Bocadillo } from "@/components/manga/Bocadillo";
@@ -8,9 +9,20 @@ import { Panel } from "@/components/manga/Panel";
 import { Sfx } from "@/components/manga/Sfx";
 import { Logo } from "@/components/marca/Logo";
 import { Link } from "@/i18n/navigation";
+import { metadatosDe } from "@/lib/metadatos";
 import { listarProyectos } from "@/lib/proyectos";
 
 type Props = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale });
+  return metadatosDe({
+    href: "/",
+    locale,
+    descripcion: t("meta.inicio"),
+  });
+}
 
 export default async function Inicio({ params }: Props) {
   const { locale } = await params;

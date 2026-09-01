@@ -9,6 +9,7 @@ import { Hoja } from "@/components/manga/Hoja";
 import { Panel } from "@/components/manga/Panel";
 import { componentesMdx } from "@/components/mdx/componentes";
 import { Link } from "@/i18n/navigation";
+import { metadatosDe } from "@/lib/metadatos";
 import { obtenerProyecto, slugsDeProyectos } from "@/lib/proyectos";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
@@ -23,10 +24,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const proyecto = await obtenerProyecto(locale, slug);
   if (!proyecto) return {};
 
-  return {
-    title: proyecto.titulo,
-    description: proyecto.resumen,
-  };
+  return metadatosDe({
+    href: { pathname: "/proyectos/[slug]", params: { slug } },
+    locale,
+    titulo: proyecto.titulo,
+    descripcion: proyecto.resumen,
+  });
 }
 
 export default async function Caso({ params }: Props) {

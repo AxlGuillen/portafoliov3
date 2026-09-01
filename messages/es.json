@@ -3,7 +3,8 @@
     "proyectos": "Proyectos",
     "blog": "Blog",
     "sobreMi": "Sobre mí",
-    "contacto": "Contacto"
+    "contacto": "Contacto",
+    "certificaciones": "Certificaciones"
   },
   "inicio": {
     "lema": "Historias dibujadas en código",
@@ -48,5 +49,15 @@
     "minutos": "{minutos} min de lectura",
     "todos": "Todos los artículos",
     "sinTraducir": "Este artículo todavía no está traducido: lo estás leyendo en español."
+  },
+  "sobreMi": {
+    "arte": "Escritorio de trabajo visto desde arriba, ilustrado a tinta",
+    "construido": "Lo que llevo construido",
+    "stack": "Con qué construyo",
+    "enProyectos": "{total} proyectos",
+    "estudios": "Estudios",
+    "donde": "Dónde estoy",
+    "credencial": "Ver credencial",
+    "sinTraducir": "Esta página todavía no está traducida: la estás leyendo en español."
   }
 }

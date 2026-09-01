@@ -3,7 +3,8 @@
     "proyectos": "Projects",
     "blog": "Blog",
     "sobreMi": "About",
-    "contacto": "Contact"
+    "contacto": "Contact",
+    "certificaciones": "Certifications"
   },
   "inicio": {
     "lema": "Stories drawn in code",
@@ -48,5 +49,15 @@
     "minutos": "{minutos} min read",
     "todos": "All articles",
     "sinTraducir": "This article has not been translated yet — you are reading the Spanish original."
+  },
+  "sobreMi": {
+    "arte": "Overhead view of a work desk, drawn in ink",
+    "construido": "What I have built",
+    "stack": "What I build with",
+    "enProyectos": "{total} projects",
+    "estudios": "Education",
+    "donde": "Where I am",
+    "credencial": "View credential",
+    "sinTraducir": "This page has not been translated yet — you are reading the Spanish original."
   }
 }

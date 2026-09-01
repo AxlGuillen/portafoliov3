@@ -233,7 +233,7 @@ export default async function Inicio({ params }: Props) {
                       )}
                       fondo={esElCuarto ? "tinta" : "papel"}
                       trama={
-                        esElCuarto
+                        proyecto.portada || esElCuarto
                           ? undefined
                           : indice === 1
                             ? "densa"
@@ -241,6 +241,17 @@ export default async function Inicio({ params }: Props) {
                       }
                       className="flex min-h-[180px] flex-col justify-end p-4"
                     >
+                      {proyecto.portada ? (
+                        <Arte
+                          src={proyecto.portada}
+                          alt={t("proyectos.captura", {
+                            proyecto: proyecto.titulo,
+                          })}
+                          filtro="captura"
+                          posicion="left top"
+                        />
+                      ) : null}
+
                       {esElCuarto ? (
                         <span className="absolute top-3 right-4 font-display text-2xl text-papel">
                           04★

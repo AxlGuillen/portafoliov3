@@ -1,4 +1,5 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Arte } from "@/components/manga/Arte";
 import { CajaNarracion } from "@/components/manga/CajaNarracion";
 import { corteAbajo, corteArriba } from "@/components/manga/formas";
 import { Hoja } from "@/components/manga/Hoja";
@@ -48,9 +49,19 @@ export default async function Proyectos({ params }: Props) {
             >
               <Panel
                 forma={corteAbajo(6)}
-                trama="puntos"
-                className="flex min-h-[240px] flex-col justify-end p-6 transition-colors group-hover:bg-lima sm:min-h-[280px] sm:p-8"
+                trama={destacado.portada ? undefined : "puntos"}
+                className="flex min-h-[380px] flex-col justify-end p-6 transition-colors group-hover:bg-lima sm:min-h-[440px] sm:p-8"
               >
+                {destacado.portada ? (
+                  <Arte
+                    src={destacado.portada}
+                    alt={t("proyectos.captura", { proyecto: destacado.titulo })}
+                    filtro="captura"
+                    posicion="left top"
+                    prioridad
+                  />
+                ) : null}
+
                 <Sfx
                   rotacion={-6}
                   className="absolute top-5 right-6 text-3xl sm:text-4xl"
@@ -79,9 +90,26 @@ export default async function Proyectos({ params }: Props) {
                       ? corteArriba(7, "derecha")
                       : corteArriba(7, "izquierda")
                   }
-                  trama={indice === 1 ? "densa" : undefined}
-                  className="flex h-full min-h-[230px] flex-col justify-end p-5 transition-colors group-hover:bg-lima"
+                  trama={
+                    proyecto.portada
+                      ? undefined
+                      : indice === 1
+                        ? "densa"
+                        : undefined
+                  }
+                  className="flex h-full min-h-[330px] flex-col justify-end p-5 transition-colors group-hover:bg-lima"
                 >
+                  {proyecto.portada ? (
+                    <Arte
+                      src={proyecto.portada}
+                      alt={t("proyectos.captura", {
+                        proyecto: proyecto.titulo,
+                      })}
+                      filtro="captura"
+                      posicion="left top"
+                    />
+                  ) : null}
+
                   <FichaProyecto proyecto={proyecto} />
                 </Panel>
               </Link>

@@ -30,6 +30,8 @@ export type Ficha = z.infer<typeof Ficha>;
 
 export type Proyecto = Ficha & {
   slug: string;
+  /** Captura de portada, si existe `public/proyectos/<slug>.(jpg|png)`. */
+  portada: string | null;
   /** Falso cuando este idioma aún no tiene traducción y se sirve el original. */
   traducido: boolean;
 };
@@ -38,6 +40,24 @@ export type ProyectoCompleto = Proyecto & { contenido: string };
 
 function carpeta(locale: string) {
   return path.join(raiz, locale, "proyectos");
+}
+
+/**
+ * Busca la captura de portada por convención: `public/proyectos/<slug>.jpg`.
+ * Se descubre en vez de declararse para que soltar el archivo baste, sin tener
+ * que acordarse de tocar tambien el frontmatter.
+ */
+async function buscarPortada(slug: string) {
+  for (const ext of ["jpg", "png", "avif", "webp"]) {
+    const relativa = `/proyectos/${slug}.${ext}`;
+    try {
+      await fs.access(path.join(process.cwd(), "public", relativa));
+      return relativa;
+    } catch {
+      // Probamos la siguiente extensión.
+    }
+  }
+  return null;
 }
 
 async function leerArchivo(locale: string, slug: string) {
@@ -77,6 +97,7 @@ export async function obtenerProyecto(
   return {
     ...ficha.data,
     slug,
+    portada: await buscarPortada(slug),
     traducido: propio !== null,
     contenido: archivo.content,
   };

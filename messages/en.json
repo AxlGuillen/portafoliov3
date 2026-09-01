@@ -31,6 +31,7 @@
     "verEnVivo": "View live",
     "codigo": "Source",
     "todos": "All projects",
-    "sinTraducir": "This case has not been translated yet — you are reading the Spanish original."
+    "sinTraducir": "This case has not been translated yet — you are reading the Spanish original.",
+    "captura": "{proyecto} screenshot"
   }
 }

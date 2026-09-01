@@ -160,30 +160,19 @@ export default async function Inicio({ params }: Props) {
 
           {/* Sobre mí: viñeta dominante con una inserta que rompe el borde */}
           <div className="relative">
+            {/* La viñeta callada de la página: sin onomatopeya. Tres paneles
+                ruidosos seguidos cansan; el manga alterna. */}
             <Panel
               forma={personaje}
-              trama="lineas"
               className="min-h-[320px] p-6 sm:min-h-[420px] sm:p-8"
             >
+              <Arte
+                src="/vinetas/inicio-sobre-mi.avif"
+                alt="Escritorio de trabajo visto desde arriba: monitor, torre, teclado y silla, ilustrado a tinta"
+                posicion="center 45%"
+              />
+
               <CajaNarracion>{t("nav.sobreMi")}</CajaNarracion>
-
-              <div className="mt-12 max-w-md border-[3px] border-tinta border-dashed bg-papel/90 p-4 text-center sm:mt-20">
-                <span className="font-bold text-xs uppercase tracking-widest">
-                  Asset IA
-                </span>
-                <p className="mt-1 text-sm leading-snug">
-                  Cuerpo entero en acción, en diagonal; la pierna rompe el borde
-                  inferior del panel.
-                </p>
-              </div>
-
-              <Sfx
-                variante="papel"
-                rotacion={-8}
-                className="absolute top-16 right-8 text-4xl sm:text-5xl"
-              >
-                ¡FIUU!
-              </Sfx>
             </Panel>
 
             {/* Va fuera del Panel: dentro, el recorte se la comería. */}
@@ -191,7 +180,9 @@ export default async function Inicio({ params }: Props) {
               href="/sobre-mi"
               className="-bottom-4 absolute right-4 flex w-[230px] rotate-2 flex-col gap-1 border-[3.5px] border-tinta bg-papel px-4 py-3 shadow-[-6px_6px_0_rgba(17,17,17,0.2)] transition-colors hover:bg-lima sm:right-6"
             >
-              <span className="font-hand text-base">Nada mal, ¿eh?</span>
+              <span className="font-hand text-base">
+                {t("inicio.aquiPasaTodo")}
+              </span>
               <span className="font-bold text-sm">{t("nav.sobreMi")} →</span>
             </Link>
           </div>

@@ -93,6 +93,23 @@ sobre el CONTENEDOR, no sobre el elemento. Dentro de una viñeta ancha, un
 `px-[16%]` en el bocadillo daba 141px por lado. Para medidas relativas al
 propio elemento, usa `inset` en un hijo absoluto.
 
+## Contenido en MDX
+
+Los casos viven en `content/{es,en}/proyectos/*.mdx` y se leen con
+`src/lib/proyectos.ts`, que **valida la ficha al leerla**: si a un archivo le
+falta un campo, el fallo sale en la compilación con el nombre del archivo, no
+en blanco en la página.
+
+Cada caso se escribe en cuatro `##`: El encargo · El problema · La decisión ·
+El resultado.
+
+**Entrecomilla siempre los textos del frontmatter.** Un valor sin comillas que
+contenga `: ` rompe el YAML — ya pasó con `No es un editor de línea de tiempo:
+es una cadena de montaje`, que js-yaml intentó leer como clave y valor.
+
+Si un idioma no tiene todavía su archivo, se sirve el del idioma por defecto y
+la página avisa; una ruta traducida nunca se queda vacía.
+
 ## Comandos
 
 El gestor de paquetes es **bun**, no npm. Para instalar: `bun install`.

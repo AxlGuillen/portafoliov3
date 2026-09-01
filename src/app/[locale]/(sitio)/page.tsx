@@ -8,6 +8,7 @@ import { Panel } from "@/components/manga/Panel";
 import { Sfx } from "@/components/manga/Sfx";
 import { Logo } from "@/components/marca/Logo";
 import { Link } from "@/i18n/navigation";
+import { listarProyectos } from "@/lib/proyectos";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -15,6 +16,8 @@ export default async function Inicio({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations();
+  const proyectos = await listarProyectos(locale);
+  const proyectoDestacado = proyectos.find((p) => p.destacado) ?? proyectos[0];
 
   // El corte pertenece a la costura entre dos viñetas, no a una sola.
   const [apertura, destacado] = costura(9);
@@ -87,15 +90,20 @@ export default async function Inicio({ params }: Props) {
               ¡ZUUM!
             </Sfx>
 
-            <Link
-              href="/proyectos"
-              className="group flex w-fit flex-wrap items-center gap-4 border-[3px] border-tinta bg-papel px-4 py-3 transition-colors hover:bg-lima"
-            >
-              <span className="font-bold">[{t("inicio.destacado")}]</span>
-              <span className="font-bold text-sm underline-offset-4 group-hover:underline">
-                {t("inicio.verCaso")} →
-              </span>
-            </Link>
+            {proyectoDestacado ? (
+              <Link
+                href={{
+                  pathname: "/proyectos/[slug]",
+                  params: { slug: proyectoDestacado.slug },
+                }}
+                className="group flex w-fit flex-wrap items-center gap-4 border-[3px] border-tinta bg-papel px-4 py-3 transition-colors hover:bg-lima"
+              >
+                <span className="font-bold">{proyectoDestacado.titulo}</span>
+                <span className="font-bold text-sm underline-offset-4 group-hover:underline">
+                  {t("inicio.verCaso")} →
+                </span>
+              </Link>
+            ) : null}
 
             <CajaNarracion
               variante="narracion"
@@ -207,37 +215,44 @@ export default async function Inicio({ params }: Props) {
               {t("inicio.losCasos")}
             </CajaNarracion>
             <div className="grid grid-cols-1 gap-canal sm:grid-cols-2 lg:grid-cols-4">
-              {[1, 2, 3].map((numero) => (
-                <Link key={numero} href="/proyectos" className="group">
-                  <Panel
-                    forma={corteAbajo(
-                      6,
-                      numero % 2 === 0 ? "izquierda" : "derecha",
-                    )}
-                    trama={numero === 2 ? "densa" : "puntos"}
-                    className="flex min-h-[180px] flex-col justify-end p-4 transition-colors group-hover:bg-lima"
+              {proyectos.slice(0, 4).map((proyecto, indice) => {
+                const esElCuarto = indice === 3;
+                return (
+                  <Link
+                    key={proyecto.slug}
+                    href={{
+                      pathname: "/proyectos/[slug]",
+                      params: { slug: proyecto.slug },
+                    }}
+                    className="group"
                   >
-                    <span className="border-[3px] border-tinta bg-papel px-2 py-1 font-bold text-sm">
-                      [Proyecto 0{numero}]
-                    </span>
-                  </Panel>
-                </Link>
-              ))}
-
-              <Link href="/proyectos" className="group">
-                <Panel
-                  forma={corteAbajo(6, "izquierda")}
-                  fondo="tinta"
-                  className="flex min-h-[180px] flex-col justify-end p-4"
-                >
-                  <span className="absolute top-3 right-4 font-display text-2xl text-papel">
-                    04★
-                  </span>
-                  <span className="border-[3px] border-tinta bg-papel px-2 py-1 font-bold text-sm text-tinta transition-colors group-hover:bg-lima">
-                    [{t("inicio.elEspecial")}]
-                  </span>
-                </Panel>
-              </Link>
+                    <Panel
+                      forma={corteAbajo(
+                        6,
+                        indice % 2 === 0 ? "derecha" : "izquierda",
+                      )}
+                      fondo={esElCuarto ? "tinta" : "papel"}
+                      trama={
+                        esElCuarto
+                          ? undefined
+                          : indice === 1
+                            ? "densa"
+                            : "puntos"
+                      }
+                      className="flex min-h-[180px] flex-col justify-end p-4"
+                    >
+                      {esElCuarto ? (
+                        <span className="absolute top-3 right-4 font-display text-2xl text-papel">
+                          04★
+                        </span>
+                      ) : null}
+                      <span className="border-[3px] border-tinta bg-papel px-2 py-1 font-bold text-sm text-tinta transition-colors group-hover:bg-lima">
+                        {proyecto.titulo}
+                      </span>
+                    </Panel>
+                  </Link>
+                );
+              })}
             </div>
           </div>
 

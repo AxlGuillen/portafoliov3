@@ -24,5 +24,13 @@
     "cambiarIdioma": "Español",
     "volver": "Back",
     "porMaquetar": "Layout pending."
+  },
+  "proyectos": {
+    "titulo": "Four cases",
+    "cuantos": "{total} documented projects",
+    "verEnVivo": "View live",
+    "codigo": "Source",
+    "todos": "All projects",
+    "sinTraducir": "This case has not been translated yet — you are reading the Spanish original."
   }
 }

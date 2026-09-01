@@ -24,5 +24,13 @@
     "cambiarIdioma": "English",
     "volver": "Volver",
     "porMaquetar": "Por maquetar."
+  },
+  "proyectos": {
+    "titulo": "Cuatro casos",
+    "cuantos": "{total} proyectos documentados",
+    "verEnVivo": "Ver en vivo",
+    "codigo": "Código",
+    "todos": "Todos los proyectos",
+    "sinTraducir": "Este caso todavía no está traducido: lo estás leyendo en español."
   }
 }

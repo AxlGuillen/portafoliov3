@@ -81,6 +81,34 @@ export default async function SobreMi({ params }: Props) {
             </dl>
           </Panel>
 
+          {/* La trayectoria por etapas: cuenta como crecio el alcance, que es
+              lo que un listado de fechas no dice. */}
+          <div>
+            <CajaNarracion fondo="tinta" className="mb-3">
+              {t("sobreMi.trayectoria")}
+            </CajaNarracion>
+            <ol className="grid grid-cols-1 gap-canal sm:grid-cols-2 lg:grid-cols-4">
+              {perfil.etapas.map((etapa, indice) => (
+                <li key={etapa.titulo}>
+                  <Panel
+                    forma={corteAbajo(
+                      6,
+                      indice % 2 === 0 ? "derecha" : "izquierda",
+                    )}
+                    trama={indice % 2 === 0 ? "puntos" : undefined}
+                    className="flex h-full flex-col gap-2 p-5"
+                  >
+                    <span className="font-hand text-base">{etapa.momento}</span>
+                    <span className="font-display text-xl leading-none">
+                      {etapa.titulo}
+                    </span>
+                    <span className="text-sm leading-snug">{etapa.texto}</span>
+                  </Panel>
+                </li>
+              ))}
+            </ol>
+          </div>
+
           {/* Cómo trabajo */}
           <Panel as="article" className="p-6 sm:p-10">
             {perfil.traducido ? null : (
@@ -121,6 +149,20 @@ export default async function SobreMi({ params }: Props) {
             </Panel>
 
             <Panel className="flex flex-1 flex-col gap-5 p-6 sm:p-8">
+              <div>
+                <p className="font-bold text-[11px] uppercase tracking-[0.14em]">
+                  {t("sobreMi.trabajoActual")}
+                </p>
+                <p className="mt-1 font-bold text-lg leading-snug">
+                  {perfil.trabajo.empresa} · {perfil.trabajo.puesto}
+                </p>
+                <p className="mt-1 text-sm leading-snug">
+                  {perfil.trabajo.texto}
+                </p>
+                <p className="mt-1 font-hand text-base">
+                  {perfil.trabajo.desde}
+                </p>
+              </div>
               <div>
                 <p className="font-bold text-[11px] uppercase tracking-[0.14em]">
                   {t("sobreMi.estudios")}

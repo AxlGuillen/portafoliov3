@@ -61,5 +61,18 @@
     "sinTraducir": "Esta página todavía no está traducida: la estás leyendo en español.",
     "trayectoria": "Cómo llegué hasta aquí",
     "trabajoActual": "Ahora mismo"
+  },
+  "contacto": {
+    "nombre": "Tu nombre",
+    "correo": "Tu correo",
+    "mensaje": "Tu mensaje",
+    "marcador": "Cuéntame del proyecto: qué necesitas y para cuándo.",
+    "enviar": "Enviar",
+    "enviando": "Enviando…",
+    "directo": "O escríbeme directo",
+    "gracias": "Mensaje enviado. Te respondo en cuanto lo lea.",
+    "errorDatos": "Revisa los campos: falta algo o el correo no es válido.",
+    "errorEnvio": "No se pudo enviar. Escríbeme directo por correo, aquí al lado.",
+    "bocadillo": "Si llegaste hasta aquí, ya sabes cómo trabajo."
   }
 }

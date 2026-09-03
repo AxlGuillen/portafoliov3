@@ -9,7 +9,9 @@ const raiz = path.join(process.cwd(), "content");
 const Contacto = z.object({
   titulo: z.string(),
   entradilla: z.string(),
-  /** Los canales directos. Siempre funcionan, aunque el formulario falle. */
+  /** Dirección a la que redacta el botón del bloc. */
+  correo: z.string(),
+  /** Los canales directos. Un enlace funciona siempre, sin intermediarios. */
   canales: z.array(
     z.object({
       nombre: z.string(),

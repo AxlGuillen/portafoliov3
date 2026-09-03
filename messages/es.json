@@ -41,7 +41,7 @@
     "blog": "Apuntes sobre lo que aprendo construyendo: decisiones técnicas, errores que costaron tiempo y las reglas que salieron de ellos.",
     "sobreMi": "Quién soy, qué construyo y con qué. Biografía, habilidades, trayectoria y certificaciones.",
     "certificaciones": "Cursos y certificaciones, cada una con enlace a su credencial verificable.",
-    "contacto": "Hablemos de tu proyecto. Formulario, correo y canales directos."
+    "contacto": "Hablemos de tu proyecto. Correo, LinkedIn y GitHub."
   },
   "blog": {
     "titulo": "Apuntes",
@@ -64,15 +64,13 @@
   },
   "contacto": {
     "nombre": "Tu nombre",
-    "correo": "Tu correo",
     "mensaje": "Tu mensaje",
     "marcador": "Cuéntame del proyecto: qué necesitas y para cuándo.",
-    "enviar": "Enviar",
-    "enviando": "Enviando…",
+    "abrir": "Abrir mi correo",
+    "sinCorreo": "¿No se abre solo? Copia el mensaje y mándalo a",
+    "copiar": "Copiar el mensaje",
+    "copiado": "¡Copiado!",
     "directo": "O escríbeme directo",
-    "gracias": "Mensaje enviado. Te respondo en cuanto lo lea.",
-    "errorDatos": "Revisa los campos: falta algo o el correo no es válido.",
-    "errorEnvio": "No se pudo enviar. Escríbeme directo por correo, aquí al lado.",
     "bocadillo": "Si llegaste hasta aquí, ya sabes cómo trabajo."
   }
 }

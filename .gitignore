@@ -43,3 +43,6 @@ next-env.d.ts
 
 # Lienzo de diseno: el artefacto empaquetado se regenera desde los .dc.html
 design/propuestas-home-4xl.html
+
+# Config local de herramientas (arranque del previsualizador)
+.claude/

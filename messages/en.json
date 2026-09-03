@@ -41,7 +41,7 @@
     "blog": "Notes on what I learn while building: technical decisions, mistakes that cost time and the rules that came out of them.",
     "sobreMi": "Who I am, what I build and with what. Biography, skills, background and certifications.",
     "certificaciones": "Courses and certifications, each linking to its verifiable credential.",
-    "contacto": "Let's talk about your project. Form, email and direct channels."
+    "contacto": "Let's talk about your project. Email, LinkedIn and GitHub."
   },
   "blog": {
     "titulo": "Notes",
@@ -64,15 +64,13 @@
   },
   "contacto": {
     "nombre": "Your name",
-    "correo": "Your email",
     "mensaje": "Your message",
     "marcador": "Tell me about the project: what you need and by when.",
-    "enviar": "Send",
-    "enviando": "Sending…",
+    "abrir": "Open my email",
+    "sinCorreo": "Not opening? Copy the message and send it to",
+    "copiar": "Copy the message",
+    "copiado": "Copied!",
     "directo": "Or reach me directly",
-    "gracias": "Message sent. I will reply as soon as I read it.",
-    "errorDatos": "Check the fields: something is missing or the email is not valid.",
-    "errorEnvio": "It could not be sent. Email me directly, right here.",
     "bocadillo": "If you made it this far, you already know how I work."
   }
 }

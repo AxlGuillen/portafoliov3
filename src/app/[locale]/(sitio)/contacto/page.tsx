@@ -10,7 +10,7 @@ import { Hoja } from "@/components/manga/Hoja";
 import { Panel } from "@/components/manga/Panel";
 import { Sfx } from "@/components/manga/Sfx";
 import { componentesMdx } from "@/components/mdx/componentes";
-import { Formulario } from "@/components/sitio/Formulario";
+import { Redactor } from "@/components/sitio/Redactor";
 import { obtenerContacto } from "@/lib/contacto";
 import { metadatosDe } from "@/lib/metadatos";
 
@@ -70,7 +70,7 @@ export default async function Contacto({ params }: Props) {
           </Panel>
 
           <div className="flex flex-col gap-canal lg:flex-row">
-            {/* El formulario */}
+            {/* El bloc: redacta el mensaje y lo pasa al correo */}
             <Panel
               forma={cuerpo}
               className="flex-[1.4] p-6 pt-12 sm:p-8 sm:pt-16"
@@ -83,21 +83,22 @@ export default async function Contacto({ params }: Props) {
                 />
               </div>
 
-              <Formulario
-                locale={locale}
+              <Redactor
+                correo={contacto.correo}
                 textos={{
                   nombre: t("contacto.nombre"),
-                  correo: t("contacto.correo"),
                   mensaje: t("contacto.mensaje"),
                   marcador: t("contacto.marcador"),
-                  enviar: t("contacto.enviar"),
-                  enviando: t("contacto.enviando"),
+                  abrir: t("contacto.abrir"),
+                  sinCorreo: t("contacto.sinCorreo"),
+                  copiar: t("contacto.copiar"),
+                  copiado: t("contacto.copiado"),
                 }}
               />
             </Panel>
 
-            {/* Los canales directos: siempre funcionan, pase lo que pase con
-                el formulario. Por eso van al mismo nivel y no debajo. */}
+            {/* Los canales directos: un enlace funciona siempre, sin depender
+                del cliente de correo. Por eso van al mismo nivel y no debajo. */}
             <div className="flex flex-1 flex-col gap-canal">
               <CajaNarracion fondo="tinta" className="self-start">
                 {t("contacto.directo")}

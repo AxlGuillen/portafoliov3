@@ -46,7 +46,7 @@ export default async function Inicio({ params }: Props) {
   return (
     <div className="mx-auto flex max-w-[920px] flex-col gap-10 px-2 pb-16 sm:gap-12">
       {/* --- Página 1: la portada del capítulo --- */}
-      <Hoja pagina="1 / 4">
+      <Hoja pagina="1 / 2">
         <div className="relative flex flex-col gap-canal">
           <Panel
             forma={apertura}
@@ -146,7 +146,7 @@ export default async function Inicio({ params }: Props) {
       </Hoja>
 
       {/* --- Página 2: las secciones --- */}
-      <Hoja pagina="2 / 4">
+      <Hoja pagina="2 / 2">
         <div className="flex flex-col gap-canal">
           {/* Blog: dos viñetas con cortes opuestos */}
           <div

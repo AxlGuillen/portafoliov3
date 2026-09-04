@@ -8,6 +8,7 @@ import { corteAbajo } from "@/components/manga/formas";
 import { Hoja } from "@/components/manga/Hoja";
 import { Panel } from "@/components/manga/Panel";
 import { componentesMdx } from "@/components/mdx/componentes";
+import { Historial } from "@/components/sitio/Historial";
 import { Link } from "@/i18n/navigation";
 import { metadatosDe } from "@/lib/metadatos";
 import { obtenerProyecto, slugsDeProyectos } from "@/lib/proyectos";
@@ -98,6 +99,16 @@ export default async function Caso({ params }: Props) {
               ) : null}
             </div>
           </Panel>
+
+          {/* El ritmo de trabajo, sacado del propio git */}
+          {proyecto.historial ? (
+            <Panel
+              forma={corteAbajo(5, "izquierda")}
+              className="p-6 pb-10 sm:p-8 sm:pb-12"
+            >
+              <Historial datos={proyecto.historial} locale={locale} />
+            </Panel>
+          ) : null}
 
           {/* El caso, en sus cuatro partes */}
           <Panel as="article" className="p-6 sm:p-10">

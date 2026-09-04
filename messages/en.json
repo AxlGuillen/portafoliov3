@@ -33,7 +33,10 @@
     "codigo": "Source",
     "todos": "All projects",
     "sinTraducir": "This case has not been translated yet — you are reading the Spanish original.",
-    "captura": "{proyecto} screenshot"
+    "captura": "{proyecto} screenshot",
+    "historial": "Commits, week by week",
+    "historialResumen": "{total} commits between {desde} and {hasta}, peaking at {pico} in a single week.",
+    "pico": "Peak: {commits} commits in the week of {semana}."
   },
   "meta": {
     "inicio": "Portfolio of Axl Guillen, developer. Four cases told end to end: what was asked, what made it hard, what was decided and what changed.",

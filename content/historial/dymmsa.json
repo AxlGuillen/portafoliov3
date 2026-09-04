@@ -1,0 +1,139 @@
+{
+  "desde": "2026-01-23",
+  "hasta": "2026-09-02",
+  "total": 601,
+  "semanas": [
+    {
+      "inicio": "2026-01-19",
+      "commits": 23
+    },
+    {
+      "inicio": "2026-01-26",
+      "commits": 23
+    },
+    {
+      "inicio": "2026-02-02",
+      "commits": 0
+    },
+    {
+      "inicio": "2026-02-09",
+      "commits": 0
+    },
+    {
+      "inicio": "2026-02-16",
+      "commits": 3
+    },
+    {
+      "inicio": "2026-02-23",
+      "commits": 23
+    },
+    {
+      "inicio": "2026-03-02",
+      "commits": 27
+    },
+    {
+      "inicio": "2026-03-09",
+      "commits": 13
+    },
+    {
+      "inicio": "2026-03-16",
+      "commits": 45
+    },
+    {
+      "inicio": "2026-03-23",
+      "commits": 27
+    },
+    {
+      "inicio": "2026-03-30",
+      "commits": 5
+    },
+    {
+      "inicio": "2026-04-06",
+      "commits": 13
+    },
+    {
+      "inicio": "2026-04-13",
+      "commits": 0
+    },
+    {
+      "inicio": "2026-04-20",
+      "commits": 3
+    },
+    {
+      "inicio": "2026-04-27",
+      "commits": 1
+    },
+    {
+      "inicio": "2026-05-04",
+      "commits": 9
+    },
+    {
+      "inicio": "2026-05-11",
+      "commits": 22
+    },
+    {
+      "inicio": "2026-05-18",
+      "commits": 43
+    },
+    {
+      "inicio": "2026-05-25",
+      "commits": 35
+    },
+    {
+      "inicio": "2026-06-01",
+      "commits": 0
+    },
+    {
+      "inicio": "2026-06-08",
+      "commits": 14
+    },
+    {
+      "inicio": "2026-06-15",
+      "commits": 22
+    },
+    {
+      "inicio": "2026-06-22",
+      "commits": 4
+    },
+    {
+      "inicio": "2026-06-29",
+      "commits": 0
+    },
+    {
+      "inicio": "2026-07-06",
+      "commits": 58
+    },
+    {
+      "inicio": "2026-07-13",
+      "commits": 79
+    },
+    {
+      "inicio": "2026-07-20",
+      "commits": 20
+    },
+    {
+      "inicio": "2026-07-27",
+      "commits": 27
+    },
+    {
+      "inicio": "2026-08-03",
+      "commits": 10
+    },
+    {
+      "inicio": "2026-08-10",
+      "commits": 13
+    },
+    {
+      "inicio": "2026-08-17",
+      "commits": 28
+    },
+    {
+      "inicio": "2026-08-24",
+      "commits": 5
+    },
+    {
+      "inicio": "2026-08-31",
+      "commits": 6
+    }
+  ]
+}

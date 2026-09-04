@@ -16,7 +16,7 @@ const variantes = {
 type Props = {
   fondo?: keyof typeof fondos;
   variante?: keyof typeof variantes;
-  as?: "p" | "div" | "span" | "h1" | "h2" | "h3";
+  as?: "p" | "div" | "span" | "h1" | "h2" | "h3" | "figcaption";
   className?: string;
   children: ReactNode;
 };

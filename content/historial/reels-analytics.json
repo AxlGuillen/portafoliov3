@@ -1,0 +1,47 @@
+{
+  "desde": "2026-07-02",
+  "hasta": "2026-09-02",
+  "total": 156,
+  "semanas": [
+    {
+      "inicio": "2026-06-29",
+      "commits": 28
+    },
+    {
+      "inicio": "2026-07-06",
+      "commits": 41
+    },
+    {
+      "inicio": "2026-07-13",
+      "commits": 10
+    },
+    {
+      "inicio": "2026-07-20",
+      "commits": 9
+    },
+    {
+      "inicio": "2026-07-27",
+      "commits": 18
+    },
+    {
+      "inicio": "2026-08-03",
+      "commits": 3
+    },
+    {
+      "inicio": "2026-08-10",
+      "commits": 2
+    },
+    {
+      "inicio": "2026-08-17",
+      "commits": 7
+    },
+    {
+      "inicio": "2026-08-24",
+      "commits": 29
+    },
+    {
+      "inicio": "2026-08-31",
+      "commits": 9
+    }
+  ]
+}

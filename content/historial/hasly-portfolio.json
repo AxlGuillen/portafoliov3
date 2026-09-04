@@ -1,0 +1,111 @@
+{
+  "desde": "2026-02-08",
+  "hasta": "2026-07-31",
+  "total": 105,
+  "semanas": [
+    {
+      "inicio": "2026-02-02",
+      "commits": 2
+    },
+    {
+      "inicio": "2026-02-09",
+      "commits": 63
+    },
+    {
+      "inicio": "2026-02-16",
+      "commits": 18
+    },
+    {
+      "inicio": "2026-02-23",
+      "commits": 0
+    },
+    {
+      "inicio": "2026-03-02",
+      "commits": 0
+    },
+    {
+      "inicio": "2026-03-09",
+      "commits": 0
+    },
+    {
+      "inicio": "2026-03-16",
+      "commits": 0
+    },
+    {
+      "inicio": "2026-03-23",
+      "commits": 0
+    },
+    {
+      "inicio": "2026-03-30",
+      "commits": 0
+    },
+    {
+      "inicio": "2026-04-06",
+      "commits": 0
+    },
+    {
+      "inicio": "2026-04-13",
+      "commits": 0
+    },
+    {
+      "inicio": "2026-04-20",
+      "commits": 0
+    },
+    {
+      "inicio": "2026-04-27",
+      "commits": 0
+    },
+    {
+      "inicio": "2026-05-04",
+      "commits": 10
+    },
+    {
+      "inicio": "2026-05-11",
+      "commits": 0
+    },
+    {
+      "inicio": "2026-05-18",
+      "commits": 0
+    },
+    {
+      "inicio": "2026-05-25",
+      "commits": 0
+    },
+    {
+      "inicio": "2026-06-01",
+      "commits": 0
+    },
+    {
+      "inicio": "2026-06-08",
+      "commits": 0
+    },
+    {
+      "inicio": "2026-06-15",
+      "commits": 0
+    },
+    {
+      "inicio": "2026-06-22",
+      "commits": 0
+    },
+    {
+      "inicio": "2026-06-29",
+      "commits": 0
+    },
+    {
+      "inicio": "2026-07-06",
+      "commits": 4
+    },
+    {
+      "inicio": "2026-07-13",
+      "commits": 0
+    },
+    {
+      "inicio": "2026-07-20",
+      "commits": 0
+    },
+    {
+      "inicio": "2026-07-27",
+      "commits": 8
+    }
+  ]
+}

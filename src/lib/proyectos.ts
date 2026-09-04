@@ -28,10 +28,25 @@ const Ficha = z.object({
 
 export type Ficha = z.infer<typeof Ficha>;
 
+/**
+ * El ritmo de commits del repositorio, semana a semana. Lo genera
+ * `bun run historial <slug> <repo>` y se versiona en `content/historial/`.
+ */
+const Historial = z.object({
+  desde: z.string(),
+  hasta: z.string(),
+  total: z.number(),
+  semanas: z.array(z.object({ inicio: z.string(), commits: z.number() })),
+});
+
+export type Historial = z.infer<typeof Historial>;
+
 export type Proyecto = Ficha & {
   slug: string;
   /** Captura de portada, si existe `public/proyectos/<slug>.(jpg|png)`. */
   portada: string | null;
+  /** Ritmo de commits, si existe `content/historial/<slug>.json`. */
+  historial: Historial | null;
   /** Falso cuando este idioma aún no tiene traducción y se sirve el original. */
   traducido: boolean;
 };
@@ -58,6 +73,30 @@ async function buscarPortada(slug: string) {
     }
   }
   return null;
+}
+
+async function leerHistorial(slug: string): Promise<Historial | null> {
+  let crudo: string;
+  try {
+    crudo = await fs.readFile(
+      path.join(raiz, "historial", `${slug}.json`),
+      "utf8",
+    );
+  } catch {
+    // Sin historial no hay gráfica; no es un error.
+    return null;
+  }
+
+  // Fuera del try: un JSON mal formado sí debe romper la compilación.
+  const datos = Historial.safeParse(JSON.parse(crudo));
+  if (!datos.success) {
+    throw new Error(
+      `Historial inválido en ${slug}.json: ${datos.error.issues
+        .map((i) => `${i.path.join(".")} ${i.message}`)
+        .join("; ")}`,
+    );
+  }
+  return datos.data;
 }
 
 async function leerArchivo(locale: string, slug: string) {
@@ -98,6 +137,7 @@ export async function obtenerProyecto(
     ...ficha.data,
     slug,
     portada: await buscarPortada(slug),
+    historial: await leerHistorial(slug),
     traducido: propio !== null,
     contenido: archivo.content,
   };

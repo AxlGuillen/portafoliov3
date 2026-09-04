@@ -1,0 +1,39 @@
+<!-- @dsCard group="Texto" name="Caja de narración" subtitle="Etiqueta en versales · narración · papel o tinta" -->
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Caja de narración — 4XL</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Karla:wght@400;700&family=Gochi+Hand&display=swap"><style>
+:root{--tinta:#111111;--papel:#ffffff;--lector:#101010;--lima:#d9f24a;
+--display:"Archivo Black","Arial Black",Impact,sans-serif;--body:Karla,ui-sans-serif,system-ui,sans-serif;--hand:"Gochi Hand","Comic Sans MS",cursive;
+--stroke-vineta:3.5px;--stroke-caja:3px;--canal:14px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--lector);color:var(--tinta);font-family:var(--body);font-size:16px;line-height:1.4;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.hoja{background:var(--papel);padding:10px;box-shadow:0 22px 60px rgba(0,0,0,.6);max-width:920px;margin:32px auto}
+.hoja--lima{background:var(--lima)}
+.pie{margin:12px 0 0;text-align:center;font-weight:700;font-size:12px;letter-spacing:.16em;color:rgba(17,17,17,.55)}
+.vineta{position:relative;isolation:isolate;background:var(--papel);color:var(--tinta)}
+.vineta--tinta{background:var(--tinta);color:var(--papel)}
+.vineta--lima{background:var(--lima);color:var(--tinta)}
+.vineta>.borde{position:absolute;inset:0;width:100%;height:100%;z-index:-10;pointer-events:none}
+.vineta>.trama{position:absolute;inset:0;z-index:-10;pointer-events:none}
+.trama-puntos{background-image:radial-gradient(color-mix(in srgb,var(--tinta) 18%,transparent) 1.3px,transparent 1.8px);background-size:9px 9px}
+.trama-densa{background-image:radial-gradient(color-mix(in srgb,var(--tinta) 30%,transparent) 1.4px,transparent 1.9px);background-size:6px 6px}
+.trama-lineas{background-image:repeating-linear-gradient(66deg,color-mix(in srgb,var(--tinta) 26%,transparent) 0 1.6px,transparent 1.6px 22px)}
+.trama-velocidad{background-image:repeating-linear-gradient(84deg,color-mix(in srgb,var(--tinta) 50%,transparent) 0 2.4px,transparent 2.4px 13px)}
+.caja{display:inline-block;border:var(--stroke-caja) solid var(--tinta);background:var(--papel);color:var(--tinta)}
+.caja--etiqueta{padding:6px 12px;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+.caja--narracion{padding:10px 16px;font-size:14px;line-height:1.35}
+.caja--tinta{background:var(--tinta);color:var(--papel)}
+.sfx{display:inline-block;font-family:var(--display);font-size:48px;line-height:1;paint-order:stroke fill;-webkit-text-stroke:2px var(--papel);color:var(--tinta)}
+.sfx--papel{color:var(--papel);-webkit-text-stroke-color:var(--tinta)}
+.display{font-family:var(--display)}
+.hand{font-family:var(--hand)}
+.rotulo{font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.14em}
+.cta{display:inline-block;background:var(--tinta);color:var(--lima);padding:16px 24px;font-family:var(--display);font-size:16px;text-decoration:none;transition:transform .2s}
+.cta:hover{transform:rotate(-1deg)}
+.boton{display:inline-block;border:3px solid var(--tinta);background:var(--papel);padding:8px 16px;font-weight:700;font-size:14px;text-decoration:none;transition:background-color .2s}
+.boton:hover{background:var(--lima)}
+.chip{display:inline-block;border:2px solid var(--tinta);padding:4px 10px;font-weight:700;font-size:12px}
+.campo{display:block;width:100%;border:3px solid var(--tinta);background:var(--papel);padding:12px 16px;font:inherit;outline:none}
+.campo:focus-visible{background:var(--lima)}
+.nota{color:rgba(255,255,255,.7);font-size:13px;max-width:920px;margin:0 auto 8px;padding:0 10px}
+.nota b{color:#fff}
+</style></head><body><p class="nota">Dos variantes: <b>etiqueta</b> (corta, versales) y <b>narración</b> (una o dos frases). Las etiquetas visibles son directas: Proyectos, Blog, Sobre mí, Contacto. Lo temático lo aporta el dibujo, nunca las palabras.</p><div class="hoja" style="padding:32px"><div style="display:flex;flex-direction:column;gap:20px;align-items:flex-start"><div style="display:flex;gap:12px;flex-wrap:wrap"><span class="caja caja--etiqueta">Desarrollador — 2026</span><span class="caja caja--etiqueta caja--tinta">Los cuatro casos</span><span class="caja caja--etiqueta" style="border-color:var(--lima);color:var(--lima);background:var(--tinta)">Contacto</span></div><p class="caja caja--narracion" style="max-width:36ch;margin:0">Cada viñeta lleva a su sección. El rótulo o la voz del narrador: a diferencia del bocadillo, no la dice nadie.</p><p class="caja caja--narracion caja--tinta" style="max-width:36ch;margin:0">Este caso todavía no está traducido: lo estás leyendo en español.</p></div></div></body></html>

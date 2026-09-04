@@ -1,0 +1,31 @@
+/* Sistema 4XL — manga en blanco y negro. Tokens listos para copiar. */
+:root {
+  /* Tinta y papel. El color no es paleta: es recompensa. */
+  --color-tinta: #111111;
+  --color-papel: #ffffff;
+  --color-lector: #101010;   /* el fondo sobre el que descansa la hoja */
+  --color-lima:  #d9f24a;    /* SOLO en hover, foco y la sección de contacto */
+
+  /* Tipografías: una de titular, una de texto, una de mano */
+  --font-display: "Archivo Black", "Arial Black", Impact, sans-serif;
+  --font-body:    Karla, ui-sans-serif, system-ui, sans-serif;
+  --font-hand:    "Gochi Hand", "Comic Sans MS", cursive;
+
+  /* Trazos y canal entre viñetas */
+  --stroke-vineta: 3.5px;
+  --stroke-caja:   3px;
+  --spacing-canal: 0.875rem;
+}
+
+/* Tramas de semitono: se pintan en CSS, nunca en la imagen. */
+.trama-puntos    { background-image: radial-gradient(color-mix(in srgb, var(--color-tinta) 18%, transparent) 1.3px, transparent 1.8px); background-size: 9px 9px; }
+.trama-densa     { background-image: radial-gradient(color-mix(in srgb, var(--color-tinta) 30%, transparent) 1.4px, transparent 1.9px); background-size: 6px 6px; }
+.trama-lineas    { background-image: repeating-linear-gradient(66deg, color-mix(in srgb, var(--color-tinta) 26%, transparent) 0 1.6px, transparent 1.6px 22px); }
+.trama-velocidad { background-image: repeating-linear-gradient(84deg, color-mix(in srgb, var(--color-tinta) 50%, transparent) 0 2.4px, transparent 2.4px 13px); }
+
+/* Foco: el único sitio fuera de hover y contacto donde la lima aparece. */
+:focus-visible { outline: 3px solid var(--color-lima); outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}

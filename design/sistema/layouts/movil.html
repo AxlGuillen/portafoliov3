@@ -1,0 +1,39 @@
+<!-- @dsCard group="Composición" name="Hoja en móvil (webtoon)" subtitle="Las mismas viñetas apiladas a todo el ancho; las diagonales se conservan" -->
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hoja en móvil (webtoon) — 4XL</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Karla:wght@400;700&family=Gochi+Hand&display=swap"><style>
+:root{--tinta:#111111;--papel:#ffffff;--lector:#101010;--lima:#d9f24a;
+--display:"Archivo Black","Arial Black",Impact,sans-serif;--body:Karla,ui-sans-serif,system-ui,sans-serif;--hand:"Gochi Hand","Comic Sans MS",cursive;
+--stroke-vineta:3.5px;--stroke-caja:3px;--canal:14px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--lector);color:var(--tinta);font-family:var(--body);font-size:16px;line-height:1.4;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.hoja{background:var(--papel);padding:10px;box-shadow:0 22px 60px rgba(0,0,0,.6);max-width:920px;margin:32px auto}
+.hoja--lima{background:var(--lima)}
+.pie{margin:12px 0 0;text-align:center;font-weight:700;font-size:12px;letter-spacing:.16em;color:rgba(17,17,17,.55)}
+.vineta{position:relative;isolation:isolate;background:var(--papel);color:var(--tinta)}
+.vineta--tinta{background:var(--tinta);color:var(--papel)}
+.vineta--lima{background:var(--lima);color:var(--tinta)}
+.vineta>.borde{position:absolute;inset:0;width:100%;height:100%;z-index:-10;pointer-events:none}
+.vineta>.trama{position:absolute;inset:0;z-index:-10;pointer-events:none}
+.trama-puntos{background-image:radial-gradient(color-mix(in srgb,var(--tinta) 18%,transparent) 1.3px,transparent 1.8px);background-size:9px 9px}
+.trama-densa{background-image:radial-gradient(color-mix(in srgb,var(--tinta) 30%,transparent) 1.4px,transparent 1.9px);background-size:6px 6px}
+.trama-lineas{background-image:repeating-linear-gradient(66deg,color-mix(in srgb,var(--tinta) 26%,transparent) 0 1.6px,transparent 1.6px 22px)}
+.trama-velocidad{background-image:repeating-linear-gradient(84deg,color-mix(in srgb,var(--tinta) 50%,transparent) 0 2.4px,transparent 2.4px 13px)}
+.caja{display:inline-block;border:var(--stroke-caja) solid var(--tinta);background:var(--papel);color:var(--tinta)}
+.caja--etiqueta{padding:6px 12px;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+.caja--narracion{padding:10px 16px;font-size:14px;line-height:1.35}
+.caja--tinta{background:var(--tinta);color:var(--papel)}
+.sfx{display:inline-block;font-family:var(--display);font-size:48px;line-height:1;paint-order:stroke fill;-webkit-text-stroke:2px var(--papel);color:var(--tinta)}
+.sfx--papel{color:var(--papel);-webkit-text-stroke-color:var(--tinta)}
+.display{font-family:var(--display)}
+.hand{font-family:var(--hand)}
+.rotulo{font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.14em}
+.cta{display:inline-block;background:var(--tinta);color:var(--lima);padding:16px 24px;font-family:var(--display);font-size:16px;text-decoration:none;transition:transform .2s}
+.cta:hover{transform:rotate(-1deg)}
+.boton{display:inline-block;border:3px solid var(--tinta);background:var(--papel);padding:8px 16px;font-weight:700;font-size:14px;text-decoration:none;transition:background-color .2s}
+.boton:hover{background:var(--lima)}
+.chip{display:inline-block;border:2px solid var(--tinta);padding:4px 10px;font-weight:700;font-size:12px}
+.campo{display:block;width:100%;border:3px solid var(--tinta);background:var(--papel);padding:12px 16px;font:inherit;outline:none}
+.campo:focus-visible{background:var(--lima)}
+.nota{color:rgba(255,255,255,.7);font-size:13px;max-width:920px;margin:0 auto 8px;padding:0 10px}
+.nota b{color:#fff}
+</style></head><body><p class="nota">En móvil la página de manga se convierte en <b>webtoon</b>: viñetas apiladas a todo el ancho. Como las formas usan coordenadas normalizadas, las diagonales se adaptan solas; solo la rejilla se reordena. Las cuatro rutas bajan a una barra fija.</p><div style="width:375px;margin:24px auto"><div class="hoja" style="margin:0;padding:8px"><div style="display:flex;flex-direction:column;gap:var(--canal)"><div class="vineta" style="clip-path:polygon(0% 0%, 100% 0%, 100% 93%, 0% 100%);height:360px"><svg class="borde" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><polygon points="0,0 100,0 100,93 0,100" fill="none" stroke="var(--tinta)" stroke-width="7.0" vector-effect="non-scaling-stroke"/></svg><div class="trama-lineas" style="position:absolute;inset:0;z-index:-20"><span class="hand" style="position:absolute;right:20px;bottom:16px;font-size:16px;color:rgba(17,17,17,.6)">aquí va la ilustración (solo línea)</span></div><span class="caja caja--etiqueta" style="position:absolute;top:16px;left:16px">Desarrollador — 2026</span><span class="sfx" style="position:absolute;top:8px;right:16px;rotate:9deg;font-size:36px">¡TAK!</span><div style="position:absolute;left:20px;bottom:24px;display:flex;flex-direction:column;gap:8px;align-items:flex-start"><div class="display" style="background:var(--tinta);color:var(--papel);padding:12px 16px;font-size:34px;line-height:1">AXL<br>GUILLEN</div><p class="display caja" style="margin:0;padding:6px 12px;font-size:15px">Historias dibujadas en código</p></div></div><div class="vineta" style="clip-path:polygon(0% 7%, 100% 0%, 100% 100%, 0% 100%);height:320px"><svg class="borde" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><polygon points="0,7 100,0 100,100 0,100" fill="none" stroke="var(--tinta)" stroke-width="7.0" vector-effect="non-scaling-stroke"/></svg><div class="trama-lineas" style="position:absolute;inset:0;z-index:-20"><span class="hand" style="position:absolute;right:20px;bottom:16px;font-size:16px;color:rgba(17,17,17,.6)">aquí va la ilustración (solo línea)</span></div><span class="sfx sfx--papel" style="position:absolute;top:20px;left:20px;font-size:36px;rotate:-5deg">¡ZUUM!</span><a href="#" class="boton" style="position:absolute;left:20px;bottom:24px"><b>DYMMSA</b> · Ver caso →</a></div><div class="vineta vineta--tinta" style="clip-path:polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);height:120px"><svg class="borde" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><polygon points="0,0 100,0 100,100 0,100" fill="none" stroke="var(--papel)" stroke-width="7.0" vector-effect="non-scaling-stroke"/></svg><span class="display" style="position:absolute;top:12px;right:16px;font-size:24px;color:var(--papel)">04★</span><p class="display" style="position:absolute;left:16px;bottom:16px;margin:0;color:var(--papel);font-size:22px">04 — Contacto</p></div></div><p class="pie">— 1 / 2 —</p></div><div style="width:375px;margin:16px auto 0"><nav style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:var(--tinta);border-top:3px solid var(--papel)"><a href="#" style="padding:16px 4px;text-align:center;font-weight:700;font-size:11px;text-decoration:none;background:var(--papel);color:var(--tinta)">Proyectos</a><a href="#" style="padding:16px 4px;text-align:center;font-weight:700;font-size:11px;text-decoration:none;border-left:2px solid rgba(255,255,255,.25);color:var(--papel)">Blog</a><a href="#" style="padding:16px 4px;text-align:center;font-weight:700;font-size:11px;text-decoration:none;border-left:2px solid rgba(255,255,255,.25);color:var(--papel)">Sobre mí</a><a href="#" style="padding:16px 4px;text-align:center;font-weight:700;font-size:11px;text-decoration:none;border-left:2px solid rgba(255,255,255,.25);color:var(--lima)">Contacto</a></nav></div></div></body></html>

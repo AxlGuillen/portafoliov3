@@ -1,0 +1,39 @@
+<!-- @dsCard group="Datos" name="Historial de commits" subtitle="Una barra por semana, SVG a mano, sin librería" -->
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Historial de commits — 4XL</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Karla:wght@400;700&family=Gochi+Hand&display=swap"><style>
+:root{--tinta:#111111;--papel:#ffffff;--lector:#101010;--lima:#d9f24a;
+--display:"Archivo Black","Arial Black",Impact,sans-serif;--body:Karla,ui-sans-serif,system-ui,sans-serif;--hand:"Gochi Hand","Comic Sans MS",cursive;
+--stroke-vineta:3.5px;--stroke-caja:3px;--canal:14px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--lector);color:var(--tinta);font-family:var(--body);font-size:16px;line-height:1.4;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.hoja{background:var(--papel);padding:10px;box-shadow:0 22px 60px rgba(0,0,0,.6);max-width:920px;margin:32px auto}
+.hoja--lima{background:var(--lima)}
+.pie{margin:12px 0 0;text-align:center;font-weight:700;font-size:12px;letter-spacing:.16em;color:rgba(17,17,17,.55)}
+.vineta{position:relative;isolation:isolate;background:var(--papel);color:var(--tinta)}
+.vineta--tinta{background:var(--tinta);color:var(--papel)}
+.vineta--lima{background:var(--lima);color:var(--tinta)}
+.vineta>.borde{position:absolute;inset:0;width:100%;height:100%;z-index:-10;pointer-events:none}
+.vineta>.trama{position:absolute;inset:0;z-index:-10;pointer-events:none}
+.trama-puntos{background-image:radial-gradient(color-mix(in srgb,var(--tinta) 18%,transparent) 1.3px,transparent 1.8px);background-size:9px 9px}
+.trama-densa{background-image:radial-gradient(color-mix(in srgb,var(--tinta) 30%,transparent) 1.4px,transparent 1.9px);background-size:6px 6px}
+.trama-lineas{background-image:repeating-linear-gradient(66deg,color-mix(in srgb,var(--tinta) 26%,transparent) 0 1.6px,transparent 1.6px 22px)}
+.trama-velocidad{background-image:repeating-linear-gradient(84deg,color-mix(in srgb,var(--tinta) 50%,transparent) 0 2.4px,transparent 2.4px 13px)}
+.caja{display:inline-block;border:var(--stroke-caja) solid var(--tinta);background:var(--papel);color:var(--tinta)}
+.caja--etiqueta{padding:6px 12px;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+.caja--narracion{padding:10px 16px;font-size:14px;line-height:1.35}
+.caja--tinta{background:var(--tinta);color:var(--papel)}
+.sfx{display:inline-block;font-family:var(--display);font-size:48px;line-height:1;paint-order:stroke fill;-webkit-text-stroke:2px var(--papel);color:var(--tinta)}
+.sfx--papel{color:var(--papel);-webkit-text-stroke-color:var(--tinta)}
+.display{font-family:var(--display)}
+.hand{font-family:var(--hand)}
+.rotulo{font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.14em}
+.cta{display:inline-block;background:var(--tinta);color:var(--lima);padding:16px 24px;font-family:var(--display);font-size:16px;text-decoration:none;transition:transform .2s}
+.cta:hover{transform:rotate(-1deg)}
+.boton{display:inline-block;border:3px solid var(--tinta);background:var(--papel);padding:8px 16px;font-weight:700;font-size:14px;text-decoration:none;transition:background-color .2s}
+.boton:hover{background:var(--lima)}
+.chip{display:inline-block;border:2px solid var(--tinta);padding:4px 10px;font-weight:700;font-size:12px}
+.campo{display:block;width:100%;border:3px solid var(--tinta);background:var(--papel);padding:12px 16px;font:inherit;outline:none}
+.campo:focus-visible{background:var(--lima)}
+.nota{color:rgba(255,255,255,.7);font-size:13px;max-width:920px;margin:0 auto 8px;padding:0 10px}
+.nota b{color:#fff}
+</style></head><body><p class="nota">Datos comprobables en vez de adjetivos. Las barras escalan con el ancho (<code>preserveAspectRatio="none"</code>) y los textos van fuera del SVG para no deformarse. Las semanas vacías también se dibujan: un parón es parte de la historia.</p><div class="hoja"><div class="vineta" style="padding:32px"><figure style="margin:0;display:flex;flex-direction:column;gap:16px"><div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap"><figcaption class="caja caja--etiqueta">Commits, semana a semana</figcaption><p style="margin:0;display:flex;align-items:baseline;gap:8px"><span class="display" style="font-size:44px;line-height:1">601</span><span style="font-weight:700;font-size:14px">commits</span></p></div><svg viewBox="0 0 32 100" preserveAspectRatio="none" role="img" aria-label="601 commits entre enero y septiembre de 2026" style="display:block;width:100%;height:128px"><rect x="0.15" y="84.81" width="0.7" height="15.19" fill="var(--tinta)"/><rect x="1.15" y="88.61" width="0.7" height="11.39" fill="var(--tinta)"/><rect x="4.15" y="97.47" width="0.7" height="2.53" fill="var(--tinta)"/><rect x="5.15" y="87.34" width="0.7" height="12.66" fill="var(--tinta)"/><rect x="6.15" y="82.28" width="0.7" height="17.72" fill="var(--tinta)"/><rect x="7.15" y="89.87" width="0.7" height="10.13" fill="var(--tinta)"/><rect x="8.15" y="72.15" width="0.7" height="27.85" fill="var(--tinta)"/><rect x="9.15" y="81.01" width="0.7" height="18.99" fill="var(--tinta)"/><rect x="10.15" y="96.20" width="0.7" height="3.80" fill="var(--tinta)"/><rect x="11.15" y="92.41" width="0.7" height="7.59" fill="var(--tinta)"/><rect x="13.15" y="98.73" width="0.7" height="1.27" fill="var(--tinta)"/><rect x="14.15" y="98.73" width="0.7" height="1.27" fill="var(--tinta)"/><rect x="15.15" y="93.67" width="0.7" height="6.33" fill="var(--tinta)"/><rect x="16.15" y="82.28" width="0.7" height="17.72" fill="var(--tinta)"/><rect x="17.15" y="68.35" width="0.7" height="31.65" fill="var(--tinta)"/><rect x="18.15" y="74.68" width="0.7" height="25.32" fill="var(--tinta)"/><rect x="20.15" y="89.87" width="0.7" height="10.13" fill="var(--tinta)"/><rect x="21.15" y="86.08" width="0.7" height="13.92" fill="var(--tinta)"/><rect x="22.15" y="97.47" width="0.7" height="2.53" fill="var(--tinta)"/><rect x="24.15" y="54.43" width="0.7" height="45.57" fill="var(--tinta)"/><rect x="25.15" y="0.00" width="0.7" height="100.00" fill="var(--tinta)"/><rect x="26.15" y="78.48" width="0.7" height="21.52" fill="var(--tinta)"/><rect x="27.15" y="84.81" width="0.7" height="15.19" fill="var(--tinta)"/><rect x="28.15" y="92.41" width="0.7" height="7.59" fill="var(--tinta)"/><rect x="29.15" y="84.81" width="0.7" height="15.19" fill="var(--tinta)"/><rect x="30.15" y="96.20" width="0.7" height="3.80" fill="var(--tinta)"/><rect x="31.15" y="96.20" width="0.7" height="3.80" fill="var(--tinta)"/></svg><div class="rotulo" style="display:flex;justify-content:space-between;border-top:3px solid var(--tinta);padding-top:8px"><span>Enero de 2026</span><span>Septiembre de 2026</span></div><p class="hand" style="margin:0;font-size:18px">Pico: 79 commits la semana del 13 de julio.</p></figure></div></div></body></html>

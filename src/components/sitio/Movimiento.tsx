@@ -37,7 +37,7 @@ export function Movimiento() {
         const pliegue = window.innerHeight;
         if (!pliegue) return;
 
-        const porDebajo = (elemento: HTMLElement) =>
+        const porDebajo = (elemento: Element) =>
           elemento.getBoundingClientRect().top > pliegue;
 
         const vinetas = gsap.utils
@@ -56,6 +56,26 @@ export function Movimiento() {
             ease: "power2.out",
             scrollTrigger: { trigger: vineta, start: "top 88%", once: true },
           });
+        }
+
+        // Las barras del historial crecen desde la base, de izquierda a
+        // derecha. Se animan los atributos y no un transform: el SVG está
+        // estirado con preserveAspectRatio="none" y un scaleY se deformaría.
+        for (const grafica of gsap.utils
+          .toArray<SVGSVGElement>("main [data-historial]")
+          .filter(porDebajo)) {
+          const barras = grafica.querySelectorAll("rect");
+          for (const barra of barras) {
+            gsap.from(barra, {
+              attr: { y: grafica.viewBox.baseVal.height, height: 0 },
+              duration: 0.6,
+              ease: "power3.out",
+              // Escalonado por posición y no por índice de barra: así las
+              // semanas vacías, que no tienen barra, también cuentan.
+              delay: Number(barra.getAttribute("x")) * 0.025,
+              scrollTrigger: { trigger: grafica, start: "top 85%", once: true },
+            });
+          }
         }
 
         const onomatopeyas = gsap.utils

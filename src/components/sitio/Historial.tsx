@@ -62,6 +62,7 @@ export async function Historial({
 
       {/* Las barras escalan con el ancho; los textos van fuera para que no. */}
       <svg
+        data-historial=""
         viewBox={`0 0 ${datos.semanas.length} ${ALTO}`}
         preserveAspectRatio="none"
         role="img"

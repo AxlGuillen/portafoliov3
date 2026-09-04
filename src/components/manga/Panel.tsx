@@ -69,6 +69,7 @@ export function Panel({
 }: PanelProps) {
   return (
     <Etiqueta
+      data-vineta=""
       className={cn("relative isolate", fondos[fondo], className)}
       style={{ clipPath: formaAClipPath(forma), ...style }}
     >

@@ -1,5 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import type { ReactNode } from "react";
+import { Movimiento } from "@/components/sitio/Movimiento";
 import { Nav } from "@/components/sitio/Nav";
 
 export default async function SitioLayout({
@@ -19,6 +20,7 @@ export default async function SitioLayout({
       <Nav />
       {/* El hueco inferior deja sitio a la barra fija de móvil. */}
       <main className="pb-24 sm:pb-0">{children}</main>
+      <Movimiento />
     </>
   );
 }

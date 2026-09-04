@@ -27,13 +27,16 @@ export function Sfx({
 
   return (
     <span
+      data-sfx=""
       className={cn(
         "inline-block font-display text-5xl leading-none",
         variante === "tinta" ? "text-tinta" : "text-papel",
         className,
       )}
       style={{
-        transform: `rotate(${rotacion}deg)`,
+        // `rotate` y no `transform`: así el movimiento puede escalar la
+        // onomatopeya sin pisarle el giro.
+        rotate: `${rotacion}deg`,
         WebkitTextStrokeWidth: `${grosorContorno}px`,
         WebkitTextStrokeColor: contorno,
         // Sin esto el contorno se come el interior de la letra.

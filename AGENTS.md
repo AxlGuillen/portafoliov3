@@ -93,6 +93,26 @@ sobre el CONTENEDOR, no sobre el elemento. Dentro de una viñeta ancha, un
 `px-[16%]` en el bocadillo daba 141px por lado. Para medidas relativas al
 propio elemento, usa `inset` en un hijo absoluto.
 
+## Movimiento
+
+Todo el movimiento vive en `src/components/sitio/Movimiento.tsx`, montado
+una vez en el layout de `(sitio)`. Encuentra las viñetas por `data-vineta`
+(lo pone `Panel`) y las onomatopeyas por `data-sfx` (lo pone `Sfx`); no
+añadas animaciones sueltas en las páginas.
+
+Tres reglas: solo se mueve lo que está por debajo del pliegue al cargar
+(lo visible se pinta ya en su sitio, nada parpadea); `prefers-reduced-motion`
+lo apaga entero, por `gsap.matchMedia` y no por CSS, porque GSAP escribe
+estilos en línea que el CSS no frena; y solo opacidad y transformaciones,
+nunca propiedades que relayout.
+
+`Sfx` gira con la propiedad `rotate`, no con `transform`: así GSAP puede
+escalarla sin pisarle el giro. No lo cambies a `transform`.
+
+**El panel de vista previa no sirve para verificar animaciones**: congela
+`requestAnimationFrame` y no dispara eventos de scroll. Verifica en un
+navegador real con la pestaña en primer plano.
+
 ## Contenido en MDX
 
 Los casos viven en `content/{es,en}/proyectos/*.mdx` y se leen con

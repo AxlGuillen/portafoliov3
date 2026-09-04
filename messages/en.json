@@ -75,5 +75,13 @@
     "copiado": "Copied!",
     "directo": "Or reach me directly",
     "bocadillo": "If you made it this far, you already know how I work."
+  },
+  "noEncontrada": {
+    "etiqueta": "404",
+    "sfx": "HUH?",
+    "titulo": "This panel doesn't exist.",
+    "texto": "The page you're looking for was erased, moved, or never drawn. These four do exist:",
+    "arteArriba": "Page-not-found illustration, top",
+    "arteAbajo": "Page-not-found illustration, bottom"
   }
 }

@@ -75,5 +75,13 @@
     "copiado": "¡Copiado!",
     "directo": "O escríbeme directo",
     "bocadillo": "Si llegaste hasta aquí, ya sabes cómo trabajo."
+  },
+  "noEncontrada": {
+    "etiqueta": "404",
+    "sfx": "¿EH?",
+    "titulo": "Esta viñeta no existe.",
+    "texto": "La página que buscas se borró, cambió de sitio o nunca se dibujó. Estas cuatro sí existen:",
+    "arteArriba": "Ilustración de la página no encontrada, parte superior",
+    "arteAbajo": "Ilustración de la página no encontrada, parte inferior"
   }
 }

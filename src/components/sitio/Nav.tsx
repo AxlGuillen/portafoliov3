@@ -1,6 +1,8 @@
 import { getLocale, getTranslations } from "next-intl/server";
 import { Logo } from "@/components/marca/Logo";
 import { BarraPegajosa } from "@/components/sitio/BarraPegajosa";
+import { EnlaceNav } from "@/components/sitio/EnlaceNav";
+import { Indicador } from "@/components/sitio/Indicador";
 import { Link } from "@/i18n/navigation";
 
 /**
@@ -34,23 +36,32 @@ export async function Nav() {
             <span className="font-display text-lg tracking-wide">4XL</span>
           </Link>
 
+          {/* El rótulo de capítulo va en el hueco entre logo y menú, no
+              centrado sobre la cabecera: así nunca se solapa con el menú. */}
+          <div className="hidden min-w-0 flex-1 justify-center min-[400px]:flex">
+            <Indicador />
+          </div>
+
           <div className="flex items-center gap-5">
             <nav className="hidden items-center gap-5 sm:flex">
               {rutas.slice(0, 3).map((ruta) => (
-                <Link
+                <EnlaceNav
                   key={ruta.href}
                   href={ruta.href}
                   className="py-2 font-bold text-papel text-sm transition-colors hover:text-lima"
+                  activo="underline decoration-[3px] underline-offset-[7px]"
                 >
                   {ruta.texto}
-                </Link>
+                </EnlaceNav>
               ))}
-              <Link
+              {/* En contacto, la única sección a color, el botón se pone lima. */}
+              <EnlaceNav
                 href="/contacto"
                 className="bg-papel px-4 py-2.5 font-bold text-sm text-tinta transition-colors hover:bg-lima"
+                activo="bg-lima"
               >
                 {t("nav.contacto")}
-              </Link>
+              </EnlaceNav>
             </nav>
 
             <Link
@@ -67,15 +78,16 @@ export async function Nav() {
       {/* Barra inferior fija: la navegación real en móvil. */}
       <nav className="fixed inset-x-0 bottom-0 z-50 grid grid-cols-4 border-papel border-t-[3px] bg-tinta sm:hidden">
         {rutas.map((ruta, indice) => (
-          <Link
+          <EnlaceNav
             key={ruta.href}
             href={ruta.href}
             className={`px-1 py-4 text-center font-bold text-[11px] ${
               indice > 0 ? "border-papel/25 border-l-2" : ""
             } ${indice === 3 ? "text-lima" : "text-papel"}`}
+            activo={indice === 3 ? "bg-lima text-tinta" : "bg-papel text-tinta"}
           >
             {ruta.texto}
-          </Link>
+          </EnlaceNav>
         ))}
       </nav>
     </>

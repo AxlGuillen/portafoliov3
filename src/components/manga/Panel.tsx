@@ -35,6 +35,8 @@ type PanelProps = {
   /** Sin borde: para viñetas que solo aportan mancha o trama. */
   sinBorde?: boolean;
   as?: "div" | "article" | "section" | "li" | "aside";
+  /** Sección que representa en la portada, para el rótulo de la barra. */
+  seccion?: string;
   className?: string;
   style?: CSSProperties;
   children?: ReactNode;
@@ -63,6 +65,7 @@ export function Panel({
   trazo,
   sinBorde = false,
   as: Etiqueta = "div",
+  seccion,
   className,
   style,
   children,
@@ -70,6 +73,7 @@ export function Panel({
   return (
     <Etiqueta
       data-vineta=""
+      data-seccion={seccion}
       className={cn("relative isolate", fondos[fondo], className)}
       style={{ clipPath: formaAClipPath(forma), ...style }}
     >

@@ -109,6 +109,11 @@ nunca propiedades que relayout.
 `Sfx` gira con la propiedad `rotate`, no con `transform`: así GSAP puede
 escalarla sin pisarle el giro. No lo cambies a `transform`.
 
+El rótulo de capítulo de la barra (`Indicador`) lee `data-seccion` en la
+portada: `<Panel seccion="blog">` o `data-seccion` en el envoltorio. En las
+páginas interiores sale de la ruta. Si añades un bloque a la portada,
+anúncialo o el rótulo no lo verá.
+
 **El panel de vista previa no sirve para verificar animaciones**: congela
 `requestAnimationFrame` y no dispara eventos de scroll. Verifica en un
 navegador real con la pestaña en primer plano.

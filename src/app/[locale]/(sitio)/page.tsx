@@ -94,6 +94,7 @@ export default async function Inicio({ params }: Props) {
 
           <Panel
             forma={destacado}
+            seccion="proyectos"
             className="flex min-h-[320px] flex-col justify-end p-6 sm:min-h-[420px] sm:p-8 lg:pl-[172px]"
           >
             <Arte
@@ -148,7 +149,10 @@ export default async function Inicio({ params }: Props) {
       <Hoja pagina="2 / 4">
         <div className="flex flex-col gap-canal">
           {/* Blog: dos viñetas con cortes opuestos */}
-          <div className="flex flex-col gap-canal sm:flex-row">
+          <div
+            data-seccion="blog"
+            className="flex flex-col gap-canal sm:flex-row"
+          >
             <Panel
               forma={blogIzquierda}
               className="flex min-h-[190px] flex-1 flex-col gap-2 p-6"
@@ -204,7 +208,7 @@ export default async function Inicio({ params }: Props) {
           </div>
 
           {/* Sobre mí: viñeta dominante con una inserta que rompe el borde */}
-          <div className="relative">
+          <div data-seccion="sobre-mi" className="relative">
             {/* La viñeta callada de la página: sin onomatopeya. Tres paneles
                 ruidosos seguidos cansan; el manga alterna. */}
             <Panel
@@ -247,7 +251,7 @@ export default async function Inicio({ params }: Props) {
           </Panel>
 
           {/* Los cuatro casos */}
-          <div>
+          <div data-seccion="proyectos">
             <CajaNarracion fondo="tinta" className="mb-3">
               {t("inicio.losCasos")}
             </CajaNarracion>
@@ -307,6 +311,7 @@ export default async function Inicio({ params }: Props) {
           {/* Contacto: la única viñeta a color */}
           <Panel
             fondo="lima"
+            seccion="contacto"
             className="mt-2 flex flex-col items-start gap-4 p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8"
           >
             <div className="flex flex-col gap-2">

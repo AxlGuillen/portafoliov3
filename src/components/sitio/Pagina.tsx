@@ -14,24 +14,16 @@ import { type ReactNode, ViewTransition } from "react";
  * ahí nunca hay salida ni entrada que animar. Los tiempos y el respeto a
  * `prefers-reduced-motion` viven en `globals.css`, sección "Pasar de página".
  *
- * Dos maneras de pasar: al cambiar de capítulo desde el menú (los enlaces
- * llevan `transitionTypes={["capitulo"]}`) la hoja se dobla como en un
- * libro: se levanta por el borde derecho y gira sobre el lomo izquierdo. En
- * cualquier otra navegación —entrar a una ficha, volver atrás— solo se
- * funde: acercarse a un caso no es pasar página.
+ * Se probó un doblez de hoja en 3D para los cambios de capítulo y se
+ * descartó: con una sola foto plana no hay forma de que parezca papel, y
+ * un giro rígido se ve como un cuadro. Un fundido corto envejece mejor.
  *
  * `default="none"` evita que se anime en transiciones que no son un cambio
  * de página (una revelación de Suspense, un refresco).
  */
 export function Pagina({ children }: { children: ReactNode }) {
   return (
-    <ViewTransition
-      // Cambiar de capítulo desde el menú dobla la hoja; cualquier otra
-      // navegación (entrar a una ficha, el botón atrás) solo la funde.
-      enter={{ capitulo: "hoja-entra-bajo-doblez", default: "hoja-entra" }}
-      exit={{ capitulo: "hoja-dobla", default: "hoja-sale" }}
-      default="none"
-    >
+    <ViewTransition enter="hoja-entra" exit="hoja-sale" default="none">
       {children}
     </ViewTransition>
   );

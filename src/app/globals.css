@@ -139,52 +139,6 @@
   }
 }
 
-/* Cambiar de capítulo: la hoja se dobla como en un libro.
-   Las reglas cuelgan del TIPO de navegación ("capitulo"), que el navegador
-   conoce con certeza, y no de las clases que React pone a cada foto: en la
-   primera versión la clase de la foto entrante no llegaba, el navegador
-   aplicaba su fundido por defecto y la página nueva se veía encima de la
-   que se iba.
-
-   Lo que la hace parecer papel y no un cuadro girando: la hoja saliente va
-   ENCIMA de la nueva, sin la mezcla aditiva por defecto; se levanta por la
-   esquina superior derecha antes que por el resto (el sesgo), no como una
-   lámina rígida; proyecta sombra sobre la página de abajo conforme se alza;
-   se oscurece al alejarse de la luz; y acelera al final, como una hoja que
-   cae. Perspectiva cercana para que el escorzo se note. */
-/* biome-ignore-start lint/correctness/noUnknownPseudoClass: :active-view-transition-type es reciente y Biome aún no lo lista */
-:root:active-view-transition-type(capitulo)::view-transition-image-pair(*) {
-  isolation: auto;
-}
-:root:active-view-transition-type(capitulo)::view-transition-old(*) {
-  z-index: 2;
-  mix-blend-mode: normal;
-  transform-origin: left center;
-  backface-visibility: hidden;
-  animation: 520ms cubic-bezier(0.5, 0, 0.75, 0.2) both hoja-dobla;
-}
-:root:active-view-transition-type(capitulo)::view-transition-new(*) {
-  z-index: 1;
-  mix-blend-mode: normal;
-  animation: none;
-}
-/* biome-ignore-end lint/correctness/noUnknownPseudoClass: :active-view-transition-type es reciente y Biome aún no lo lista */
-
-@keyframes hoja-dobla {
-  0% {
-    transform: perspective(1000px) rotateY(0deg) skewY(0deg);
-    filter: brightness(1) drop-shadow(0 0 0 rgba(0, 0, 0, 0));
-  }
-  35% {
-    transform: perspective(1000px) rotateY(-28deg) skewY(-3deg);
-    filter: brightness(0.97) drop-shadow(-18px 10px 22px rgba(0, 0, 0, 0.45));
-  }
-  100% {
-    transform: perspective(1000px) rotateY(-96deg) skewY(-7deg);
-    filter: brightness(0.7) drop-shadow(-40px 18px 34px rgba(0, 0, 0, 0.55));
-  }
-}
-
 /* La barra y el menú de móvil no se mueven ni se funden. */
 /* biome-ignore-start lint/correctness/noUnknownTypeSelector: son nombres de view-transition, no etiquetas */
 ::view-transition-group(barra),

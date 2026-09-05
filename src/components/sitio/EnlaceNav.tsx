@@ -23,8 +23,6 @@ export function EnlaceNav({ href, activo, className, children }: Props) {
   return (
     <Link
       href={href}
-      // Cambiar de capítulo dobla la hoja (ver Pagina.tsx).
-      transitionTypes={["capitulo"]}
       aria-current={esActual ? "page" : undefined}
       className={cn(className, esActual && activo)}
     >

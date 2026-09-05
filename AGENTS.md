@@ -114,6 +114,14 @@ portada: `<Panel seccion="blog">` o `data-seccion` en el envoltorio. En las
 páginas interiores sale de la ruta. Si añades un bloque a la portada,
 anúncialo o el rótulo no lo verá.
 
+**Pasar de página** es la excepción a "todo en Movimiento.tsx": lo anima
+el navegador con la View Transitions API vía el `<ViewTransition>` de React
+que envuelve cada página en `src/components/sitio/Pagina.tsx` (en cada
+`page.tsx`, nunca en el layout, que persiste entre rutas). Los tiempos y el
+anclaje de la barra viven en `globals.css`, sección "Pasar de página". Los
+tipos de `ViewTransition` entran por `src/react-canary.d.ts`. Toda página
+nueva se envuelve en `<Pagina>`.
+
 **El panel de vista previa no sirve para verificar animaciones**: congela
 `requestAnimationFrame` y no dispara eventos de scroll. Verifica en un
 navegador real con la pestaña en primer plano.

@@ -97,3 +97,72 @@
     outline-offset: 2px;
   }
 }
+
+/* ------------------------------------------------------------------
+   Pasar de página.
+   Lo anima el navegador (View Transitions API) a través del
+   <ViewTransition> de React que envuelve cada página en `Pagina.tsx`.
+   La hoja saliente se funde rápido; la entrante llega un poco después,
+   subiendo. La barra queda anclada: es la referencia fija que dice que
+   se movió el contenido, no la pantalla.
+------------------------------------------------------------------ */
+::view-transition {
+  /* Que un clic durante la transición no se pierda. */
+  pointer-events: none;
+}
+
+::view-transition-old(.hoja-sale) {
+  animation: 150ms ease-in both hoja-fundido reverse;
+}
+
+::view-transition-new(.hoja-entra) {
+  animation:
+    220ms ease-out 120ms both hoja-fundido,
+    380ms cubic-bezier(0.2, 0.8, 0.2, 1) both hoja-sube;
+}
+
+@keyframes hoja-fundido {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes hoja-sube {
+  from {
+    translate: 0 14px;
+  }
+  to {
+    translate: 0;
+  }
+}
+
+/* La barra y el menú de móvil no se mueven ni se funden. */
+/* biome-ignore-start lint/correctness/noUnknownTypeSelector: son nombres de view-transition, no etiquetas */
+::view-transition-group(barra),
+::view-transition-group(barra-movil) {
+  animation: none;
+  z-index: 100;
+}
+::view-transition-old(barra),
+::view-transition-old(barra-movil) {
+  display: none;
+}
+::view-transition-new(barra),
+::view-transition-new(barra-movil) {
+  animation: none;
+}
+/* biome-ignore-end lint/correctness/noUnknownTypeSelector: son nombres de view-transition, no etiquetas */
+
+/* biome-ignore-start lint/complexity/noImportantStyles: anular la animación del navegador */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+}
+/* biome-ignore-end lint/complexity/noImportantStyles: anular la animación del navegador */

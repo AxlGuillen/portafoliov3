@@ -76,7 +76,10 @@ export async function Nav() {
       </BarraPegajosa>
 
       {/* Barra inferior fija: la navegación real en móvil. */}
-      <nav className="fixed inset-x-0 bottom-0 z-50 grid grid-cols-4 border-papel border-t-[3px] bg-tinta sm:hidden">
+      <nav
+        style={{ viewTransitionName: "barra-movil" }}
+        className="fixed inset-x-0 bottom-0 z-50 grid grid-cols-4 border-papel border-t-[3px] bg-tinta sm:hidden"
+      >
         {rutas.map((ruta, indice) => (
           <EnlaceNav
             key={ruta.href}

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Pagina } from "@/components/sitio/Pagina";
 import { SeccionPendiente } from "@/components/sitio/SeccionPendiente";
-
 import { metadatosDe } from "@/lib/metadatos";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -21,13 +21,15 @@ export default async function Certificaciones({ params }: Props) {
   setRequestLocale(locale);
 
   return (
-    <SeccionPendiente
-      titulo={locale === "es" ? "Certificaciones" : "Certifications"}
-      ruta={
-        locale === "es"
-          ? "/es/sobre-mi/certificaciones"
-          : "/en/about/certifications"
-      }
-    />
+    <Pagina>
+      <SeccionPendiente
+        titulo={locale === "es" ? "Certificaciones" : "Certifications"}
+        ruta={
+          locale === "es"
+            ? "/es/sobre-mi/certificaciones"
+            : "/en/about/certifications"
+        }
+      />
+    </Pagina>
   );
 }

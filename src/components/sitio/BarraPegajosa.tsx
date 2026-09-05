@@ -26,6 +26,7 @@ export function BarraPegajosa({ children }: { children: ReactNode }) {
 
   return (
     <div
+      style={{ viewTransitionName: "barra" }}
       className={cn(
         "sticky top-0 z-40 border-b-2 transition-colors duration-300 motion-reduce:transition-none",
         desplazado

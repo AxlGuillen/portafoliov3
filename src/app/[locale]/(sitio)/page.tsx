@@ -67,7 +67,7 @@ export default async function Inicio({ params }: Props) {
               rotacion={9}
               className="absolute top-3 right-5 text-4xl sm:top-5 sm:right-8 sm:text-6xl"
             >
-              ¡TAK!
+              {t("sfx.tak")}
             </Sfx>
 
             {/* Sobre el dibujo, el texto necesita fondo sólido: es lo que hace
@@ -108,7 +108,7 @@ export default async function Inicio({ params }: Props) {
               rotacion={-5}
               className="absolute top-5 left-5 text-4xl sm:top-6 sm:left-8 sm:text-5xl lg:left-[172px]"
             >
-              ¡ZUUM!
+              {t("sfx.zuum")}
             </Sfx>
 
             {proyectoDestacado ? (
@@ -246,7 +246,7 @@ export default async function Inicio({ params }: Props) {
               rotacion={-3}
               className="text-3xl sm:text-4xl"
             >
-              ¡GO GO GO GO!
+              {t("sfx.go")}
             </Sfx>
           </Panel>
 

@@ -78,7 +78,7 @@ export default async function Proyectos({ params }: Props) {
                   rotacion={-6}
                   className="absolute top-5 right-6 text-3xl sm:text-4xl"
                 >
-                  ¡PAM!
+                  {t("sfx.pam")}
                 </Sfx>
                 <FichaProyecto proyecto={destacado} grande />
               </Panel>

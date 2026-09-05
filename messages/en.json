@@ -83,5 +83,12 @@
     "texto": "The page you're looking for was erased, moved, or never drawn. These four do exist:",
     "arteArriba": "Page-not-found illustration, top",
     "arteAbajo": "Page-not-found illustration, bottom"
+  },
+  "sfx": {
+    "tak": "TAK!",
+    "zuum": "ZOOM!",
+    "go": "GO GO GO GO!",
+    "pam": "BAM!",
+    "alFin": "AT LAST!"
   }
 }

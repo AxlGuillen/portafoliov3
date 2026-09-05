@@ -83,5 +83,12 @@
     "texto": "La página que buscas se borró, cambió de sitio o nunca se dibujó. Estas cuatro sí existen:",
     "arteArriba": "Ilustración de la página no encontrada, parte superior",
     "arteAbajo": "Ilustración de la página no encontrada, parte inferior"
+  },
+  "sfx": {
+    "tak": "¡TAK!",
+    "zuum": "¡ZUUM!",
+    "go": "¡GO GO GO GO!",
+    "pam": "¡PAM!",
+    "alFin": "¡AL FIN!"
   }
 }

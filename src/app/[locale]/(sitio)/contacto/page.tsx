@@ -58,7 +58,7 @@ export default async function Contacto({ params }: Props) {
               rotacion={9}
               className="absolute top-6 right-6 text-4xl sm:text-5xl"
             >
-              ¡AL FIN!
+              {t("sfx.alFin")}
             </Sfx>
 
             <h1 className="font-display text-4xl text-lima leading-none sm:text-5xl">

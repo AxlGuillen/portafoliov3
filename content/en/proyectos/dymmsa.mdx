@@ -1,0 +1,75 @@
+---
+titulo: "DYMMSA"
+subtitulo: "Quoting and inventory for a tool distributor"
+resumen: "I automated the full quote, approval and purchasing cycle of a URREA distributor that until then processed every order by hand in Excel."
+cliente: "DYMMSA"
+tipo: aplicacion
+periodo: "January 2026 — ongoing"
+stack:
+  - Next.js 16
+  - Supabase
+  - TanStack Query
+  - MCP
+  - Playwright
+enlace: "https://dymmsa-web.vercel.app"
+destacado: true
+orden: 1
+---
+
+## The brief
+
+DYMMSA is an authorized URREA tool distributor in Morelia. Their customers sent
+Excel files full of product codes, and someone at the company sat down to look
+up every price, work out the totals, write the quote and then track the order by
+hand.
+
+They hired me to automate that. Freelance work, on my own, no team.
+
+## The problem
+
+The obvious issue was slowness, but the real one was the lack of a trail: nobody
+could say where an order stood, what the customer had approved or what still had
+to be ordered from the supplier. Every mistake surfaced late.
+
+And there was a friction that was not technical at all: **any system that forced
+the customer to create an account was going to die unused.** The person who
+approves a quote does not want to sign up for anything.
+
+## The decision
+
+I modelled the whole flow as a chain where every step leaves a record:
+
+```
+Customer's Excel → Quoting tool → Token approval → Sales order
+    → Purchase planner → Excel for URREA → Receiving → Inventory
+```
+
+Three decisions hold the system up. **Approval goes through a public token**:
+the customer gets a link, approves item by item and never registers anywhere —
+that removed the adoption friction at the root. **The catalogue teaches itself**:
+every product that goes through the quoting tool gets added, so the system grows
+more useful with normal use and no extra work for anyone. And **nothing calls the
+database from the browser**: everything goes through the app's own API routes,
+which gives a single place where authentication, errors and business rules live.
+
+Later I added an **MCP server** on top of the application: the same routes and
+the same rules became available to AI agents, with Supabase's native OAuth 2.1.
+The caller's token builds its own client, so the access policies apply exactly as
+they do on the web — no privileged keys anywhere.
+
+## The result
+
+The system is in active use and still growing: **556 commits** as of August
+2026, 14 tables in production and 47 API routes. Since the original cycle I have
+delivered six more modules — a multi-brand catalogue, a wholesale-versus-retail
+purchase planner, a cutting planner with an SVG diagram, suppliers, tasks on top
+of GitHub issues, and the MCP server.
+
+A serious test base backs it: **81 test files** across unit, component,
+integration and end-to-end tests against a local instance of the database.
+
+But the lesson that marked me most was not technical. I had added a constraint so
+that a delivery could never exceed what was ordered, because it seemed obvious.
+**It turned out to be false: the supplier sometimes ships more.** Removing the
+constraint and modelling the surplus was the right answer, and it taught me to
+distrust the rules I take for granted without having watched them operate.

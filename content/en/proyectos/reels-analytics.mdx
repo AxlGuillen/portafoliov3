@@ -1,0 +1,72 @@
+---
+titulo: "Reels Analytics"
+subtitulo: "Custom analytics for a TikTok and Instagram channel"
+resumen: "The official APIs tell you how a video is doing today, not how it got there. I built the system that keeps that history and turns it into decisions."
+tipo: aplicacion
+periodo: "July 2026 — in production"
+stack:
+  - Next.js 16
+  - Supabase
+  - MCP
+  - TikTok API
+  - Instagram Graph API
+enlace: "https://reels-analytics.vercel.app"
+repo: "https://github.com/AxlGuillen/reels-analytics"
+orden: 2
+---
+
+## The brief
+
+I set it myself. I publish short video on TikTok and Instagram as
+**@axelsine13**, and there came a point where I had hundreds of videos out and
+no way to answer simple questions: what kind of content works, what time is
+best to post, whether a video really took off or only seemed to.
+
+## The problem
+
+Here is the finding that defines the project: **the official APIs return the
+current state of a metric, never its history.** They tell you a video has
+40,000 views. They do not tell you whether it got them in six hours or in three
+weeks — and that difference is exactly the one that matters.
+
+Without history you cannot compare videos of different ages, or spot which one
+broke out of its cohort, or know what caused a jump in followers.
+
+## The decision
+
+**Snapshots are the product.** A cron job captures the state of every video
+each day and stores it untouched; growth is computed by comparing snapshots.
+Storing the raw data and deriving the metrics at read time had a consequence I
+did not anticipate and that proved invaluable: **every time I improve a formula,
+the improvement applies backwards over the whole history.**
+
+The second decision was about honesty. A personal metrics system is only useful
+if it does not lie to itself, so I designed it to admit what it does not know:
+when there is not enough data to compare at a given age it returns *nothing*
+instead of extrapolating, spikes are cancelled when the cohort cannot
+discriminate, and follower attribution is labelled as correlation, not cause.
+
+The ports-and-adapters architecture was not a whim: **Instagram's rate limits
+force a rotation** between recent videos and a batch of old ones, while TikTok
+needs nothing of the sort. Each platform solves its own quirks behind the same
+contract, and adding a new one means implementing that contract, not touching
+the analytics.
+
+## The result
+
+In production with uninterrupted daily ingestion since 4 July 2026, over a
+catalogue of **524 videos and about 5.97 million accumulated views**. From zero
+to a complete system — ingestion, analytics, dashboard, MCP and a weekly digest —
+in about 109 commits over one month.
+
+It has already changed real decisions: an experiment with trending audio was
+settled in its favour with data rather than intuition — 27.8% of that cohort
+passed 20,000 views, and those days gained **3.25 times more followers** than the
+rest.
+
+Two things I came out of it better at. **Implementing full OAuth 2.1 by hand** —
+dynamic client registration, PKCE, refresh rotation, hashed tokens — in a
+low-risk project of my own, which is the best place to actually read the specs.
+And discovering that **the free tier's limits work as design**: two scheduled
+jobs and sixty seconds of execution forced the whole system to fit exactly
+there.

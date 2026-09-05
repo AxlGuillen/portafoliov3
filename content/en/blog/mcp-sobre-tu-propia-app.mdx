@@ -1,0 +1,98 @@
+---
+titulo: "An MCP on top of your own app"
+resumen: "You already wrote the business rules. Exposing them to an agent should not make you write them again."
+fecha: "2026-08-31"
+tema: "architecture"
+---
+
+I have three projects with an MCP server on top: a client's quoting system, my
+channel's analytics and my home dashboard. The first one cost me understanding
+something that now seems obvious, and it is the only thing I want to argue for
+here.
+
+## The mistake I almost made
+
+When I decided an agent had to be able to query DYMMSA's business, my first
+instinct was to build **a separate service**. A new endpoint, with its own
+authentication, its own database queries, its own idea of what a valid quote is.
+
+It would have been a silent disaster. Not because it would not work — it works —
+but because from that day on I would have **two definitions of the same rules**.
+The web knows an order can only be created from approved items; the new service
+would have to know it too. And the day the rule changes — and they change —
+someone will update only one of the two.
+
+## What I did instead
+
+The MCP server **lives inside the same application**. It is not a twin project:
+it is one more folder and one more endpoint, next to the forty-seven API routes
+that already existed.
+
+That means every tool I expose leans on code that was already written and
+tested. When an agent asks for pending quotes, it goes through exactly the same
+filters the page goes through when it renders them. There is no second truth to
+maintain.
+
+And there is a side effect I had not foreseen: **every improvement to the
+business rules reaches the agents for free.** Nothing has to be ported.
+
+## Where this gets serious: permissions
+
+This is where a badly built MCP turns into a hole.
+
+The easy way out is for the server to use a key with full permissions and filter
+by itself what each caller may see. It is easy because it works on the first
+try. It is bad because it moves all the security into your code: every new query
+is a chance to forget a filter.
+
+I did the opposite. **The caller's token builds its own database client**, one
+per request. The access policies that already protect the web apply identically,
+without me writing a line for it. There is no privileged key anywhere in the
+system.
+
+The practical difference is enormous: I do not have to *remember* to restrict
+anything. If an agent should not see something, it does not, for the same reason
+a user in the browser would not.
+
+## Read-only integrations need an allowlist
+
+DYMMSA also queries the company's invoicing system. There the temptation is to
+let generic queries through and trust that nobody will ask for what they should
+not.
+
+I did not trust. There is an **explicit list of which models and which fields
+can be queried**, and it is validated even inside a query's filters — because
+you can filter by a field without requesting it and deduce its value. Payroll
+fields are blocked, and there is a test that fails if anyone unblocks them.
+
+That test is the important part. An allowlist without a test defending it is a
+comment.
+
+## Why the projects start reinforcing each other
+
+What I did not expect is what happens once you have more than one.
+
+My channel's analytics expose nine read tools. One of them returns a block ready
+to paste into the note of the script that produced that video. The result is
+that **the system that measures talks to the system where I write**, without me
+copying anything by hand.
+
+Every app with an MCP stops being an island. Not because they integrate with
+each other — they do not — but because **there is an agent in the middle that
+can read all of them**, and I stop being the one carrying data from one window
+to another.
+
+## What I would tell someone starting out
+
+Three things, in order of importance.
+
+**Do not build a parallel service.** Put the MCP inside the application that
+already has the rules.
+
+**Do not use a privileged key.** Let the caller's token build the client, and
+let the permissions you already have do their job.
+
+**Start read-only.** Of twenty-three tools in DYMMSA, twenty-two are queries.
+The only one that writes creates a task, which is the most harmless thing I
+could think of. Writes get enabled one at a time, by level of risk, and there is
+no hurry.

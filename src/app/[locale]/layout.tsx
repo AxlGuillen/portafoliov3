@@ -32,6 +32,16 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
+/**
+ * Solo existen los idiomas de `generateStaticParams`; cualquier otro valor
+ * del segmento es 404 sin renderizar nada. Hace falta porque las rutas con
+ * punto (/favicon.ico, /apple-touch-icon.png) no pasan por el proxy de
+ * idiomas y llegan aquí con `locale = "favicon.ico"`; el `notFound()` de
+ * abajo no basta, porque la página se renderiza en paralelo al layout y
+ * `Intl.DateTimeFormat("favicon.ico")` reventaba antes con un RangeError.
+ */
+export const dynamicParams = false;
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {

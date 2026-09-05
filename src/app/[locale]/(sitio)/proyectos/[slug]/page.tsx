@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { MDXRemote } from "next-mdx-remote/rsc";
@@ -125,6 +126,48 @@ export default async function Caso({ params }: Props) {
                 options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
               />
             </Panel>
+
+            {/* La galería: capturas de la app, en blanco y negro por CSS */}
+
+            {proyecto.galeria.length > 0 ? (
+              <Panel
+                forma={corteAbajo(5, "izquierda")}
+                className="p-6 pb-10 sm:p-8 sm:pb-12"
+              >
+                <CajaNarracion fondo="tinta" className="mb-4">
+                  {t("proyectos.galeria")}
+                </CajaNarracion>
+
+                <ul className="grid grid-cols-1 gap-canal sm:grid-cols-2">
+                  {proyecto.galeria.map((captura, indice) => (
+                    <li key={captura.src}>
+                      <figure className="flex flex-col gap-2">
+                        {/* Enlace de verdad a la imagen entera: se abre y se comparte. */}
+
+                        <a
+                          href={captura.src}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group relative block aspect-video overflow-hidden border-[3px] border-tinta"
+                        >
+                          <Image
+                            src={captura.src}
+                            alt={captura.pie}
+                            fill
+                            sizes="(max-width: 640px) 100vw, 440px"
+                            className="object-cover object-left-top contrast-[1.35] grayscale transition-[filter] group-hover:grayscale-0"
+                          />
+                        </a>
+
+                        <figcaption className="font-hand text-base">
+                          {indice + 1}. {captura.pie}
+                        </figcaption>
+                      </figure>
+                    </li>
+                  ))}
+                </ul>
+              </Panel>
+            ) : null}
 
             <Panel fondo="tinta" className="p-6 sm:p-8">
               <Link

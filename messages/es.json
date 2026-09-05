@@ -36,7 +36,8 @@
     "captura": "Captura de {proyecto}",
     "historial": "Commits, semana a semana",
     "historialResumen": "{total} commits entre {desde} y {hasta}, con un pico de {pico} en una sola semana.",
-    "pico": "Pico: {commits} commits la semana del {semana}."
+    "pico": "Pico: {commits} commits la semana del {semana}.",
+    "galeria": "Capturas de pantalla"
   },
   "meta": {
     "inicio": "Portafolio de Axl Guillen, desarrollador. Cuatro casos contados de principio a fin: qué se encargó, qué lo hacía difícil, qué se decidió y qué cambió.",

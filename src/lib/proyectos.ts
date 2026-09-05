@@ -24,6 +24,11 @@ const Ficha = z.object({
   repo: z.string().optional(),
   destacado: z.boolean().optional().default(false),
   orden: z.number(),
+  /** Pies de las capturas de la galería, por nombre de archivo. Opcional. */
+  capturas: z
+    .array(z.object({ archivo: z.string(), pie: z.string() }))
+    .optional()
+    .default([]),
 });
 
 export type Ficha = z.infer<typeof Ficha>;
@@ -41,12 +46,24 @@ const Historial = z.object({
 
 export type Historial = z.infer<typeof Historial>;
 
+export type Captura = { src: string; pie: string };
+
+const extensionesDeImagen = new Set([
+  ".jpg",
+  ".jpeg",
+  ".png",
+  ".avif",
+  ".webp",
+]);
+
 export type Proyecto = Ficha & {
   slug: string;
   /** Captura de portada, si existe `public/proyectos/<slug>.(jpg|png)`. */
   portada: string | null;
   /** Ritmo de commits, si existe `content/historial/<slug>.json`. */
   historial: Historial | null;
+  /** Galería de la ficha: lo que haya en `public/proyectos/<slug>/`. */
+  galeria: Captura[];
   /** Falso cuando este idioma aún no tiene traducción y se sirve el original. */
   traducido: boolean;
 };
@@ -73,6 +90,38 @@ async function buscarPortada(slug: string) {
     }
   }
   return null;
+}
+
+/**
+ * La galería se descubre igual que la portada: todo lo que haya en
+ * `public/proyectos/<slug>/`, ordenado por nombre (de ahí el `01-`, `02-`).
+ * El pie sale del frontmatter si lo declara y, si no, del nombre del archivo
+ * sin número ni extensión: soltar el archivo basta para que aparezca.
+ */
+async function buscarGaleria(
+  slug: string,
+  pies: { archivo: string; pie: string }[],
+): Promise<Captura[]> {
+  let archivos: string[];
+  try {
+    archivos = await fs.readdir(
+      path.join(process.cwd(), "public", "proyectos", slug),
+    );
+  } catch {
+    return [];
+  }
+  return archivos
+    .filter((a) => extensionesDeImagen.has(path.extname(a).toLowerCase()))
+    .sort()
+    .map((archivo) => ({
+      src: `/proyectos/${slug}/${archivo}`,
+      pie:
+        pies.find((p) => p.archivo === archivo)?.pie ??
+        archivo
+          .replace(/\.[^.]+$/, "")
+          .replace(/^\d+[-_ ]*/, "")
+          .replace(/[-_]+/g, " "),
+    }));
 }
 
 async function leerHistorial(slug: string): Promise<Historial | null> {
@@ -138,6 +187,7 @@ export async function obtenerProyecto(
     slug,
     portada: await buscarPortada(slug),
     historial: await leerHistorial(slug),
+    galeria: await buscarGaleria(slug, ficha.data.capturas),
     traducido: propio !== null,
     contenido: archivo.content,
   };

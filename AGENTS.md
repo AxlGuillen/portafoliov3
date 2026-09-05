@@ -143,6 +143,15 @@ es una cadena de montaje`, que js-yaml intentó leer como clave y valor.
 Si un idioma no tiene todavía su archivo, se sirve el del idioma por defecto y
 la página avisa; una ruta traducida nunca se queda vacía.
 
+## Imágenes
+
+Se descubren por convención, nunca se declaran: `public/vinetas/<nombre>.avif`
+para las ilustraciones que cada página busca por nombre,
+`public/proyectos/<slug>.jpg` como portada de un caso y
+`public/proyectos/<slug>/01-*.jpg` como su galería. `bun run assets` lista qué
+hay y qué falta (código 1 si falta algo obligatorio). Especificaciones y
+estructura en `ASSETS.md`.
+
 ## Comandos
 
 El gestor de paquetes es **bun**, no npm. Para instalar: `bun install`.

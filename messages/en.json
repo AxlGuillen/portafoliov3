@@ -36,7 +36,8 @@
     "captura": "{proyecto} screenshot",
     "historial": "Commits, week by week",
     "historialResumen": "{total} commits between {desde} and {hasta}, peaking at {pico} in a single week.",
-    "pico": "Peak: {commits} commits in the week of {semana}."
+    "pico": "Peak: {commits} commits in the week of {semana}.",
+    "galeria": "Screenshots"
   },
   "meta": {
     "inicio": "Portfolio of Axl Guillen, developer. Four cases told end to end: what was asked, what made it hard, what was decided and what changed.",
